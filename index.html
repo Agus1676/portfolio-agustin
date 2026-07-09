@@ -133,6 +133,13 @@
                                 <p>Catálogo & Admin Excel</p>
                             </div>
                         </button>
+                        <button class="showcase-tab" data-project="resumatch">
+                            <i data-lucide="file-check"></i>
+                            <div class="tab-info">
+                                <h4>RESUMATCH</h4>
+                                <p>Analizador de CV con IA</p>
+                            </div>
+                        </button>
                     </aside>
 
                     <!-- Main Showcase Content -->
@@ -448,6 +455,112 @@
                             </div>
                         </div>
 
+                        <!-- PANE 5: RESUMATCH -->
+                        <div class="project-pane" id="pane-resumatch">
+                            <div class="pane-header">
+                                <div class="project-tags">
+                                    <span class="tag">FastAPI (Python)</span>
+                                    <span class="tag">React 18</span>
+                                    <span class="tag">TypeScript</span>
+                                    <span class="tag">Google Gemini AI</span>
+                                    <span class="tag">SQLite / SQLAlchemy</span>
+                                    <span class="tag font-neon-cyan">Premium</span>
+                                </div>
+                                <h3 class="pane-title">Resumatch — Analizador de CV & ATS con Inteligencia Artificial</h3>
+                                <p class="pane-subtitle">Aplicación web Full-Stack que compara currículums en formato PDF contra descripciones de puestos, calculando un score de compatibilidad y sugiriendo mejoras precisas.</p>
+                            </div>
+                            
+                            <div class="pane-nav-tabs">
+                                <button class="pane-nav-btn active" data-view="details">Detalles del Proyecto</button>
+                                <button class="pane-nav-btn" data-view="demo">Demo Interactiva</button>
+                            </div>
+
+                            <div class="pane-tab-content active" data-tab-content="details">
+                                <div class="pane-split-layout">
+                                    <div class="pane-info-col">
+                                        <p class="project-description">
+                                            Una solución diseñada para ayudar a los candidatos a superar los filtros automatizados (ATS) y optimizar sus currículums utilizando modelos generativos de IA.
+                                        </p>
+                                        <ul class="project-bullets">
+                                            <li><strong>Procesamiento Inteligente:</strong> Extracción de texto de archivos PDF en Python con `pypdf` y análisis semántico profundo usando la API de Gemini 2.5 Flash.</li>
+                                            <li><strong>Feedback Detallado:</strong> Identificación precisa de palabras clave (keywords) faltantes y sugerencias estructuradas paso a paso para reescribir secciones del CV.</li>
+                                            <li><strong>Reportes PDF de Alta Calidad:</strong> Generación y descarga automatizada del reporte de compatibilidad en formato A4 usando `jsPDF`.</li>
+                                            <li><strong>Arquitectura CI/CD:</strong> Pipeline automatizado que integra el repositorio con Vercel (Frontend React) y Render (Backend FastAPI).</li>
+                                        </ul>
+                                        <div class="pane-ctas" style="margin-top: 24px; display: flex; gap: 12px;">
+                                            <a href="https://resumatch-dusky.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary-sm" style="display: inline-flex; align-items: center; text-decoration: none;">Probar App <i data-lucide="external-link" style="width: 14px; height: 14px; margin-left: 6px;"></i></a>
+                                            <a href="https://github.com/Agus1676/resumatch" target="_blank" rel="noopener noreferrer" class="btn-secondary-sm" style="display: inline-flex; align-items: center; text-decoration: none;">Ver GitHub <i data-lucide="github" style="width: 14px; height: 14px; margin-left: 6px;"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="pane-mockup-col">
+                                        <a href="https://resumatch-dusky.vercel.app/" target="_blank" rel="noopener noreferrer" class="pane-mockup-link" title="Visitar Resumatch en Vercel">
+                                            <img src="assets/resumatch.png" alt="Mockup Resumatch" class="pane-mockup-img" style="border: 1px solid var(--border-color); border-radius: 8px;">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pane-tab-content" data-tab-content="demo">
+                                <div class="demo-box resumatch-demo">
+                                    <div class="demo-header">
+                                        <span class="demo-title"><i data-lucide="cpu"></i> Simulador de Match ATS</span>
+                                        <span class="demo-badge">Feedback Interactivo</span>
+                                    </div>
+                                    <div class="demo-body">
+                                        <div class="resumatch-demo-container" style="width: 100%; display: flex; flex-direction: column; gap: 14px;">
+                                            <div class="demo-form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                                                <div class="demo-form-group" style="display: flex; flex-direction: column; gap: 6px;">
+                                                    <label class="demo-input-label" style="font-size: 0.75rem; color: var(--text-muted); font-weight: 500;">1. Seleccionar Perfil del CV</label>
+                                                    <select class="card-select w-100" id="resumatchCvSelect" style="width: 100%;">
+                                                        <option value="react-jr">Agustín Pollán - CV Desarrollador Frontend</option>
+                                                        <option value="python-jr">Sofía García - CV Desarrollador Python Backend</option>
+                                                    </select>
+                                                </div>
+                                                <div class="demo-form-group" style="display: flex; flex-direction: column; gap: 6px;">
+                                                    <label class="demo-input-label" style="font-size: 0.75rem; color: var(--text-muted); font-weight: 500;">2. Seleccionar Oferta de Trabajo</label>
+                                                    <select class="card-select w-100" id="resumatchJobSelect" style="width: 100%;">
+                                                        <option value="frontend-offer">Front-End Developer (React + TypeScript)</option>
+                                                        <option value="backend-offer">Backend Developer (FastAPI + SQL)</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div style="text-align: center; margin-top: 8px;">
+                                                <button class="btn-primary-sm" id="resumatchRunBtn">Analizar CV en Demo</button>
+                                            </div>
+                                            
+                                            <!-- Mini Loader -->
+                                            <div class="resumatch-mini-loader" id="resumatchLoader" style="display: none; flex-direction: column; align-items: center; gap: 10px; padding: 20px 0; text-align: center;">
+                                                <div class="mini-spinner" style="width: 24px; height: 24px; border: 3px solid rgba(232, 160, 32, 0.15); border-top-color: var(--gold); border-radius: 50%; animation: spin 0.8s linear infinite;"></div>
+                                                <p id="resumatchLoaderText" style="font-size: 0.8rem; color: var(--text-muted);">Extrayendo texto del PDF...</p>
+                                            </div>
+
+                                            <!-- Mini Results -->
+                                            <div class="resumatch-mini-results" id="resumatchResults" style="display: none; background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 8px; padding: 18px 24px; animation: fadeIn 0.4s ease;">
+                                                <div class="mini-results-header" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+                                                    <h4 id="resumatchResultTitle" style="font-size: 0.95rem; font-weight: 700; color: #fff;">Excelente match</h4>
+                                                    <div class="mini-score-badge" id="resumatchScoreBadge" style="font-family: monospace; font-size: 0.85rem; font-weight: 700; background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.25); color: #10b981; padding: 3px 10px; border-radius: 999px;">85% Match</div>
+                                                </div>
+                                                <p class="mini-result-desc" id="resumatchResultDesc" style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 14px;">El CV se alinea bien con el puesto, pero faltan keywords clave.</p>
+                                                <div class="mini-kw-cols" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; border-top: 1px solid var(--border-color); padding-top: 12px;">
+                                                    <div class="mini-kw-col" style="display: flex; flex-direction: column; gap: 6px;">
+                                                        <span class="mini-kw-label found" style="font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #10b981;">Coincidencias</span>
+                                                        <div class="mini-chips" id="resumatchFoundChips" style="display: flex; flex-wrap: wrap; gap: 4px;">
+                                                            <span class="mini-chip found" style="font-size: 0.75rem; background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.2); color: #6ee7b7; padding: 2px 8px; border-radius: 4px;">React</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mini-kw-col" style="display: flex; flex-direction: column; gap: 6px;">
+                                                        <span class="mini-kw-label missing" style="font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #f59e0b;">Faltantes</span>
+                                                        <div class="mini-chips" id="resumatchMissingChips" style="display: flex; flex-wrap: wrap; gap: 4px;">
+                                                            <span class="mini-chip missing" style="font-size: 0.75rem; background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.2); color: #fcd34d; padding: 2px 8px; border-radius: 4px;">TypeScript</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

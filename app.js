@@ -630,4 +630,140 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ==========================================================================
+    // DEMO INTERACTIVA 5: RESUMATCH (SIMULADOR ATS CON IA MOCK)
+    // ==========================================================================
+    const resumatchRunBtn = document.getElementById('resumatchRunBtn');
+    const resumatchLoader = document.getElementById('resumatchLoader');
+    const resumatchLoaderText = document.getElementById('resumatchLoaderText');
+    const resumatchResults = document.getElementById('resumatchResults');
+    const resumatchCvSelect = document.getElementById('resumatchCvSelect');
+    const resumatchJobSelect = document.getElementById('resumatchJobSelect');
+
+    const resumatchMockData = {
+        'react-jr_frontend-offer': {
+            score: 92,
+            title: "Excelente compatibilidad",
+            desc: "El perfil de Agustín se alinea perfectamente. Cuenta con experiencia en React, APIs multimedia y animaciones complejas.",
+            found: ["React", "Vite", "TypeScript", "Vanilla CSS", "Git"],
+            missing: ["Next.js 15", "Tailwind CSS v4"]
+        },
+        'react-jr_backend-offer': {
+            score: 42,
+            title: "Compatibilidad baja",
+            desc: "El perfil de Agustín es fuertemente Frontend y carece de las bases de datos y frameworks backend solicitados.",
+            found: ["Git", "TypeScript"],
+            missing: ["FastAPI", "SQL", "SQLAlchemy", "REST APIs", "Python"]
+        },
+        'python-jr_frontend-offer': {
+            score: 35,
+            title: "Compatibilidad baja",
+            desc: "El CV de Sofía está enfocado en backend y lógica de datos, sin habilidades de interfaz de usuario solicitadas.",
+            found: ["Git", "TypeScript"],
+            missing: ["React", "Vite", "Vanilla CSS", "Responsive Design", "Framer Motion"]
+        },
+        'python-jr_backend-offer': {
+            score: 88,
+            title: "Alta compatibilidad",
+            desc: "Sofía tiene sólida experiencia en desarrollo backend con Python, creación de APIs REST y bases de datos relacionales.",
+            found: ["FastAPI", "Python", "SQL", "SQLAlchemy", "REST APIs", "Git"],
+            missing: ["Docker", "Redis"]
+        }
+    };
+
+    if (resumatchRunBtn && resumatchLoader && resumatchResults) {
+        resumatchRunBtn.addEventListener('click', () => {
+            const cvVal = resumatchCvSelect.value;
+            const jobVal = resumatchJobSelect.value;
+            const comboKey = `${cvVal}_${jobVal}`;
+
+            // Resetear UI
+            resumatchResults.style.display = 'none';
+            resumatchLoader.style.display = 'flex';
+            resumatchRunBtn.disabled = true;
+            resumatchRunBtn.innerText = 'Procesando...';
+
+            // Simulación de estados de carga
+            const steps = [
+                { text: "Extrayendo texto del PDF...", time: 600 },
+                { text: "Enviando a Gemini 2.5 Flash...", time: 1300 },
+                { text: "Analizando keywords y estructura ATS...", time: 2000 },
+                { text: "Generando sugerencias finales...", time: 2600 }
+            ];
+
+            steps.forEach(step => {
+                setTimeout(() => {
+                    resumatchLoaderText.innerText = step.text;
+                }, step.time);
+            });
+
+            // Mostrar resultados al finalizar
+            setTimeout(() => {
+                resumatchLoader.style.display = 'none';
+                resumatchRunBtn.disabled = false;
+                resumatchRunBtn.innerText = 'Analizar CV en Demo';
+
+                const data = resumatchMockData[comboKey];
+                if (data) {
+                    // Cargar datos en la UI de resultados
+                    document.getElementById('resumatchResultTitle').innerText = data.title;
+                    document.getElementById('resumatchResultDesc').innerText = data.desc;
+                    
+                    const scoreBadge = document.getElementById('resumatchScoreBadge');
+                    scoreBadge.innerText = `${data.score}% Match`;
+
+                    // Colores de score dinámicos
+                    if (data.score >= 75) {
+                        scoreBadge.style.color = '#10b981';
+                        scoreBadge.style.background = 'rgba(16, 185, 129, 0.12)';
+                        scoreBadge.style.borderColor = 'rgba(16, 185, 129, 0.25)';
+                    } else if (data.score >= 50) {
+                        scoreBadge.style.color = '#f59e0b';
+                        scoreBadge.style.background = 'rgba(245, 158, 11, 0.12)';
+                        scoreBadge.style.borderColor = 'rgba(245, 158, 11, 0.25)';
+                    } else {
+                        scoreBadge.style.color = '#f43f5e';
+                        scoreBadge.style.background = 'rgba(244, 63, 94, 0.12)';
+                        scoreBadge.style.borderColor = 'rgba(244, 63, 94, 0.25)';
+                    }
+
+                    // Renderizar chips de coincidencias
+                    const foundChipsContainer = document.getElementById('resumatchFoundChips');
+                    foundChipsContainer.innerHTML = '';
+                    data.found.forEach(kw => {
+                        const chip = document.createElement('span');
+                        chip.className = 'mini-chip found';
+                        chip.style.fontSize = '0.75rem';
+                        chip.style.background = 'rgba(16, 185, 129, 0.08)';
+                        chip.style.border = '1px solid rgba(16, 185, 129, 0.2)';
+                        chip.style.color = '#6ee7b7';
+                        chip.style.padding = '2px 8px';
+                        chip.style.borderRadius = '4px';
+                        chip.innerText = kw;
+                        foundChipsContainer.appendChild(chip);
+                    });
+
+                    // Renderizar chips de faltantes
+                    const missingChipsContainer = document.getElementById('resumatchMissingChips');
+                    missingChipsContainer.innerHTML = '';
+                    data.missing.forEach(kw => {
+                        const chip = document.createElement('span');
+                        chip.className = 'mini-chip missing';
+                        chip.style.fontSize = '0.75rem';
+                        chip.style.background = 'rgba(245, 158, 11, 0.08)';
+                        chip.style.border = '1px solid rgba(245, 158, 11, 0.2)';
+                        chip.style.color = '#fcd34d';
+                        chip.style.padding = '2px 8px';
+                        chip.style.borderRadius = '4px';
+                        chip.innerText = kw;
+                        missingChipsContainer.appendChild(chip);
+                    });
+
+                    // Mostrar el panel de resultados
+                    resumatchResults.style.display = 'block';
+                }
+            }, 3200);
+        });
+    }
+
 });

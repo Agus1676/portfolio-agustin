@@ -71,6 +71,57 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================================================
+    // FILTRADO DE CATEGORÍAS & TILT 3D EN BENTO CARDS
+    // ==========================================================================
+    const projectFilterBtns = document.querySelectorAll('.project-filter-btn');
+    const bentoCards        = document.querySelectorAll('.projects-bento .project-card');
+
+    // Filtrado por categoría
+    projectFilterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const filter = btn.getAttribute('data-filter');
+            
+            projectFilterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            bentoCards.forEach(card => {
+                const cats = card.getAttribute('data-category') || '';
+                if (filter === 'all' || cats.includes(filter)) {
+                    card.classList.remove('dimmed');
+                } else {
+                    card.classList.add('dimmed');
+                }
+            });
+        });
+    });
+
+    // Tilt 3D suave al mover el cursor dentro de la tarjeta
+    if (window.matchMedia('(pointer: fine)').matches) {
+        bentoCards.forEach(card => {
+            card.addEventListener('mousemove', e => {
+                if (card.classList.contains('dimmed')) return;
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const cx = x / rect.width  - 0.5;
+                const cy = y / rect.height - 0.5;
+                const rx = cy * -10; // inclinación X
+                const ry = cx * 10;  // inclinación Y
+                card.style.transform = `perspective(1000px) rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg) translateY(-4px)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+                card.style.transition = 'transform 0.5s ease';
+            });
+
+            card.addEventListener('mouseenter', () => {
+                card.style.transition = 'transform 0.1s ease-out';
+            });
+        });
+    }
+
+    // ==========================================================================
     // PARALLAX SUTIL EN HERO (blobs reaccionan al mouse)
     // ==========================================================================
     const meshBg = document.querySelector('.mesh-background');

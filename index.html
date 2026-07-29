@@ -93,11 +93,39 @@
                     <p class="section-desc">Aplicaciones web completas enfocadas en rendimiento, UX interactiva y valor real.</p>
                 </div>
 
+                <!-- Banner de Métricas de Impacto -->
+                <div class="projects-metrics-bar reveal">
+                    <div class="metric-item">
+                        <span class="metric-val">5</span>
+                        <span class="metric-lbl">Apps en Producción</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-val">99%</span>
+                        <span class="metric-lbl">Lighthouse Score</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-val">100%</span>
+                        <span class="metric-lbl">Clean Code &amp; TS</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-val">&lt;100ms</span>
+                        <span class="metric-lbl">Respuesta en Cliente</span>
+                    </div>
+                </div>
+
+                <!-- Barra de Filtros de Proyectos -->
+                <div class="projects-filter-bar reveal">
+                    <button class="project-filter-btn active" data-filter="all">Todos (5)</button>
+                    <button class="project-filter-btn" data-filter="ai">IA &amp; Fullstack</button>
+                    <button class="project-filter-btn" data-filter="ecommerce">E-Commerce</button>
+                    <button class="project-filter-btn" data-filter="webapis">Web APIs &amp; Canvas</button>
+                </div>
+
                 <!-- Bento Grid de Proyectos -->
                 <div class="projects-bento reveal">
 
                     <!-- CARD 1: MODKEY (Featured) -->
-                    <div class="project-card card-featured">
+                    <div class="project-card card-featured" data-category="ecommerce webapis">
                         <div class="card-bg" style="background-image: url('assets/modkey.png');"></div>
                         <div class="card-overlay"></div>
                         <span class="card-num">01 / 05</span>
@@ -119,7 +147,7 @@
                     </div>
 
                     <!-- CARD 2: LOS PORTEÑOS PRO -->
-                    <div class="project-card card-side">
+                    <div class="project-card card-side" data-category="webapis">
                         <div class="card-bg" style="background-image: url('assets/losportenos.png');"></div>
                         <div class="card-overlay"></div>
                         <span class="card-num">02 / 05</span>
@@ -141,7 +169,7 @@
                     </div>
 
                     <!-- CARD 3: MERCADO LIBRE PRO -->
-                    <div class="project-card card-third">
+                    <div class="project-card card-third" data-category="ecommerce">
                         <div class="card-bg" style="background-image: url('assets/mercadolibre.png');"></div>
                         <div class="card-overlay"></div>
                         <span class="card-num">03 / 05</span>
@@ -162,7 +190,7 @@
                     </div>
 
                     <!-- CARD 4: APR NEUMÁTICOS -->
-                    <div class="project-card card-side">
+                    <div class="project-card card-side" data-category="webapis">
                         <div class="card-bg" style="background-image: url('assets/apr.png');"></div>
                         <div class="card-overlay"></div>
                         <span class="card-num">04 / 05</span>
@@ -183,7 +211,7 @@
                     </div>
 
                     <!-- CARD 5: RESUMATCH (Wide) -->
-                    <div class="project-card card-wide">
+                    <div class="project-card card-wide" data-category="ai">
                         <div class="card-bg" style="background-image: url('assets/resumatch.png');"></div>
                         <div class="card-overlay"></div>
                         <span class="card-num">05 / 05</span>

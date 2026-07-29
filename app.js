@@ -10,43 +10,63 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================================================
-    // CURSOR MAGNÉTICO PERSONALIZADO
+    // SPOTLIGHT DE MOUSE
     // ==========================================================================
-    const cursorDot  = document.getElementById('cursorDot');
-    const cursorRing = document.getElementById('cursorRing');
+    const mouseSpotlight = document.getElementById('mouseSpotlight');
 
-    if (cursorDot && cursorRing && window.matchMedia('(pointer: fine)').matches) {
-        let mouseX = 0, mouseY = 0;
-        let ringX  = 0, ringY  = 0;
-
+    if (mouseSpotlight) {
         document.addEventListener('mousemove', e => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            cursorDot.style.left = mouseX + 'px';
-            cursorDot.style.top  = mouseY + 'px';
+            mouseSpotlight.style.left = e.clientX + 'px';
+            mouseSpotlight.style.top  = e.clientY + 'px';
         });
+    }
 
-        // Lerp suave para el ring
-        function animateRing() {
-            ringX += (mouseX - ringX) * 0.1;
-            ringY += (mouseY - ringY) * 0.1;
-            cursorRing.style.left = ringX + 'px';
-            cursorRing.style.top  = ringY + 'px';
-            requestAnimationFrame(animateRing);
-        }
-        animateRing();
+    // ==========================================================================
+    // DEMO DRAWER LOGIC (Apertura de Demos desde Bento Cards)
+    // ==========================================================================
+    const demoDrawer = document.getElementById('demoDrawer');
+    const closeDemoDrawerBtn = document.getElementById('closeDemoDrawerBtn');
+    const openDemoBtns = document.querySelectorAll('.open-demo-btn');
+    const showcaseTabs = document.querySelectorAll('.showcase-tab');
+    const projectPanes = document.querySelectorAll('.project-pane');
 
-        // Efecto hover en elementos interactivos
-        const hoverTargets = document.querySelectorAll('a, button, .tech-item, .showcase-tab, .stack-card');
-        hoverTargets.forEach(el => {
-            el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-            el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+    function activateProjectPane(projectId) {
+        // Activar tab en la sidebar del drawer
+        showcaseTabs.forEach(tab => {
+            if (tab.getAttribute('data-project') === projectId) {
+                tab.classList.add('active');
+            } else {
+                tab.classList.remove('active');
+            }
         });
+        // Activar pane correspondiente
+        projectPanes.forEach(pane => {
+            if (pane.id === `pane-${projectId}`) {
+                pane.classList.add('active');
+                // Switch a la pestaña 'demo'
+                const demoTabBtn = pane.querySelector('.pane-nav-btn[data-view="demo"]');
+                if (demoTabBtn) demoTabBtn.click();
+            } else {
+                pane.classList.remove('active');
+            }
+        });
+    }
 
-        // Ocultar cursor nativo
-        document.body.style.cursor = 'none';
-        document.querySelectorAll('a, button, input, select, textarea').forEach(el => {
-            el.style.cursor = 'none';
+    openDemoBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const projectId = btn.getAttribute('data-project');
+            if (demoDrawer) {
+                demoDrawer.classList.add('open');
+                activateProjectPane(projectId);
+                demoDrawer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    if (closeDemoDrawerBtn && demoDrawer) {
+        closeDemoDrawerBtn.addEventListener('click', () => {
+            demoDrawer.classList.remove('open');
         });
     }
 

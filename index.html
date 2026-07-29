@@ -19,9 +19,8 @@
 </head>
 <body>
 
-    <!-- Cursor personalizado -->
-    <div class="cursor-dot" id="cursorDot"></div>
-    <div class="cursor-ring" id="cursorRing"></div>
+    <!-- Spotlight de Mouse -->
+    <div class="mouse-spotlight" id="mouseSpotlight"></div>
 
     <!-- Fondo de malla animado -->
     <div class="mesh-background"></div>
@@ -88,474 +87,386 @@
         <!-- Proyectos Section -->
         <section id="proyectos" class="projects-section">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header reveal">
                     <span class="section-tag">Portafolio</span>
-                    <h2 class="section-title">Trabajos Destacados</h2>
-                    <p class="section-desc">Una selección de aplicaciones web complejas creadas con un enfoque en UX interactiva, micro-animaciones premium y alto rendimiento técnico.</p>
+                    <h2 class="section-title">Proyectos <span class="accent">destacados</span></h2>
+                    <p class="section-desc">Aplicaciones web completas enfocadas en rendimiento, UX interactiva y valor real.</p>
                 </div>
-                <!-- Showcase Dashboard -->
-                <div class="showcase-dashboard">
-                    
-                    <!-- Sidebar Selector -->
-                    <aside class="showcase-sidebar">
-                        <button class="showcase-tab active" data-project="modkey">
-                            <i data-lucide="keyboard"></i>
-                            <div class="tab-info">
-                                <h4>MODKEY</h4>
-                                <p>Teclados Mecánicos Custom</p>
-                            </div>
-                        </button>
-                        <button class="showcase-tab" data-project="mercadolibre">
-                            <i data-lucide="shopping-bag"></i>
-                            <div class="tab-info">
-                                <h4>MERCADO LIBRE PRO</h4>
-                                <p>Clon E-Commerce Pro</p>
-                            </div>
-                        </button>
-                        <button class="showcase-tab" data-project="losportenos">
-                            <i data-lucide="wrench"></i>
-                            <div class="tab-info">
-                                <h4>LOS PORTEÑOS PRO</h4>
-                                <p>Turnero & Diagnóstico SVG</p>
-                            </div>
-                        </button>
-                        <button class="showcase-tab" data-project="apr">
-                            <i data-lucide="disc"></i>
-                            <div class="tab-info">
-                                <h4>APR NEUMÁTICOS</h4>
-                                <p>Catálogo & Admin Excel</p>
-                            </div>
-                        </button>
-                        <button class="showcase-tab" data-project="resumatch">
-                            <i data-lucide="file-check"></i>
-                            <div class="tab-info">
-                                <h4>RESUMATCH</h4>
-                                <p>Analizador de CV con IA</p>
-                            </div>
-                        </button>
-                    </aside>
 
-                    <!-- Main Showcase Content -->
-                    <div class="showcase-content">
+                <!-- Bento Grid de Proyectos -->
+                <div class="projects-bento reveal">
 
-                        <!-- PANE 1: MODKEY -->
-                        <div class="project-pane active" id="pane-modkey">
-                            <div class="pane-header">
-                                <div class="project-tags">
-                                    <span class="tag">Next.js 15</span>
-                                    <span class="tag">React 19</span>
-                                    <span class="tag">Web Audio API</span>
-                                    <span class="tag">Canvas API</span>
-                                    <span class="tag font-neon-cyan">Premium</span>
-                                </div>
-                                <h3 class="pane-title">MODKEY — E-Commerce de Teclados Custom</h3>
-                                <p class="pane-subtitle">Plataforma de comercio electrónico de alta gama con simulaciones físicas, osciladores de sonido y ruleta de premios.</p>
+                    <!-- CARD 1: MODKEY (Featured) -->
+                    <div class="project-card card-featured">
+                        <div class="card-bg" style="background-image: url('assets/modkey.png');"></div>
+                        <div class="card-overlay"></div>
+                        <span class="card-num">01 / 05</span>
+                        <div class="card-content">
+                            <span class="card-label">E-Commerce &amp; Audio</span>
+                            <h3 class="card-title">MODKEY</h3>
+                            <div class="card-tags">
+                                <span class="card-tag">Next.js 15</span>
+                                <span class="card-tag">React 19</span>
+                                <span class="card-tag">Web Audio API</span>
+                                <span class="card-tag">Canvas API</span>
                             </div>
-                            
-                            <!-- Tabs de navegación interna del panel -->
-                            <div class="pane-nav-tabs">
-                                <button class="pane-nav-btn active" data-view="details">Detalles del Proyecto</button>
-                                <button class="pane-nav-btn" data-view="demo">Demo Interactiva</button>
-                            </div>
-
-                            <!-- Contenido Tab 1: Detalles -->
-                            <div class="pane-tab-content active" data-tab-content="details">
-                                <div class="pane-split-layout">
-                                    <div class="pane-info-col">
-                                        <p class="project-description">
-                                            Una experiencia web ultra-interactiva pensada para entusiastas de teclados mecánicos. Permite "probar" la acústica de diferentes interruptores sintéticamente e interactuar con mecánicas de juego en el cliente.
-                                        </p>
-                                        <ul class="project-bullets">
-                                            <li><strong>Síntesis de Audio en Cliente:</strong> Uso de la Web Audio API para simular matemáticamente perfiles acústicos de tipeo sin depender de archivos de audio pesados.</li>
-                                            <li><strong>Osciloscopio Reactivo:</strong> Renderizado sobre HTML5 Canvas de la onda de sonido reactiva en tiempo real con efecto neón.</li>
-                                            <li><strong>Gamificación en Navegador:</strong> Ruleta de premios flotante con inercia física real (`requestAnimationFrame`) y persistencia local.</li>
-                                        </ul>
-                                    </div>
-                                    <div class="pane-mockup-col">
-                                        <a href="https://modkey-one.vercel.app/" target="_blank" rel="noopener noreferrer" class="pane-mockup-link" title="Visitar MODKEY en Vercel">
-                                            <img src="assets/modkey.png" alt="Mockup MODKEY" class="pane-mockup-img">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Contenido Tab 2: Demo -->
-                            <div class="pane-tab-content" data-tab-content="demo">
-                                <div class="demo-box modkey-demo">
-                                    <div class="demo-header">
-                                        <span class="demo-title"><i data-lucide="music"></i> Simulador Acústico de Switches</span>
-                                        <span class="demo-badge">Web Audio API + Canvas</span>
-                                    </div>
-                                    <div class="demo-body">
-                                        <div class="keyboard-keys">
-                                            <button class="key-btn" data-switch="linear" title="Presionar Tecla A">
-                                                <span class="key-cap">A</span>
-                                                <span class="key-label">Linear (Thock)</span>
-                                            </button>
-                                            <button class="key-btn" data-switch="tactile" title="Presionar Tecla S">
-                                                <span class="key-cap">S</span>
-                                                <span class="key-label">Tactile (Quiet)</span>
-                                            </button>
-                                            <button class="key-btn" data-switch="clicky" title="Presionar Tecla D">
-                                                <span class="key-cap">D</span>
-                                                <span class="key-label">Clicky (Blue)</span>
-                                            </button>
-                                        </div>
-                                        <div class="oscilloscope-container">
-                                            <canvas id="osciloscope" width="280" height="80"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- PANE 2: MERCADO LIBRE PRO -->
-                        <div class="project-pane" id="pane-mercadolibre">
-                            <div class="pane-header">
-                                <div class="project-tags">
-                                    <span class="tag">Next.js 16</span>
-                                    <span class="tag">TypeScript</span>
-                                    <span class="tag">Tailwind CSS v4</span>
-                                    <span class="tag">SpeechRecognition</span>
-                                    <span class="tag font-neon-cyan">Premium</span>
-                                </div>
-                                <h3 class="pane-title">MercadoLibre Pro — Clon de Alta Fidelidad</h3>
-                                <p class="pane-subtitle">Réplica profesional y pixel-perfect optimizada para máxima fluidez, con panel de control de ventas completo, buscador de voz y pasarela de pago interactiva.</p>
-                            </div>
-                            
-                            <div class="pane-nav-tabs">
-                                <button class="pane-nav-btn active" data-view="details">Detalles del Proyecto</button>
-                                <button class="pane-nav-btn" data-view="demo">Demo Interactiva</button>
-                            </div>
-
-                            <div class="pane-tab-content active" data-tab-content="details">
-                                <div class="pane-split-layout">
-                                    <div class="pane-info-col">
-                                        <p class="project-description">
-                                            Clon e-commerce de alto rendimiento visual, enfocado en emular las micro-interacciones más complejas del mercado digital de manera fluida y accesible.
-                                        </p>
-                                        <ul class="project-bullets">
-                                            <li><strong>Dashboard Completo:</strong> Métricas de negocio semanales visualizadas en gráficos SVG interactivos con tooltips reactivos.</li>
-                                            <li><strong>Búsqueda por Voz:</strong> Botón de micrófono integrado con la API nativa de reconocimiento de voz del navegador (`webkitSpeechRecognition`).</li>
-                                            <li><strong>Impresión Profesional:</strong> Generador de facturas comerciales Tipo B optimizadas con hojas de estilos de impresión CSS `@media print`.</li>
-                                        </ul>
-                                    </div>
-                                    <div class="pane-mockup-col">
-                                        <a href="https://mercadolibrepro.vercel.app/" target="_blank" rel="noopener noreferrer" class="pane-mockup-link" title="Visitar Mercado Libre Pro en Vercel">
-                                            <img src="assets/mercadolibre-pro.png" alt="Mockup MercadoLibre Pro" class="pane-mockup-img">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="pane-tab-content" data-tab-content="demo">
-                                <div class="demo-box mercadolibre-demo">
-                                    <div class="demo-header">
-                                        <span class="demo-title"><i data-lucide="credit-card"></i> Tarjeta de Pago 3D Interactiva</span>
-                                        <span class="demo-badge">Giro 3D con cursor</span>
-                                    </div>
-                                    <div class="demo-body flex-center">
-                                        <div class="card-3d-wrapper">
-                                            <div class="card-3d">
-                                                <div class="card-front">
-                                                    <div class="card-logo-row">
-                                                        <i data-lucide="cpu" class="card-chip"></i>
-                                                        <span class="card-brand" id="cardBrand">VISA</span>
-                                                    </div>
-                                                    <div class="card-number">4517 8892 0124 9982</div>
-                                                    <div class="card-footer-row">
-                                                        <div class="card-holder">
-                                                            <span class="card-label">TITULAR</span>
-                                                            <span class="card-value">AGUSTIN POLLAN</span>
-                                                        </div>
-                                                        <div class="card-expires">
-                                                            <span class="card-label">EXP</span>
-                                                            <span class="card-value">08/30</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="card-back">
-                                                    <div class="card-magnetic-strip"></div>
-                                                    <div class="card-signature-row">
-                                                        <div class="card-signature">Agustin Pollan</div>
-                                                        <div class="card-cvv">742</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-controls">
-                                            <button class="btn-primary-sm" id="flipCardBtn">Girar Tarjeta</button>
-                                            <select class="card-select" id="cardBrandSelect">
-                                                <option value="visa">Visa</option>
-                                                <option value="mastercard">Mastercard</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- PANE 3: LOS PORTEÑOS -->
-                        <div class="project-pane" id="pane-losportenos">
-                            <div class="pane-header">
-                                <div class="project-tags">
-                                    <span class="tag">React</span>
-                                    <span class="tag">Vite</span>
-                                    <span class="tag">Framer Motion</span>
-                                    <span class="tag">SVG Vectorial</span>
-                                    <span class="tag font-neon-cyan">Premium</span>
-                                </div>
-                                <h3 class="pane-title">Los Porteños — Agenda y Diagnóstico Eléctrico</h3>
-                                <p class="pane-subtitle">Solución para talleres mecánicos que combina un selector visual interactivo para turnos y un tablero Kanban administrativo con drag-and-drop para control de órdenes.</p>
-                            </div>
-                            
-                            <div class="pane-nav-tabs">
-                                <button class="pane-nav-btn active" data-view="details">Detalles del Proyecto</button>
-                                <button class="pane-nav-btn" data-view="demo">Demo Interactiva</button>
-                            </div>
-
-                            <div class="pane-tab-content active" data-tab-content="details">
-                                <div class="pane-split-layout">
-                                    <div class="pane-info-col">
-                                        <p class="project-description">
-                                            Turnero inteligente para taller de electricidad automotriz. Simplifica el flujo de reserva con un auto interactivo y facilita la logística interna con Kanban.
-                                        </p>
-                                        <ul class="project-bullets">
-                                            <li><strong>Diagnóstico Visual SVG:</strong> Renderización de áreas vectoriales reactivas que actualizan el presupuesto en vivo.</li>
-                                            <li><strong>Tablero Kanban Administrativo:</strong> Interfaz con Drag & Drop completo para reordenamiento de turnos en tiempo real con animaciones de Framer Motion.</li>
-                                            <li><strong>Orden de Trabajo Metálica 3D:</strong> Efecto 3D Parallax sobre el ticket de compra, siguiendo la posición del cursor con brillo reflectivo.</li>
-                                        </ul>
-                                    </div>
-                                    <div class="pane-mockup-col">
-                                        <a href="https://losporte-osturnero.vercel.app/" target="_blank" rel="noopener noreferrer" class="pane-mockup-link" title="Visitar Los Porteños en Vercel">
-                                            <img src="assets/los-portenos.png" alt="Mockup Los Porteños" class="pane-mockup-img">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="pane-tab-content" data-tab-content="demo">
-                                <div class="demo-box portenos-demo">
-                                    <div class="demo-header">
-                                        <span class="demo-title"><i data-lucide="settings"></i> Diagnóstico Interactivo de Averías</span>
-                                        <span class="demo-badge">SVG Reactivo</span>
-                                    </div>
-                                    <div class="demo-body">
-                                        <div class="portenos-layout">
-                                            <div class="svg-car-wrapper">
-                                                <svg viewBox="0 0 300 120" class="car-interactive-svg">
-                                                    <path d="M10 80 L35 80 Q 40 50, 80 40 L160 40 Q 200 45, 230 65 L275 75 Q 290 80, 290 90 L290 95 L270 95 Q 260 80, 240 80 Q 220 80, 210 95 L90 95 Q 80 80, 60 80 Q 40 80, 30 95 L10 95 Z" fill="#1b1c24" stroke="#4f46e5" stroke-width="2"/>
-                                                    <circle cx="60" cy="95" r="18" fill="#0f1016" stroke="#4f46e5" stroke-width="2"/>
-                                                    <circle cx="240" cy="95" r="18" fill="#0f1016" stroke="#4f46e5" stroke-width="2"/>
-                                                    
-                                                    <rect x="25" y="55" width="45" height="25" class="car-zone" data-zone="ecu" rx="3" title="Unidad de Control (ECU)"/>
-                                                    <rect x="75" y="60" width="35" height="20" class="car-zone" data-zone="carga" rx="3" title="Sistema de Carga"/>
-                                                    <polygon points="5,60 25,65 25,85 5,90" class="car-zone" data-zone="luces" title="Faros y Luces LED"/>
-                                                    <rect x="125" y="45" width="55" height="35" class="car-zone" data-zone="confort" rx="5" title="Módulo Confort"/>
-                                                    
-                                                    <text x="47" y="72" fill="#fff" font-size="9" text-anchor="middle" pointer-events="none">ECU</text>
-                                                    <text x="92" y="73" fill="#fff" font-size="9" text-anchor="middle" pointer-events="none">BATT</text>
-                                                    <text x="15" y="78" fill="#fff" font-size="8" text-anchor="middle" pointer-events="none">LUCES</text>
-                                                    <text x="152" y="66" fill="#fff" font-size="9" text-anchor="middle" pointer-events="none">CONF</text>
-                                                </svg>
-                                                <p class="svg-help">Haz clic en una zona del auto (ECU, BATT, LUCES, CONF) para diagnosticar</p>
-                                            </div>
-                                            
-                                            <div class="diagnostic-info-panel" id="diagnosticPanel">
-                                                <h4 id="diagZoneTitle">Selecciona una zona</h4>
-                                                <p id="diagZoneDesc">Haz clic en las partes interactivas del vehículo para simular un presupuesto de taller.</p>
-                                                <div class="diag-price" id="diagZonePrice">-</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- PANE 4: APR NEUMÁTICOS -->
-                        <div class="project-pane" id="pane-apr">
-                            <div class="pane-header">
-                                <div class="project-tags">
-                                    <span class="tag">React</span>
-                                    <span class="tag">Vite</span>
-                                    <span class="tag">Node.js</span>
-                                    <span class="tag">Excel (CSV) Integration</span>
-                                    <span class="tag font-neon-cyan">Premium</span>
-                                </div>
-                                <h3 class="pane-title">APR Neumáticos — Catálogo Oficial y Admin Live</h3>
-                                <p class="pane-subtitle">Sitio web corporativo y catálogo rápido optimizado para móviles, con buscador multi-filtro y panel administrativo en vivo.</p>
-                            </div>
-                            
-                            <div class="pane-nav-tabs">
-                                <button class="pane-nav-btn active" data-view="details">Detalles del Proyecto</button>
-                                <button class="pane-nav-btn" data-view="demo">Demo Interactiva</button>
-                            </div>
-
-                            <div class="pane-tab-content active" data-tab-content="details">
-                                <div class="pane-split-layout">
-                                    <div class="pane-info-col">
-                                        <p class="project-description">
-                                            Una plataforma de catálogo optimizada para dispositivos móviles de alto tráfico para una importante distribuidora de neumáticos en Necochea, Argentina.
-                                        </p>
-                                        <ul class="project-bullets">
-                                            <li><strong>Sincronización con Excel:</strong> Importador automático en Node.js que procesa planillas de catálogo (.csv) con más de 740 neumáticos en segundos.</li>
-                                            <li><strong>Buscador Multi-filtro:</strong> Filtros combinados (ancho, perfil, rodado, marca) en tiempo real con latencia cero.</li>
-                                            <li><strong>Panel Administrativo:</strong> Consola protegida para encender o apagar secciones de la web y modificar stocks en vivo.</li>
-                                        </ul>
-                                    </div>
-                                    <div class="pane-mockup-col">
-                                        <a href="https://aprneumaticos.vercel.app/" target="_blank" rel="noopener noreferrer" class="pane-mockup-link" title="Visitar APR Neumáticos en Vercel">
-                                            <img src="assets/apr-neumaticos.png" alt="Mockup APR Neumáticos" class="pane-mockup-img">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="pane-tab-content" data-tab-content="demo">
-                                <div class="demo-box apr-demo">
-                                    <div class="demo-header">
-                                        <span class="demo-title"><i data-lucide="help-circle"></i> Quiz Recomendador Expreso</span>
-                                        <span class="demo-badge">Asistente Paso a Paso</span>
-                                    </div>
-                                    <div class="demo-body">
-                                        <div class="quiz-container" id="quizContainer">
-                                            <div class="quiz-step active" data-step="1">
-                                                <h4 class="quiz-question">1. ¿Qué tipo de vehículo tienes?</h4>
-                                                <div class="quiz-options">
-                                                    <button class="quiz-opt-btn" data-val="auto">Automóvil / Sedán</button>
-                                                    <button class="quiz-opt-btn" data-val="suv">Camioneta / SUV</button>
-                                                </div>
-                                            </div>
-                                            <div class="quiz-step" data-step="2">
-                                                <h4 class="quiz-question">2. ¿Cuál es el uso principal del vehículo?</h4>
-                                                <div class="quiz-options">
-                                                    <button class="quiz-opt-btn" data-val="ciudad">Ciudad y Ruta Pavimentada</button>
-                                                    <button class="quiz-opt-btn" data-val="offroad">Caminos de Tierra / Off-Road</button>
-                                                </div>
-                                            </div>
-                                            <div class="quiz-step" data-step="3">
-                                                <h4 class="quiz-question">¡Recomendación encontrada!</h4>
-                                                <div class="quiz-result" id="quizResultBox">
-                                                    <div class="result-tire-name" id="resultTireName">-</div>
-                                                    <p class="result-tire-desc" id="resultTireDesc">-</p>
-                                                    <div class="result-tire-specs" id="resultTireSpecs">-</div>
-                                                </div>
-                                                <button class="btn-secondary-sm" id="resetQuizBtn" style="margin-top:12px;">Reiniciar Quiz</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- PANE 5: RESUMATCH -->
-                        <div class="project-pane" id="pane-resumatch">
-                            <div class="pane-header">
-                                <div class="project-tags">
-                                    <span class="tag">FastAPI (Python)</span>
-                                    <span class="tag">React 18</span>
-                                    <span class="tag">TypeScript</span>
-                                    <span class="tag">Google Gemini AI</span>
-                                    <span class="tag">SQLite / SQLAlchemy</span>
-                                    <span class="tag font-neon-cyan">Premium</span>
-                                </div>
-                                <h3 class="pane-title">Resumatch — Analizador de CV & ATS con Inteligencia Artificial</h3>
-                                <p class="pane-subtitle">Aplicación web Full-Stack que compara currículums en formato PDF contra descripciones de puestos, calculando un score de compatibilidad y sugiriendo mejoras precisas.</p>
-                            </div>
-                            
-                            <div class="pane-nav-tabs">
-                                <button class="pane-nav-btn active" data-view="details">Detalles del Proyecto</button>
-                                <button class="pane-nav-btn" data-view="demo">Demo Interactiva</button>
-                            </div>
-
-                            <div class="pane-tab-content active" data-tab-content="details">
-                                <div class="pane-split-layout">
-                                    <div class="pane-info-col">
-                                        <p class="project-description">
-                                            Una solución diseñada para ayudar a los candidatos a superar los filtros automatizados (ATS) y optimizar sus currículums utilizando modelos generativos de IA.
-                                        </p>
-                                        <ul class="project-bullets">
-                                            <li><strong>Procesamiento Inteligente:</strong> Extracción de texto de archivos PDF en Python con `pypdf` y análisis semántico profundo usando la API de Gemini 2.5 Flash.</li>
-                                            <li><strong>Feedback Detallado:</strong> Identificación precisa de palabras clave (keywords) faltantes y sugerencias estructuradas paso a paso para reescribir secciones del CV.</li>
-                                            <li><strong>Reportes PDF de Alta Calidad:</strong> Generación y descarga automatizada del reporte de compatibilidad en formato A4 usando `jsPDF`.</li>
-                                            <li><strong>Arquitectura CI/CD:</strong> Pipeline automatizado que integra el repositorio con Vercel (Frontend React) y Render (Backend FastAPI).</li>
-                                        </ul>
-                                        <div class="pane-ctas" style="margin-top: 24px; display: flex; gap: 12px;">
-                                            <a href="https://resumatch-dusky.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary-sm" style="display: inline-flex; align-items: center; text-decoration: none;">Probar App <i data-lucide="external-link" style="width: 14px; height: 14px; margin-left: 6px;"></i></a>
-                                            <a href="https://github.com/Agus1676/resumatch" target="_blank" rel="noopener noreferrer" class="btn-secondary-sm" style="display: inline-flex; align-items: center; text-decoration: none;">Ver GitHub <i data-lucide="github" style="width: 14px; height: 14px; margin-left: 6px;"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="pane-mockup-col">
-                                        <a href="https://resumatch-dusky.vercel.app/" target="_blank" rel="noopener noreferrer" class="pane-mockup-link" title="Visitar Resumatch en Vercel">
-                                            <img src="assets/resumatch.png" alt="Mockup Resumatch" class="pane-mockup-img" style="border: 1px solid var(--border-color); border-radius: 8px;">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="pane-tab-content" data-tab-content="demo">
-                                <div class="demo-box resumatch-demo">
-                                    <div class="demo-header">
-                                        <span class="demo-title"><i data-lucide="cpu"></i> Simulador de Match ATS</span>
-                                        <span class="demo-badge">Feedback Interactivo</span>
-                                    </div>
-                                    <div class="demo-body">
-                                        <div class="resumatch-demo-container" style="width: 100%; display: flex; flex-direction: column; gap: 14px;">
-                                            <div class="demo-form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-                                                <div class="demo-form-group" style="display: flex; flex-direction: column; gap: 6px;">
-                                                    <label class="demo-input-label" style="font-size: 0.75rem; color: var(--text-muted); font-weight: 500;">1. Seleccionar Perfil del CV</label>
-                                                    <select class="card-select w-100" id="resumatchCvSelect" style="width: 100%;">
-                                                        <option value="react-jr">Agustín Pollán - CV Desarrollador Frontend</option>
-                                                        <option value="python-jr">Sofía García - CV Desarrollador Python Backend</option>
-                                                    </select>
-                                                </div>
-                                                <div class="demo-form-group" style="display: flex; flex-direction: column; gap: 6px;">
-                                                    <label class="demo-input-label" style="font-size: 0.75rem; color: var(--text-muted); font-weight: 500;">2. Seleccionar Oferta de Trabajo</label>
-                                                    <select class="card-select w-100" id="resumatchJobSelect" style="width: 100%;">
-                                                        <option value="frontend-offer">Front-End Developer (React + TypeScript)</option>
-                                                        <option value="backend-offer">Backend Developer (FastAPI + SQL)</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div style="text-align: center; margin-top: 8px;">
-                                                <button class="btn-primary-sm" id="resumatchRunBtn">Analizar CV en Demo</button>
-                                            </div>
-                                            
-                                            <!-- Mini Loader -->
-                                            <div class="resumatch-mini-loader" id="resumatchLoader" style="display: none; flex-direction: column; align-items: center; gap: 10px; padding: 20px 0; text-align: center;">
-                                                <div class="mini-spinner" style="width: 24px; height: 24px; border: 3px solid rgba(232, 160, 32, 0.15); border-top-color: var(--gold); border-radius: 50%; animation: spin 0.8s linear infinite;"></div>
-                                                <p id="resumatchLoaderText" style="font-size: 0.8rem; color: var(--text-muted);">Extrayendo texto del PDF...</p>
-                                            </div>
-
-                                            <!-- Mini Results -->
-                                            <div class="resumatch-mini-results" id="resumatchResults" style="display: none; background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 8px; padding: 18px 24px; animation: fadeIn 0.4s ease;">
-                                                <div class="mini-results-header" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
-                                                    <h4 id="resumatchResultTitle" style="font-size: 0.95rem; font-weight: 700; color: #fff;">Excelente match</h4>
-                                                    <div class="mini-score-badge" id="resumatchScoreBadge" style="font-family: monospace; font-size: 0.85rem; font-weight: 700; background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.25); color: #10b981; padding: 3px 10px; border-radius: 999px;">85% Match</div>
-                                                </div>
-                                                <p class="mini-result-desc" id="resumatchResultDesc" style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 14px;">El CV se alinea bien con el puesto, pero faltan keywords clave.</p>
-                                                <div class="mini-kw-cols" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; border-top: 1px solid var(--border-color); padding-top: 12px;">
-                                                    <div class="mini-kw-col" style="display: flex; flex-direction: column; gap: 6px;">
-                                                        <span class="mini-kw-label found" style="font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #10b981;">Coincidencias</span>
-                                                        <div class="mini-chips" id="resumatchFoundChips" style="display: flex; flex-wrap: wrap; gap: 4px;">
-                                                            <span class="mini-chip found" style="font-size: 0.75rem; background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.2); color: #6ee7b7; padding: 2px 8px; border-radius: 4px;">React</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="mini-kw-col" style="display: flex; flex-direction: column; gap: 6px;">
-                                                        <span class="mini-kw-label missing" style="font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #f59e0b;">Faltantes</span>
-                                                        <div class="mini-chips" id="resumatchMissingChips" style="display: flex; flex-wrap: wrap; gap: 4px;">
-                                                            <span class="mini-chip missing" style="font-size: 0.75rem; background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.2); color: #fcd34d; padding: 2px 8px; border-radius: 4px;">TypeScript</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <p class="card-desc">Plataforma e-commerce con sintesis de audio en cliente para simular acústica de teclados mecánicos y osciloscopio en tiempo real.</p>
+                            <div class="card-actions">
+                                <a href="https://modkey-one.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-primary">Probar App <i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
+                                <button class="btn-card-secondary open-demo-btn" data-project="modkey">Probar Demo <i data-lucide="sparkles" style="width:14px;height:14px;"></i></button>
                             </div>
                         </div>
                     </div>
+
+                    <!-- CARD 2: LOS PORTEÑOS PRO -->
+                    <div class="project-card card-side">
+                        <div class="card-bg" style="background-image: url('assets/losportenos.png');"></div>
+                        <div class="card-overlay"></div>
+                        <span class="card-num">02 / 05</span>
+                        <div class="card-content">
+                            <span class="card-label">Web Interactiva</span>
+                            <h3 class="card-title">Los Porteños Pro</h3>
+                            <div class="card-tags">
+                                <span class="card-tag">React 18</span>
+                                <span class="card-tag">Vite</span>
+                                <span class="card-tag">Canvas 2D</span>
+                                <span class="card-tag">Turnero</span>
+                            </div>
+                            <p class="card-desc">Sistema de reserva de turnos con diagnóstico técnico visual sobre plano vehicular interactivo.</p>
+                            <div class="card-actions">
+                                <a href="https://los-portenos-pro.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-primary">Ver App <i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
+                                <button class="btn-card-secondary open-demo-btn" data-project="losportenos">Demo <i data-lucide="sparkles" style="width:14px;height:14px;"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 3: MERCADO LIBRE PRO -->
+                    <div class="project-card card-third">
+                        <div class="card-bg" style="background-image: url('assets/mercadolibre.png');"></div>
+                        <div class="card-overlay"></div>
+                        <span class="card-num">03 / 05</span>
+                        <div class="card-content">
+                            <span class="card-label">Clon E-Commerce</span>
+                            <h3 class="card-title">Mercado Libre Pro</h3>
+                            <div class="card-tags">
+                                <span class="card-tag">React 18</span>
+                                <span class="card-tag">Tailwind CSS</span>
+                                <span class="card-tag">Búsqueda Reactiva</span>
+                            </div>
+                            <p class="card-desc">Reinvención completa con búsqueda rápida en cliente, carrito en tiempo real e interfaz fluida.</p>
+                            <div class="card-actions">
+                                <a href="https://mercadolibre-clone.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-primary">Ver App <i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
+                                <button class="btn-card-secondary open-demo-btn" data-project="mercadolibre">Demo <i data-lucide="sparkles" style="width:14px;height:14px;"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 4: APR NEUMÁTICOS -->
+                    <div class="project-card card-side">
+                        <div class="card-bg" style="background-image: url('assets/apr.png');"></div>
+                        <div class="card-overlay"></div>
+                        <span class="card-num">04 / 05</span>
+                        <div class="card-content">
+                            <span class="card-label">Catálogo &amp; Admin</span>
+                            <h3 class="card-title">APR Neumáticos</h3>
+                            <div class="card-tags">
+                                <span class="card-tag">React 18</span>
+                                <span class="card-tag">SheetJS</span>
+                                <span class="card-tag">Quiz Recomendador</span>
+                            </div>
+                            <p class="card-desc">Catálogo con actualizador desde archivos Excel e instalador PWA para consulta offline.</p>
+                            <div class="card-actions">
+                                <a href="https://apr-neumaticos.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-primary">Ver App <i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
+                                <button class="btn-card-secondary open-demo-btn" data-project="apr">Quiz Demo <i data-lucide="sparkles" style="width:14px;height:14px;"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 5: RESUMATCH (Wide) -->
+                    <div class="project-card card-wide">
+                        <div class="card-bg" style="background-image: url('assets/resumatch.png');"></div>
+                        <div class="card-overlay"></div>
+                        <span class="card-num">05 / 05</span>
+                        <div class="card-content">
+                            <span class="card-label">IA Generativa &amp; ATS</span>
+                            <h3 class="card-title">Resumatch AI</h3>
+                            <div class="card-tags">
+                                <span class="card-tag">FastAPI (Python)</span>
+                                <span class="card-tag">React 18</span>
+                                <span class="card-tag">Google Gemini 2.5</span>
+                                <span class="card-tag">Reportes PDF</span>
+                            </div>
+                            <p class="card-desc">Herramienta Full-Stack que compara PDFs contra ofertas laborales utilizando Gemini AI para superar filtros ATS.</p>
+                            <div class="card-actions">
+                                <a href="https://resumatch-dusky.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-primary">Probar App <i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
+                                <button class="btn-card-secondary open-demo-btn" data-project="resumatch">Simular ATS <i data-lucide="sparkles" style="width:14px;height:14px;"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
+
+                <!-- Demo Drawer (Contenedor para Demos Interactivas) -->
+                <div class="demo-drawer" id="demoDrawer">
+                    <div class="demo-drawer-header">
+                        <span class="demo-drawer-label" id="demoDrawerTitle"><i data-lucide="sparkles"></i> Demo Interactiva</span>
+                        <button class="demo-drawer-close" id="closeDemoDrawerBtn" aria-label="Cerrar demo">&times;</button>
+                    </div>
+
+                    <!-- Showcase Dashboard Interno -->
+                    <div class="showcase-dashboard">
+                        <aside class="showcase-sidebar">
+                            <button class="showcase-tab active" data-project="modkey">
+                                <i data-lucide="keyboard"></i>
+                                <div class="tab-info">
+                                    <h4>MODKEY</h4>
+                                    <p>Teclados Mecánicos</p>
+                                </div>
+                            </button>
+                            <button class="showcase-tab" data-project="mercadolibre">
+                                <i data-lucide="shopping-bag"></i>
+                                <div class="tab-info">
+                                    <h4>MERCADO LIBRE PRO</h4>
+                                    <p>Clon E-Commerce</p>
+                                </div>
+                            </button>
+                            <button class="showcase-tab" data-project="losportenos">
+                                <i data-lucide="wrench"></i>
+                                <div class="tab-info">
+                                    <h4>LOS PORTEÑOS PRO</h4>
+                                    <p>Diagnóstico SVG</p>
+                                </div>
+                            </button>
+                            <button class="showcase-tab" data-project="apr">
+                                <i data-lucide="disc"></i>
+                                <div class="tab-info">
+                                    <h4>APR NEUMÁTICOS</h4>
+                                    <p>Quiz Recomendador</p>
+                                </div>
+                            </button>
+                            <button class="showcase-tab" data-project="resumatch">
+                                <i data-lucide="file-check"></i>
+                                <div class="tab-info">
+                                    <h4>RESUMATCH</h4>
+                                    <p>Simulador ATS IA</p>
+                                </div>
+                            </button>
+                        </aside>
+
+                        <div class="showcase-content">
+                            <!-- PANE 1: MODKEY -->
+                            <div class="project-pane active" id="pane-modkey">
+                                <div class="pane-header">
+                                    <h3 class="pane-title">MODKEY — Demo Sintetizador de Audio</h3>
+                                    <p class="pane-subtitle">Probá la acústica simulada de los switches e interactuá con el osciloscopio en tiempo real.</p>
+                                </div>
+                                <div class="pane-nav-tabs">
+                                    <button class="pane-nav-btn active" data-view="details">Detalles</button>
+                                    <button class="pane-nav-btn" data-view="demo">Demo Interactiva</button>
+                                </div>
+                                <div class="pane-tab-content active" data-tab-content="details">
+                                    <div class="pane-split-layout">
+                                        <div class="pane-info-col">
+                                            <p class="project-description">Plataforma e-commerce con sintetizador de sonido en el navegador sin archivos de audio externos.</p>
+                                            <div class="pane-ctas" style="margin-top: 16px;">
+                                                <a href="https://modkey-one.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary-sm">Abrir en Vercel <i data-lucide="external-link" style="width: 14px; height: 14px;"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="pane-mockup-col">
+                                            <img src="assets/modkey.png" alt="MODKEY" class="pane-mockup-img" style="border-radius: 8px; width: 100%; border: 1px solid var(--border-color);">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pane-tab-content" data-tab-content="demo">
+                                    <div class="demo-box">
+                                        <div class="demo-header">
+                                            <span class="demo-title"><i data-lucide="volume-2"></i> Sintetizador Acústico</span>
+                                        </div>
+                                        <div class="demo-body" style="display:flex; flex-direction:column; gap:14px; align-items:center;">
+                                            <canvas id="osciloscope" width="400" height="90" style="background:#000; border-radius:6px; width:100%;"></canvas>
+                                            <div style="display:flex; gap:10px;">
+                                                <button class="btn-secondary-sm sound-btn" data-switch="linear">Probar Switch Lineal</button>
+                                                <button class="btn-secondary-sm sound-btn" data-switch="tactile">Probar Switch Táctil</button>
+                                                <button class="btn-secondary-sm sound-btn" data-switch="clicky">Probar Switch Clicky</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- PANE 2: MERCADO LIBRE PRO -->
+                            <div class="project-pane" id="pane-mercadolibre">
+                                <div class="pane-header">
+                                    <h3 class="pane-title">Mercado Libre Pro</h3>
+                                    <p class="pane-subtitle">Clon optimizado con búsqueda en tiempo real y carrito interactivo.</p>
+                                </div>
+                                <div class="pane-nav-tabs">
+                                    <button class="pane-nav-btn active" data-view="details">Detalles</button>
+                                    <button class="pane-nav-btn" data-view="demo">Demo Interactiva</button>
+                                </div>
+                                <div class="pane-tab-content active" data-tab-content="details">
+                                    <div class="pane-split-layout">
+                                        <div class="pane-info-col">
+                                            <p class="project-description">Experiencia rápida de e-commerce con filtrado instantáneo y simulación de compra.</p>
+                                            <div class="pane-ctas" style="margin-top: 16px;">
+                                                <a href="https://mercadolibre-clone.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary-sm">Abrir en Vercel <i data-lucide="external-link" style="width: 14px; height: 14px;"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="pane-mockup-col">
+                                            <img src="assets/mercadolibre.png" alt="Mercado Libre Pro" class="pane-mockup-img" style="border-radius: 8px; width: 100%; border: 1px solid var(--border-color);">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pane-tab-content" data-tab-content="demo">
+                                    <div class="demo-box">
+                                        <div class="demo-header"><span class="demo-title">Búsqueda Reactiva</span></div>
+                                        <div class="demo-body" style="padding:16px;">
+                                            <input type="text" id="demoMlSearch" placeholder="Buscar productos (ej: Auriculares, Teclado...)" class="card-select" style="width:100%; padding:10px; border-radius:6px; background:rgba(255,255,255,0.05); color:#fff; border:1px solid var(--border-color);">
+                                            <div id="demoMlResults" style="margin-top:12px; display:flex; flex-direction:column; gap:8px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- PANE 3: LOS PORTEÑOS PRO -->
+                            <div class="project-pane" id="pane-losportenos">
+                                <div class="pane-header">
+                                    <h3 class="pane-title">Los Porteños Pro — Diagnóstico SVG</h3>
+                                    <p class="pane-subtitle">Plano interactivo del vehículo para seleccionar zonas de reparación.</p>
+                                </div>
+                                <div class="pane-nav-tabs">
+                                    <button class="pane-nav-btn active" data-view="details">Detalles</button>
+                                    <button class="pane-nav-btn" data-view="demo">Demo Interactiva</button>
+                                </div>
+                                <div class="pane-tab-content active" data-tab-content="details">
+                                    <div class="pane-split-layout">
+                                        <div class="pane-info-col">
+                                            <p class="project-description">Turnero para taller mecánico con mapa interactivo de autopartes.</p>
+                                            <div class="pane-ctas" style="margin-top: 16px;">
+                                                <a href="https://los-portenos-pro.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary-sm">Abrir en Vercel <i data-lucide="external-link" style="width: 14px; height: 14px;"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="pane-mockup-col">
+                                            <img src="assets/losportenos.png" alt="Los Porteños Pro" class="pane-mockup-img" style="border-radius: 8px; width: 100%; border: 1px solid var(--border-color);">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pane-tab-content" data-tab-content="demo">
+                                    <div class="demo-box">
+                                        <div class="demo-header"><span class="demo-title">Selección de Zona Vehicular</span></div>
+                                        <div class="demo-body" style="padding:16px; text-align:center;">
+                                            <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:12px;">Haz clic en un componente para simular presupuesto:</p>
+                                            <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+                                                <button class="btn-secondary-sm diag-btn" data-part="Frenos delanteros" data-price="$45.000">Frenos</button>
+                                                <button class="btn-secondary-sm diag-btn" data-part="Suspensión neumática" data-price="$82.000">Suspensión</button>
+                                                <button class="btn-secondary-sm diag-btn" data-part="Alineación y Balanceo" data-price="$28.000">Alineación</button>
+                                            </div>
+                                            <div id="diagResult" style="margin-top:14px; font-weight:600; color:var(--neon-orange);"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- PANE 4: APR NEUMÁTICOS -->
+                            <div class="project-pane" id="pane-apr">
+                                <div class="pane-header">
+                                    <h3 class="pane-title">APR Neumáticos — Quiz Recomendador</h3>
+                                    <p class="pane-subtitle">Recomendación automatizada del neumático ideal según tipo de uso.</p>
+                                </div>
+                                <div class="pane-nav-tabs">
+                                    <button class="pane-nav-btn active" data-view="details">Detalles</button>
+                                    <button class="pane-nav-btn" data-view="demo">Demo Quiz</button>
+                                </div>
+                                <div class="pane-tab-content active" data-tab-content="details">
+                                    <div class="pane-split-layout">
+                                        <div class="pane-info-col">
+                                            <p class="project-description">Catálogo e-commerce de neumáticos con actualización dinámica por Excel.</p>
+                                            <div class="pane-ctas" style="margin-top: 16px;">
+                                                <a href="https://apr-neumaticos.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary-sm">Abrir en Vercel <i data-lucide="external-link" style="width: 14px; height: 14px;"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="pane-mockup-col">
+                                            <img src="assets/apr.png" alt="APR Neumáticos" class="pane-mockup-img" style="border-radius: 8px; width: 100%; border: 1px solid var(--border-color);">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pane-tab-content" data-tab-content="demo">
+                                    <div class="demo-box">
+                                        <div class="demo-header"><span class="demo-title">Quiz de Recomendación</span></div>
+                                        <div class="demo-body" style="padding:16px;">
+                                            <div class="quiz-container">
+                                                <div class="quiz-step active" id="quizStep1">
+                                                    <p class="quiz-question">¿Por qué tipo de terreno circulás principalmente?</p>
+                                                    <div class="quiz-options">
+                                                        <button class="quiz-opt-btn" data-ans="city">Ciudad / Asfalto</button>
+                                                        <button class="quiz-opt-btn" data-ans="offroad">Ruta / Off-Road</button>
+                                                    </div>
+                                                </div>
+                                                <div class="quiz-step" id="quizStep2" style="display:none;">
+                                                    <div class="quiz-result">
+                                                        <div class="result-tire-name" id="quizTireName">Pirelli Cinturato P7</div>
+                                                        <div class="result-tire-desc" id="quizTireDesc">Excelente agarre en mojado y confort de marcha urbano.</div>
+                                                        <button class="btn-secondary-sm" id="resetQuizBtn" style="margin-top:10px;">Reintentar Quiz</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- PANE 5: RESUMATCH -->
+                            <div class="project-pane" id="pane-resumatch">
+                                <div class="pane-header">
+                                    <h3 class="pane-title">Resumatch — Simulador ATS con IA</h3>
+                                    <p class="pane-subtitle">Análisis automatizado de CV en PDF comparado contra descripciones de puestos.</p>
+                                </div>
+                                <div class="pane-nav-tabs">
+                                    <button class="pane-nav-btn active" data-view="details">Detalles</button>
+                                    <button class="pane-nav-btn" data-view="demo">Demo ATS</button>
+                                </div>
+                                <div class="pane-tab-content active" data-tab-content="details">
+                                    <div class="pane-split-layout">
+                                        <div class="pane-info-col">
+                                            <p class="project-description">Aplicación Full-Stack con integración a la API de Gemini 2.5 Flash para score ATS.</p>
+                                            <div class="pane-ctas" style="margin-top: 16px;">
+                                                <a href="https://resumatch-dusky.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary-sm">Abrir en Vercel <i data-lucide="external-link" style="width: 14px; height: 14px;"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="pane-mockup-col">
+                                            <img src="assets/resumatch.png" alt="Resumatch AI" class="pane-mockup-img" style="border-radius: 8px; width: 100%; border: 1px solid var(--border-color);">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pane-tab-content" data-tab-content="demo">
+                                    <div class="demo-box">
+                                        <div class="demo-header"><span class="demo-title">Simulador de Match ATS</span></div>
+                                        <div class="demo-body" style="padding:16px;">
+                                            <div style="display:flex; flex-direction:column; gap:10px;">
+                                                <select class="card-select" id="resumatchCvSelect" style="width:100%; padding:8px; background:rgba(255,255,255,0.05); color:#fff; border:1px solid var(--border-color); border-radius:6px;">
+                                                    <option value="react-jr">Agustín Pollán - Frontend Developer</option>
+                                                    <option value="python-jr">Sofía García - Backend Python</option>
+                                                </select>
+                                                <select class="card-select" id="resumatchJobSelect" style="width:100%; padding:8px; background:rgba(255,255,255,0.05); color:#fff; border:1px solid var(--border-color); border-radius:6px;">
+                                                    <option value="frontend-offer">Front-End Developer (React + TS)</option>
+                                                    <option value="backend-offer">Backend Developer (FastAPI + SQL)</option>
+                                                </select>
+                                                <button class="btn-primary-sm" id="resumatchRunBtn" style="margin-top:4px;">Analizar CV</button>
+                                                <div id="resumatchLoader" style="display:none; text-align:center; padding:10px; font-size:0.8rem; color:var(--text-muted);">Analizando con Gemini AI...</div>
+                                                <div id="resumatchResults" style="display:none; background:rgba(255,255,255,0.03); padding:12px; border-radius:6px; border:1px solid var(--border-color);">
+                                                    <h4 id="resumatchResultTitle" style="color:#fff; font-size:0.9rem;">Match 92%</h4>
+                                                    <p id="resumatchResultDesc" style="font-size:0.8rem; color:var(--text-secondary);"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -602,14 +513,14 @@
                             <!-- JavaScript -->
                             <div class="tech-item">
                                 <div class="tech-icon">
-                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="#F0DB4F" d="M1.408 1.408h125.184v125.185H1.408z"/><path fill="#323330" d="M116.347 96.736c-.917-5.711-4.641-10.348-12.543-14.856-3.052-1.572-6.478-2.642-7.529-5.15-.382-1.514-.454-2.338-.231-3.23.84-3.797 4.01-4.917 6.628-4.225 1.702.452 3.312 1.701 4.326 3.603 4.586-3.006 4.586-3.006 7.786-5.055-1.209-1.891-1.802-2.738-2.607-3.specials544-2.865-3.354-6.866-4.71-13.276-4.36l-3.32.591c-3.17.763-6.16 2.427-8.066 4.711-5.509 6.36-3.881 17.535 1.562 22.174 5.806 5.132 14.29 6.26 15.3 11.087.509 5.561-4.569 7.375-10.143 6.72-4.294-.904-6.677-3.17-9.277-7.253l-8.048 4.624c1.111 2.291 2.321 3.295 4.178 5.334 9.026 9.243 31.443 8.7 35.474-4.996.144-.477 1.018-3.185.344-7.439zm-36.98-40.848h-9.782c0 8.17-.052 16.204-.052 24.363 0 5.149.25 9.868-.57 11.36-1.396 2.945-4.961 2.567-6.627 2.055-1.712-.567-2.54-1.729-3.523-3.13-.25-.381-.436-.714-.582-.984l-7.994 4.94c1.336 2.669 3.236 4.94 5.72 6.37 3.763 2.136 8.703 2.762 13.678 1.62 3.381-.872 6.315-2.788 7.994-5.931 2.557-4.617 2.004-10.252 1.975-16.508.094-8.476 0-16.952 0-25.155z"/></svg>
+                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="#F0DB4F" d="M1.408 1.408h125.184v125.185H1.408z"/><path fill="#323330" d="M116.347 96.736c-.917-5.711-4.641-10.348-12.543-14.856-3.052-1.572-6.478-2.642-7.529-5.15-.382-1.514-.454-2.338-.231-3.23.84-3.797 4.01-4.917 6.628-4.225 1.702.452 3.312 1.701 4.326 3.603 4.586-3.006 4.586-3.006 7.786-5.055-1.209-1.891-1.802-2.738-2.607-3.544-2.865-3.354-6.866-4.71-13.276-4.36l-3.32.591c-3.17.763-6.16 2.427-8.066 4.711-5.509 6.36-3.881 17.535 1.562 22.174 5.806 5.132 14.29 6.26 15.3 11.087.509 5.561-4.569 7.375-10.143 6.72-4.294-.904-6.677-3.17-9.277-7.253l-8.048 4.624c1.111 2.291 2.321 3.295 4.178 5.334 9.026 9.243 31.443 8.7 35.474-4.996.144-.477 1.018-3.185.344-7.439zm-36.98-40.848h-9.782c0 8.17-.052 16.204-.052 24.363 0 5.149.25 9.868-.57 11.36-1.396 2.945-4.961 2.567-6.627 2.055-1.712-.567-2.54-1.729-3.523-3.13-.25-.381-.436-.714-.582-.984l-7.994 4.94c1.336 2.669 3.236 4.94 5.72 6.37 3.763 2.136 8.703 2.762 13.678 1.62 3.381-.872 6.315-2.788 7.994-5.931 2.557-4.617 2.004-10.252 1.975-16.508.094-8.476 0-16.952 0-25.155z"/></svg>
                                 </div>
                                 <span class="tech-name">JavaScript</span>
                             </div>
                             <!-- Vite -->
                             <div class="tech-item">
                                 <div class="tech-icon">
-                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M124.766 19.52 67.324 122.238c-1.187 2.121-4.234 2.133-5.437.024L.305 19.532c-1.313-2.302.652-5.087 3.261-4.622l60.ifax01 10.898a3.12 3.12 0 0 0 1.13-.004l58.61-10.884c2.606-.485 4.581 2.3 3.459 4.6Z" fill="url(#vite0)"/><path d="M94.009 1.2 49.718 9.32a1.964 1.964 0 0 0-1.612 1.83l-2.487 42.rdparty5a1.96 1.96 0 0 0 2.193 2.046l11.52-1.37a1.96 1.96 0 0 1 2.142 2.427l-3.379 15.717a1.96 1.96 0 0 0 2.29 2.379l7.1-1.722c1.328-.32 2.56.847 2.268 2.18l-5.35 25.975c-.335 1.62 1.816 2.51 2.72 1.12l.588-.9 32.54-64.836c.68-1.358-.498-2.89-1.998-2.618l-11.87 2.28a1.96 1.96 0 0 1-2.247-2.54l7.758-26.977A1.96 1.96 0 0 0 94.009 1.2Z" fill="url(#vite1)"/><defs><linearGradient id="vite0" x1="6.035" y1="-8.1" x2="235" y2="214.87" gradientUnits="userSpaceOnUse"><stop stop-color="#41D1FF"/><stop offset="1" stop-color="#BD34FE"/></linearGradient><linearGradient id="vite1" x1="194.651" y1="8.818" x2="236" y2="292.989" gradientUnits="userSpaceOnUse"><stop stop-color="#FF3E00"/><stop offset=".526" stop-color="#FF7743"/><stop offset="1" stop-color="#FFD700"/></linearGradient></defs></svg>
+                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M124.766 19.52 67.324 122.238c-1.187 2.121-4.234 2.133-5.437.024L.305 19.532c-1.313-2.302.652-5.087 3.261-4.622l60.01 10.898a3.12 3.12 0 0 0 1.13-.004l58.61-10.884c2.606-.485 4.581 2.3 3.459 4.6Z" fill="url(#vite0)"/><path d="M94.009 1.2 49.718 9.32a1.964 1.964 0 0 0-1.612 1.83l-2.487 42.5a1.96 1.96 0 0 0 2.193 2.046l11.52-1.37a1.96 1.96 0 0 1 2.142 2.427l-3.379 15.717a1.96 1.96 0 0 0 2.29 2.379l7.1-1.722c1.328-.32 2.56.847 2.268 2.18l-5.35 25.975c-.335 1.62 1.816 2.51 2.72 1.12l.588-.9 32.54-64.836c.68-1.358-.498-2.89-1.998-2.618l-11.87 2.28a1.96 1.96 0 0 1-2.247-2.54l7.758-26.977A1.96 1.96 0 0 0 94.009 1.2Z" fill="url(#vite1)"/><defs><linearGradient id="vite0" x1="6.035" y1="-8.1" x2="235" y2="214.87" gradientUnits="userSpaceOnUse"><stop stop-color="#41D1FF"/><stop offset="1" stop-color="#BD34FE"/></linearGradient><linearGradient id="vite1" x1="194.651" y1="8.818" x2="236" y2="292.989" gradientUnits="userSpaceOnUse"><stop stop-color="#FF3E00"/><stop offset=".526" stop-color="#FF7743"/><stop offset="1" stop-color="#FFD700"/></linearGradient></defs></svg>
                                 </div>
                                 <span class="tech-name">Vite</span>
                             </div>

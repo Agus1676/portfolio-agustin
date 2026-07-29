@@ -194,9 +194,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================================
     // INTERACTIVIDAD DEL DASHBOARD DE PROYECTOS (TABS Y SIDEBAR)
     // ==========================================================================
-    const showcaseTabs = document.querySelectorAll('.showcase-tab');
-    const projectPanes = document.querySelectorAll('.project-pane');
-
     showcaseTabs.forEach(tab => {
         tab.addEventListener('click', () => {
             const projectKey = tab.getAttribute('data-project');

@@ -4,38 +4,42 @@
 
 /* Variables del Sistema de Diseño */
 :root {
-    --bg-dark: #07070a;
-    --bg-card: rgba(18, 18, 24, 0.6);
-    --bg-card-hover: rgba(26, 26, 36, 0.85);
-    --border-color: rgba(255, 255, 255, 0.08);
-    --border-hover: rgba(255, 255, 255, 0.15);
-    
-    /* Colores de Acento (Neón) */
-    --neon-cyan: #00f2fe;
-    --neon-blue: #4f46e5;
-    --neon-purple: #9d4edd;
-    --neon-pink: #ff007f;
-    --neon-green: #10b981;
-    --text-primary: #f3f4f6;
-    --text-secondary: #9ca3af;
-    --text-muted: #6b7280;
-    
+    --bg-dark: #0c0c14;
+    --bg-card: rgba(16, 16, 28, 0.65);
+    --bg-card-hover: rgba(22, 22, 38, 0.9);
+    --border-color: rgba(255, 255, 255, 0.07);
+    --border-hover: rgba(167, 139, 250, 0.25);
+
+    /* Colores de Acento — Paleta Violeta-Índigo */
+    --neon-violet: #a78bfa;      /* lavanda principal */
+    --neon-indigo: #6d28d9;      /* índigo intenso */
+    --neon-purple: #c084fc;      /* violeta claro (tipografía accent) */
+    --neon-cyan: #a78bfa;        /* alias para compatibilidad (ahora violeta) */
+    --neon-blue: #6d28d9;        /* alias para compatibilidad (ahora índigo) */
+    --neon-pink: #f472b6;        /* rosa-magenta para acentos secundarios */
+    --neon-green: #34d399;       /* verde esmeralda para estados positivos */
+    --text-primary: #f1f0f8;
+    --text-secondary: #9896b0;
+    --text-muted: #6260788;
+
     /* Gradientes */
-    --gradient-hero: linear-gradient(135deg, #00f2fe 0%, #4f46e5 50%, #9d4edd 100%);
-    --gradient-card-overlay: linear-gradient(180deg, rgba(7, 7, 10, 0) 0%, rgba(7, 7, 10, 0.95) 100%);
-    --gradient-radial: radial-gradient(circle at 50% 50%, rgba(79, 70, 229, 0.15) 0%, rgba(7, 7, 10, 0) 70%);
+    --gradient-hero: linear-gradient(135deg, #7c3aed 0%, #a78bfa 50%, #c084fc 100%);
+    --gradient-card-overlay: linear-gradient(180deg, rgba(12, 12, 20, 0) 0%, rgba(12, 12, 20, 0.96) 100%);
+    --gradient-radial: radial-gradient(circle at 50% 50%, rgba(109, 40, 217, 0.18) 0%, rgba(12, 12, 20, 0) 70%);
 
     /* Tipografías */
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
-    
+    --font-mono: 'JetBrains Mono', 'Fira Code', 'SFMono-Regular', Consolas, monospace;
+
     /* Sombras y Filtros */
-    --glass-blur: blur(12px) saturate(180%);
-    --glow-cyan: 0 0 20px rgba(0, 242, 254, 0.3);
-    --glow-purple: 0 0 20px rgba(157, 78, 221, 0.3);
-    
+    --glass-blur: blur(14px) saturate(180%);
+    --glow-violet: 0 0 24px rgba(167, 139, 250, 0.35);
+    --glow-indigo: 0 0 24px rgba(109, 40, 217, 0.4);
+
     /* Transiciones */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 /* Reset de Estilos */
@@ -64,19 +68,63 @@ body {
    ELEMENTOS DE SOPORTE VISUAL (Fondo y Layout)
    ========================================================================== */
 
-/* Fondo de malla de luces dinámicas */
+/* Cursor personalizado */
+.cursor-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--neon-violet);
+    border-radius: 50%;
+    position: fixed;
+    top: 0; left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s, background 0.2s;
+    will-change: transform;
+}
+.cursor-ring {
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid rgba(167, 139, 250, 0.5);
+    border-radius: 50%;
+    position: fixed;
+    top: 0; left: 0;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s, border-color 0.3s, opacity 0.3s;
+    will-change: transform;
+}
+body.cursor-hover .cursor-dot {
+    width: 10px;
+    height: 10px;
+    background: #c084fc;
+}
+body.cursor-hover .cursor-ring {
+    width: 52px;
+    height: 52px;
+    border-color: rgba(192, 132, 252, 0.6);
+}
+
+/* Fondo con blobs violeta-índigo (estilo premium) */
 .mesh-background {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: 
-        radial-gradient(circle at 15% 15%, rgba(0, 242, 254, 0.05) 0%, transparent 40%),
-        radial-gradient(circle at 85% 85%, rgba(157, 78, 221, 0.06) 0%, transparent 45%),
-        radial-gradient(circle at 50% 50%, rgba(79, 70, 229, 0.04) 0%, transparent 60%);
+    background-image:
+        radial-gradient(ellipse 55% 45% at 8% 12%, rgba(109, 40, 217, 0.14) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 92% 88%, rgba(124, 58, 237, 0.12) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 35% at 50% 50%, rgba(167, 139, 250, 0.04) 0%, transparent 70%);
     z-index: -10;
     pointer-events: none;
+    animation: meshDrift 20s infinite alternate ease-in-out;
+}
+@keyframes meshDrift {
+    0%   { background-position: 0% 0%, 100% 100%, 50% 50%; }
+    50%  { background-position: 3% 5%, 97% 95%, 53% 48%; }
+    100% { background-position: -3% 2%, 103% 98%, 47% 52%; }
 }
 
 .container {
@@ -225,7 +273,9 @@ strong {
     letter-spacing: -0.02em;
 }
 .nav-logo span {
-    color: var(--neon-cyan);
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-left: 4px;
     font-weight: 500;
 }
@@ -304,9 +354,9 @@ strong {
 }
 
 .hero-badge {
-    background: rgba(79, 70, 229, 0.15);
-    color: #818cf8;
-    border: 1px solid rgba(79, 70, 229, 0.3);
+    background: rgba(124, 58, 237, 0.12);
+    color: #c084fc;
+    border: 1px solid rgba(167, 139, 250, 0.25);
     padding: 6px 14px;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -314,6 +364,23 @@ strong {
     margin-bottom: 24px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+}
+.hero-badge::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #34d399;
+    box-shadow: 0 0 8px #34d399;
+    animation: pulseGreen 2s infinite;
+}
+@keyframes pulseGreen {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.3); }
 }
 
 .hero-title {
@@ -398,42 +465,51 @@ strong {
 }
 
 .window-content code {
-    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
-    font-size: 0.82rem;
-    line-height: 1.5;
-    color: #a9b2c3;
+    font-family: var(--font-mono);
+    font-size: 0.83rem;
+    line-height: 1.7;
+    color: #7b8496;
     display: block;
     text-align: left;
 }
 
-.window-content .key { color: var(--neon-pink); }
-.window-content .val { color: var(--neon-cyan); }
-.window-content .bool { color: #f59e0b; font-weight: bold; }
+/* One Dark Pro palette en el terminal */
+.window-content .key   { color: #c084fc; }         /* lavanda — keys */
+.window-content .val   { color: #86efac; }         /* verde suave — strings */
+.window-content .bool  { color: #fb923c; font-weight: 600; } /* naranja — booleans */
+.window-content .num   { color: #f472b6; }         /* rosa — números */
+.window-content .bracket { color: #94a3b8; }       /* gris-azul — brackets */
+
+/* Cursor parpadeante de typing */
+.typing-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background: #a78bfa;
+    margin-left: 2px;
+    vertical-align: text-bottom;
+    animation: blink 1s step-end infinite;
+}
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
 
 .interactive-glow-sphere {
-    width: 250px;
-    height: 250px;
-    background: radial-gradient(circle, rgba(0, 242, 254, 0.3) 0%, rgba(79, 70, 229, 0.15) 50%, transparent 100%);
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.35) 0%, rgba(109, 40, 217, 0.18) 50%, transparent 100%);
     border-radius: 50%;
-    filter: blur(25px);
+    filter: blur(32px);
     position: absolute;
     z-index: 1;
     animation: pulseSphere 8s infinite alternate ease-in-out;
 }
 
 @keyframes pulseSphere {
-    0% {
-        transform: scale(1) translate(0px, 0px);
-        filter: blur(25px);
-    }
-    50% {
-        transform: scale(1.2) translate(15px, -15px);
-        filter: blur(30px);
-    }
-    100% {
-        transform: scale(0.9) translate(-15px, 15px);
-        filter: blur(20px);
-    }
+    0%   { transform: scale(1) translate(0px, 0px); filter: blur(32px); }
+    50%  { transform: scale(1.25) translate(12px, -14px); filter: blur(38px); }
+    100% { transform: scale(0.9) translate(-12px, 14px); filter: blur(26px); }
 }
 
 /* ==========================================================================
@@ -446,12 +522,12 @@ strong {
 }
 
 .section-tag {
-    color: var(--neon-cyan);
+    color: var(--neon-violet);
     font-family: var(--font-heading);
     font-weight: 700;
     text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 0.15em;
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
     display: block;
     margin-bottom: 12px;
 }
@@ -460,11 +536,31 @@ strong {
     font-size: 2.5rem;
     color: #fff;
     margin-bottom: 16px;
+    line-height: 1.15;
+}
+.section-title .accent {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .section-desc {
     color: var(--text-secondary);
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* Scroll Reveal — clases añadidas por JS */
+.reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.from-left  { transform: translateX(-32px); }
+.reveal.from-right { transform: translateX(32px); }
+.reveal.visible {
+    opacity: 1;
+    transform: translate(0, 0);
 }
 
 /* ==========================================================================
@@ -1344,154 +1440,124 @@ canvas#osciloscope {
 }
 
 /* ==========================================================================
-   SKILLS SECTION (Stack)
+   SKILLS SECTION — Tech Icon Grid (nuevo)
    ========================================================================== */
 
 .skills-section {
     padding: 100px 0;
 }
 
-/* Skills Filter Bar */
-.skills-filter-bar {
+/* Contenedor de tarjetas de categoría */
+.stack-categories {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 40px;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.filter-btn {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid var(--border-color);
-    color: var(--text-muted);
+/* Tarjeta de categoría */
+.stack-card {
+    background: rgba(16, 16, 28, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 20px;
+    padding: 28px 32px;
+    backdrop-filter: blur(14px);
+    transition: border-color 0.35s ease, box-shadow 0.35s ease;
+}
+.stack-card:hover {
+    border-color: rgba(167, 139, 250, 0.18);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+/* Título de la categoría */
+.stack-card-title {
     font-family: var(--font-heading);
-    font-weight: 600;
-    font-size: 0.88rem;
-    padding: 8px 18px;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: var(--transition-smooth);
-}
-.filter-btn:hover {
+    font-size: 1rem;
+    font-weight: 700;
     color: #fff;
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.15);
-}
-.filter-btn.active {
-    color: #fff;
-    background: rgba(0, 242, 254, 0.08);
-    border-color: var(--neon-cyan);
-    box-shadow: 0 0 12px rgba(0, 242, 254, 0.2);
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
 }
 
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+/* Sub-label (ej: "COMPLEMENTOS") */
+.stack-sublabel {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 18px 0 14px 0;
+    display: block;
 }
 
-.skills-category-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 24px;
-    padding: 32px;
-    backdrop-filter: var(--glass-blur);
-    transition: var(--transition-smooth);
-}
-.skills-category-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+/* Grid de íconos de tecnología */
+.stack-icons-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: flex-end;
 }
 
-.skills-category-card[data-card-category="frontend"]:hover { border-color: rgba(0, 242, 254, 0.35); }
-.skills-category-card[data-card-category="backend"]:hover { border-color: rgba(157, 78, 221, 0.35); }
-.skills-category-card[data-card-category="multimedia"]:hover { border-color: rgba(255, 0, 127, 0.35); }
+/* Cada item de tecnología (ícono + nombre) */
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: default;
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.tech-item:hover {
+    transform: translateY(-5px);
+}
 
-.category-header {
+/* Contenedor del SVG del ícono */
+.tech-icon {
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 24px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    padding-bottom: 14px;
+    justify-content: center;
+    opacity: 0.75;
+    transition: opacity 0.25s ease, filter 0.25s ease;
 }
-.category-header i {
-    width: 24px;
-    height: 24px;
+.tech-item:hover .tech-icon {
+    opacity: 1;
 }
-.category-header h3 {
-    font-size: 1.3rem;
-    color: #fff;
-    font-family: var(--font-heading);
+.tech-icon svg {
+    width: 100%;
+    height: 100%;
 }
 
-.text-neon-cyan { color: var(--neon-cyan); filter: drop-shadow(0 0 4px rgba(0, 242, 254, 0.4)); }
-.text-neon-purple { color: var(--neon-purple); filter: drop-shadow(0 0 4px rgba(157, 78, 221, 0.4)); }
-.text-neon-pink { color: var(--neon-pink); filter: drop-shadow(0 0 4px rgba(255, 0, 127, 0.4)); }
-
-/* Skills Pills Container */
-.skills-pills-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+/* Nombre de la tecnología */
+.tech-name {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    transition: color 0.25s ease;
+    white-space: nowrap;
 }
-
-.skill-pill {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 6px 12px;
-    font-size: 0.82rem;
+.tech-item:hover .tech-name {
     color: var(--text-secondary);
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    cursor: default;
-}
-.skill-pill:hover {
-    color: #fff;
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
 }
 
-/* Dimmed card style */
-.skills-category-card.dimmed-card {
-    opacity: 0.45;
-    transform: scale(0.98);
+/* Ítems de primer nivel (más grandes = tecnologías principales) */
+.tech-item.primary .tech-icon {
+    width: 48px;
+    height: 48px;
 }
 
-/* Pill active states */
-.skill-pill.active-pill {
-    color: #fff;
-    background: rgba(255, 255, 255, 0.05);
-    transform: translateY(-2px);
-}
-.skill-pill[data-category="frontend"].active-pill {
-    border-color: var(--neon-cyan);
-    box-shadow: 0 0 10px rgba(0, 242, 254, 0.25);
-}
-.skill-pill[data-category="backend"].active-pill {
-    border-color: var(--neon-purple);
-    box-shadow: 0 0 10px rgba(157, 78, 221, 0.25);
-}
-.skill-pill[data-category="multimedia"].active-pill {
-    border-color: var(--neon-pink);
-    box-shadow: 0 0 10px rgba(255, 0, 127, 0.25);
-}
-.skill-pill[data-category="methodology"].active-pill {
-    border-color: var(--neon-blue);
-    box-shadow: 0 0 10px rgba(79, 70, 229, 0.25);
-}
-
-.skill-pill.dimmed-pill {
-    opacity: 0.15;
-    filter: blur(0.5px);
-    transform: scale(0.95);
-}
-
-@media (max-width: 992px) {
-    .skills-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
+@media (max-width: 768px) {
+    .stack-card {
+        padding: 22px 20px;
+    }
+    .stack-icons-row {
+        gap: 18px;
+    }
+    .tech-item.primary .tech-icon {
+        width: 40px;
+        height: 40px;
     }
 }
 

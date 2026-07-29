@@ -10,6 +10,140 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================================================
+    // CURSOR MAGNÉTICO PERSONALIZADO
+    // ==========================================================================
+    const cursorDot  = document.getElementById('cursorDot');
+    const cursorRing = document.getElementById('cursorRing');
+
+    if (cursorDot && cursorRing && window.matchMedia('(pointer: fine)').matches) {
+        let mouseX = 0, mouseY = 0;
+        let ringX  = 0, ringY  = 0;
+
+        document.addEventListener('mousemove', e => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            cursorDot.style.left = mouseX + 'px';
+            cursorDot.style.top  = mouseY + 'px';
+        });
+
+        // Lerp suave para el ring
+        function animateRing() {
+            ringX += (mouseX - ringX) * 0.1;
+            ringY += (mouseY - ringY) * 0.1;
+            cursorRing.style.left = ringX + 'px';
+            cursorRing.style.top  = ringY + 'px';
+            requestAnimationFrame(animateRing);
+        }
+        animateRing();
+
+        // Efecto hover en elementos interactivos
+        const hoverTargets = document.querySelectorAll('a, button, .tech-item, .showcase-tab, .stack-card');
+        hoverTargets.forEach(el => {
+            el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+            el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+        });
+
+        // Ocultar cursor nativo
+        document.body.style.cursor = 'none';
+        document.querySelectorAll('a, button, input, select, textarea').forEach(el => {
+            el.style.cursor = 'none';
+        });
+    }
+
+    // ==========================================================================
+    // PARALLAX SUTIL EN HERO (blobs reaccionan al mouse)
+    // ==========================================================================
+    const meshBg = document.querySelector('.mesh-background');
+    const heroSection = document.querySelector('.hero-section');
+    if (meshBg && heroSection) {
+        heroSection.addEventListener('mousemove', e => {
+            const rect = heroSection.getBoundingClientRect();
+            const cx = (e.clientX - rect.left) / rect.width  - 0.5;  // -0.5 to 0.5
+            const cy = (e.clientY - rect.top)  / rect.height - 0.5;
+            const tx = cx * 20;  // max 20px
+            const ty = cy * 15;
+            meshBg.style.transform = `translate(${tx}px, ${ty}px)`;
+        });
+        heroSection.addEventListener('mouseleave', () => {
+            meshBg.style.transform = 'translate(0,0)';
+            meshBg.style.transition = 'transform 0.8s ease';
+        });
+        heroSection.addEventListener('mouseenter', () => {
+            meshBg.style.transition = 'transform 0.1s linear';
+        });
+    }
+
+    // ==========================================================================
+    // TYPING ANIMATION — developer.json
+    // ==========================================================================
+    const typingCode = document.getElementById('typingCode');
+    if (typingCode) {
+        // Contenido con HTML para el coloreado
+        const lines = [
+            '<span style="color:#94a3b8">{</span>',
+            '  <span class="key">"name"</span><span style="color:#94a3b8">:</span> <span class="val">"Agustin Pollan"</span><span style="color:#94a3b8">,</span>',
+            '  <span class="key">"role"</span><span style="color:#94a3b8">:</span> <span class="val">"Junior Fullstack"</span><span style="color:#94a3b8">,</span>',
+            '  <span class="key">"focus"</span><span style="color:#94a3b8">:</span> <span class="val">"Frontend-oriented"</span><span style="color:#94a3b8">,</span>',
+            '  <span class="key">"skills"</span><span style="color:#94a3b8">: [</span>',
+            '    <span class="val">"React / Next.js"</span><span style="color:#94a3b8">,</span>',
+            '    <span class="val">"Web Audio API"</span><span style="color:#94a3b8">,</span>',
+            '    <span class="val">"Canvas &amp; SVG"</span><span style="color:#94a3b8">,</span>',
+            '    <span class="val">"Java + Spring"</span>',
+            '  <span style="color:#94a3b8">],</span>',
+            '  <span class="key">"available"</span><span style="color:#94a3b8">:</span> <span class="bool">true</span>',
+            '<span style="color:#94a3b8">}</span>',
+        ];
+
+        let lineIndex = 0;
+        let rendered = '';
+
+        // Agrega cursor parpadeante
+        const cursor = document.createElement('span');
+        cursor.className = 'typing-cursor';
+        typingCode.appendChild(cursor);
+
+        function typeLine() {
+            if (lineIndex >= lines.length) {
+                cursor.remove();
+                return;
+            }
+            rendered += lines[lineIndex] + '\n';
+            // Actualizar el código SIN el cursor, luego reinsertarlo al final
+            typingCode.innerHTML = rendered;
+            typingCode.appendChild(cursor);
+            lineIndex++;
+            setTimeout(typeLine, 80 + Math.random() * 60);
+        }
+
+        // Iniciar con un pequeño delay para que cargue la página primero
+        setTimeout(typeLine, 600);
+    }
+
+    // ==========================================================================
+    // SCROLL REVEAL con IntersectionObserver
+    // ==========================================================================
+    const revealEls = document.querySelectorAll('.reveal');
+    if (revealEls.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    // Delay escalonado según posición en el DOM
+                    const siblings = [...entry.target.parentElement.children].filter(c => c.classList.contains('reveal'));
+                    const idx = siblings.indexOf(entry.target);
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, idx * 100);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        revealEls.forEach(el => observer.observe(el));
+    }
+
+
+
+    // ==========================================================================
     // MENÚ MÓVIL
     // ==========================================================================
     const mobileNavToggle = document.querySelector('.mobile-nav-toggle');

@@ -9,7 +9,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
@@ -18,6 +18,10 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
+
+    <!-- Cursor personalizado -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
 
     <!-- Fondo de malla animado -->
     <div class="mesh-background"></div>
@@ -73,18 +77,7 @@
                             <span class="window-title">developer.json</span>
                         </div>
                         <div class="window-content">
-                            <pre><code>{
-  <span class="key">"name"</span>: <span class="val">"Agustin Pollan"</span>,
-  <span class="key">"role"</span>: <span class="val">"Junior Fullstack (Frontend-oriented)"</span>,
-  <span class="key">"skills"</span>: [
-    <span class="val">"React/Next.js"</span>,
-    <span class="val">"Web Audio API"</span>,
-    <span class="val">"Canvas & SVG"</span>,
-    <span class="val">"Tailwind & CSS"</span>
-  ],
-  <span class="key">"experience"</span>: <span class="val">"Commercial & Freelance"</span>,
-  <span class="key">"available"</span>: <span class="bool">true</span>
-}</code></pre>
+                            <pre><code id="typingCode"></code></pre>
                         </div>
                     </div>
                     <div class="interactive-glow-sphere"></div>
@@ -569,78 +562,197 @@
         <!-- Habilidades Section -->
         <section id="habilidades" class="skills-section">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header reveal">
                     <span class="section-tag">Capacidades</span>
-                    <h2 class="section-title">Mi Stack Tecnológico</h2>
-                    <p class="section-desc">Herramientas y lenguajes en los que tengo experiencia práctica y desarrollo profesional.</p>
+                    <h2 class="section-title">Mi stack <span class="accent">tecnológico</span></h2>
+                    <p class="section-desc">Herramientas y lenguajes con los que construyo productos reales, día a día.</p>
                 </div>
 
-                <!-- Barra de Filtrado de Habilidades -->
-                <div class="skills-filter-bar">
-                    <button class="filter-btn active" data-filter="all">Todos</button>
-                    <button class="filter-btn" data-filter="frontend">Frontend</button>
-                    <button class="filter-btn" data-filter="backend">Backend & DB</button>
-                    <button class="filter-btn" data-filter="multimedia">APIs & Scraping</button>
-                    <button class="filter-btn" data-filter="methodology">Buenas Prácticas</button>
-                </div>
+                <div class="stack-categories">
 
-                <div class="skills-grid">
-                    
-                    <!-- CATEGORIA 1: FRONTEND -->
-                    <div class="skills-category-card" data-card-category="frontend">
-                        <div class="category-header">
-                            <i data-lucide="layout" class="text-neon-cyan"></i>
-                            <h3>Frontend</h3>
+                    <!-- FRONTEND ESPECIALIZADO -->
+                    <div class="stack-card reveal">
+                        <p class="stack-card-title">Frontend Especializado</p>
+                        <div class="stack-icons-row">
+                            <!-- React -->
+                            <div class="tech-item primary">
+                                <div class="tech-icon">
+                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><g fill="#61DAFB"><circle cx="64" cy="64" r="11.4"/><path d="M107.3 45.2c-2.2-.8-4.5-1.6-6.9-2.3.6-2.4 1.1-4.8 1.5-7.1 2.1-13.2-.2-22.5-6.6-26.1-1.9-1.1-4-1.6-6.4-1.6-7 0-15.9 5.2-24.9 13.9-9-8.7-17.9-13.9-24.9-13.9-2.4 0-4.5.5-6.4 1.6-6.4 3.7-8.7 13-6.6 26.1.4 2.3.9 4.7 1.5 7.1-2.4.7-4.7 1.4-6.9 2.3C8.2 52 1.4 61.4 1.4 64s6.8 12 19.3 18.8c2.2.8 4.5 1.6 6.9 2.3-.6 2.4-1.1 4.8-1.5 7.1-2.1 13.2.2 22.5 6.6 26.1 1.9 1.1 4 1.6 6.4 1.6 7.1 0 16-5.2 24.9-13.9 9 8.7 17.9 13.9 24.9 13.9 2.4 0 4.5-.5 6.4-1.6 6.4-3.7 8.7-13 6.6-26.1-.4-2.3-.9-4.7-1.5-7.1 2.4-.7 4.7-1.4 6.9-2.3 12.5-6.8 19.3-16.2 19.3-18.8s-6.8-12-19.3-18.8zM92.5 14.7c4.1 2.4 5.5 9.8 3.8 20.3-.3 2.1-.8 4.3-1.4 6.6-5.2-1.2-10.7-2-16.5-2.5-3.4-4.8-6.9-9.1-10.4-13 7.4-7.3 14.9-12.3 21-12.3 1.3 0 2.5.3 3.5.9zM81.3 74c-1.8 3.2-3.9 6.4-6.1 9.6-3.7.3-7.4.4-11.2.4-3.9 0-7.6-.1-11.2-.4-2.2-3.2-4.2-6.4-6-9.6-1.9-3.3-3.7-6.7-5.3-10 1.6-3.3 3.4-6.7 5.3-10 1.8-3.2 3.9-6.4 6.1-9.6 3.7-.3 7.4-.4 11.2-.4 3.9 0 7.6.1 11.2.4 2.2 3.2 4.2 6.4 6 9.6 1.9 3.3 3.7 6.7 5.3 10-1.7 3.3-3.4 6.6-5.3 10zm8.3-3.3c1.5 3.5 2.7 6.9 3.8 10.3-3.4.8-7 1.4-10.8 1.9 1.2-1.9 2.5-3.9 3.6-6 1.2-2.1 2.3-4.2 3.4-6.2zM64 97.8c-2.4-2.6-4.7-5.4-6.9-8.3 2.3.1 4.6.2 6.9.2 2.3 0 4.6-.1 6.8-.2-2.2 2.9-4.5 5.7-6.8 8.3zm-18.6-15c-3.8-.5-7.4-1.1-10.8-1.9 1-3.4 2.2-6.8 3.8-10.3 1.1 2 2.2 4.1 3.4 6.1 1.2 2.2 2.4 4.1 3.6 6.1zm-7-25.5c-1.5-3.5-2.7-6.9-3.8-10.3 3.4-.8 7-1.4 10.8-1.9-1.2 1.9-2.5 3.9-3.6 6-1.2 2.1-2.3 4.2-3.4 6.2zM64 30.2c2.4 2.6 4.7 5.4 6.9 8.3-2.3-.1-4.6-.2-6.9-.2-2.3 0-4.6.1-6.8.2 2.2-2.9 4.5-5.7 6.8-8.3zm22.2 21l-3.6-6c3.8.5 7.4 1.1 10.8 1.9-1 3.4-2.2 6.8-3.8 10.3-1.1-2-2.2-4.1-3.4-6.2zM31.7 35c-1.7-10.5-.3-17.9 3.8-20.3 1-.6 2.2-.9 3.5-.9 6 0 13.5 4.9 21 12.3-3.5 3.8-7 8.2-10.4 13-5.8.5-11.3 1.4-16.5 2.5-.6-2.3-1-4.5-1.4-6.6zM7 64c0-4.7 5.7-9.7 15.7-13.4 2-.8 4.2-1.5 6.4-2.1 1.6 5 3.6 10.3 6 15.6-2.4 5.3-4.5 10.5-6 15.5C15.3 75.6 7 69.6 7 64zm28.5 49.3c-4.1-2.4-5.5-9.8-3.8-20.3.3-2.1.8-4.3 1.4-6.6 5.2 1.2 10.7 2 16.5 2.5 3.4 4.8 6.9 9.1 10.4 13-7.4 7.3-14.9 12.3-21 12.3-1.3 0-2.5-.3-3.5-.9zM96.3 93c1.7 10.5.3 17.9-3.8 20.3-1 .6-2.2.9-3.5.9-6 0-13.5-4.9-21-12.3 3.5-3.8 7-8.2 10.4-13 5.8-.5 11.3-1.4 16.5-2.5.6 2.3 1 4.5 1.4 6.6zm9-15.6c-2 .8-4.2 1.5-6.4 2.1-1.6-5-3.6-10.3-6-15.6 2.4-5.3 4.5-10.5 6-15.5 13.8 4 22.1 10 22.1 15.6 0 4.7-5.8 9.7-15.7 13.4z"/></g></svg>
+                                </div>
+                                <span class="tech-name">React</span>
+                            </div>
+                            <!-- Next.js -->
+                            <div class="tech-item primary">
+                                <div class="tech-icon">
+                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M64 0C28.7 0 0 28.7 0 64s28.7 64 64 64c11.2 0 21.7-2.9 30.8-7.9L48.4 55.3v36.6H35.1V40.5h13.4l50.7 73.4C90.3 121.1 77.6 128 64 128c-35.3 0-64-28.7-64-64S28.7 0 64 0z" fill="#fff"/><path d="M108.2 86.8L80.5 40.5h13.4v40.5h14.3" fill="#fff"/></svg>
+                                </div>
+                                <span class="tech-name">Next.js</span>
+                            </div>
+                            <!-- TypeScript -->
+                            <div class="tech-item primary">
+                                <div class="tech-icon">
+                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="#007ACC" d="M2 63.91v62.5h125v-125H2z"/><path fill="#fff" d="M19.1 120.5c0 .4.1.8.4 1.1.3.3.6.5 1 .5h79.2c.4 0 .8-.2 1.1-.5.3-.3.4-.7.4-1.1v-44h20.7V70.9H89.3V56.8H19.1v13h30.1v50.7zm41.5 0V70.9H81v49.6H60.6z"/></svg>
+                                </div>
+                                <span class="tech-name">TypeScript</span>
+                            </div>
                         </div>
-                        <div class="skills-pills-container">
-                            <span class="skill-pill" data-category="frontend">React 18/19</span>
-                            <span class="skill-pill" data-category="frontend">Next.js (App Router)</span>
-                            <span class="skill-pill" data-category="frontend">Vite</span>
-                            <span class="skill-pill" data-category="frontend">TypeScript</span>
-                            <span class="skill-pill" data-category="frontend">JavaScript ES6+</span>
-                            <span class="skill-pill" data-category="frontend">Tailwind CSS</span>
-                            <span class="skill-pill" data-category="frontend">Framer Motion</span>
-                            <span class="skill-pill" data-category="frontend">CSS3 / HTML5</span>
-                            <span class="skill-pill" data-category="frontend">Responsive Design</span>
+
+                        <span class="stack-sublabel">Complementos</span>
+                        <div class="stack-icons-row">
+                            <!-- JavaScript -->
+                            <div class="tech-item">
+                                <div class="tech-icon">
+                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="#F0DB4F" d="M1.408 1.408h125.184v125.185H1.408z"/><path fill="#323330" d="M116.347 96.736c-.917-5.711-4.641-10.348-12.543-14.856-3.052-1.572-6.478-2.642-7.529-5.15-.382-1.514-.454-2.338-.231-3.23.84-3.797 4.01-4.917 6.628-4.225 1.702.452 3.312 1.701 4.326 3.603 4.586-3.006 4.586-3.006 7.786-5.055-1.209-1.891-1.802-2.738-2.607-3.specials544-2.865-3.354-6.866-4.71-13.276-4.36l-3.32.591c-3.17.763-6.16 2.427-8.066 4.711-5.509 6.36-3.881 17.535 1.562 22.174 5.806 5.132 14.29 6.26 15.3 11.087.509 5.561-4.569 7.375-10.143 6.72-4.294-.904-6.677-3.17-9.277-7.253l-8.048 4.624c1.111 2.291 2.321 3.295 4.178 5.334 9.026 9.243 31.443 8.7 35.474-4.996.144-.477 1.018-3.185.344-7.439zm-36.98-40.848h-9.782c0 8.17-.052 16.204-.052 24.363 0 5.149.25 9.868-.57 11.36-1.396 2.945-4.961 2.567-6.627 2.055-1.712-.567-2.54-1.729-3.523-3.13-.25-.381-.436-.714-.582-.984l-7.994 4.94c1.336 2.669 3.236 4.94 5.72 6.37 3.763 2.136 8.703 2.762 13.678 1.62 3.381-.872 6.315-2.788 7.994-5.931 2.557-4.617 2.004-10.252 1.975-16.508.094-8.476 0-16.952 0-25.155z"/></svg>
+                                </div>
+                                <span class="tech-name">JavaScript</span>
+                            </div>
+                            <!-- Vite -->
+                            <div class="tech-item">
+                                <div class="tech-icon">
+                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M124.766 19.52 67.324 122.238c-1.187 2.121-4.234 2.133-5.437.024L.305 19.532c-1.313-2.302.652-5.087 3.261-4.622l60.ifax01 10.898a3.12 3.12 0 0 0 1.13-.004l58.61-10.884c2.606-.485 4.581 2.3 3.459 4.6Z" fill="url(#vite0)"/><path d="M94.009 1.2 49.718 9.32a1.964 1.964 0 0 0-1.612 1.83l-2.487 42.rdparty5a1.96 1.96 0 0 0 2.193 2.046l11.52-1.37a1.96 1.96 0 0 1 2.142 2.427l-3.379 15.717a1.96 1.96 0 0 0 2.29 2.379l7.1-1.722c1.328-.32 2.56.847 2.268 2.18l-5.35 25.975c-.335 1.62 1.816 2.51 2.72 1.12l.588-.9 32.54-64.836c.68-1.358-.498-2.89-1.998-2.618l-11.87 2.28a1.96 1.96 0 0 1-2.247-2.54l7.758-26.977A1.96 1.96 0 0 0 94.009 1.2Z" fill="url(#vite1)"/><defs><linearGradient id="vite0" x1="6.035" y1="-8.1" x2="235" y2="214.87" gradientUnits="userSpaceOnUse"><stop stop-color="#41D1FF"/><stop offset="1" stop-color="#BD34FE"/></linearGradient><linearGradient id="vite1" x1="194.651" y1="8.818" x2="236" y2="292.989" gradientUnits="userSpaceOnUse"><stop stop-color="#FF3E00"/><stop offset=".526" stop-color="#FF7743"/><stop offset="1" stop-color="#FFD700"/></linearGradient></defs></svg>
+                                </div>
+                                <span class="tech-name">Vite</span>
+                            </div>
+                            <!-- Tailwind -->
+                            <div class="tech-item">
+                                <div class="tech-icon">
+                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M64.004 25.602c-17.067 0-27.742 8.53-32 25.597 6.398-8.531 13.867-11.73 22.398-9.602 4.871 1.214 8.352 4.746 12.207 8.66C72.883 56.629 80.145 64 96.004 64c17.066 0 27.74-8.531 32-25.602-6.399 8.536-13.867 11.735-22.399 9.602-4.87-1.21-8.347-4.742-12.207-8.656-6.27-6.367-13.53-13.742-29.394-13.742zM32.004 64c-17.066 0-27.742 8.531-32 25.602C6.402 81.066 13.87 77.867 22.402 80c4.871 1.215 8.352 4.746 12.207 8.66 6.274 6.375 13.536 13.742 29.395 13.742 17.066 0 27.741-8.532 32-25.602-6.399 8.536-13.867 11.735-22.399 9.602-4.87-1.21-8.347-4.742-12.207-8.656C55.128 71.371 47.868 64 32.004 64z" fill="#38bdf8"/></svg>
+                                </div>
+                                <span class="tech-name">Tailwind</span>
+                            </div>
+                            <!-- Framer Motion -->
+                            <div class="tech-item">
+                                <div class="tech-icon">
+                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M64 0L0 64l64 64 64-64z" fill="#0055FF"/><path d="M64 64L0 128h64V64z" fill="#fff" opacity=".5"/><path d="M64 64l64 64H64V64z" fill="#fff" opacity=".25"/></svg>
+                                </div>
+                                <span class="tech-name">Framer Motion</span>
+                            </div>
+                            <!-- HTML5 -->
+                            <div class="tech-item">
+                                <div class="tech-icon">
+                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="#E44D26" d="M19.037 113.876L9.032 1.661h109.936l-10.016 112.198-45.019 12.48z"/><path fill="#F16529" d="M64 116.8l36.378-10.086 8.559-95.878H64z"/><path fill="#EBEBEB" d="M64 52.455H45.788L44.53 38.361H64V24.599H29.489l.33 3.692 3.382 37.927H64zm0 35.743l-.061.017-15.327-4.14-.979-10.975H33.816l1.928 21.609 28.193 7.826.063-.017z"/><path fill="#fff" d="M63.952 52.455v13.763h16.947l-1.597 17.849-15.35 4.143v14.319l28.215-7.82.207-2.325 3.234-36.233.335-3.696h-3.708zm0-27.856v13.762h33.244l.276-3.092.628-6.978.329-3.692z"/></svg>
+                                </div>
+                                <span class="tech-name">HTML5</span>
+                            </div>
+                            <!-- CSS3 -->
+                            <div class="tech-item">
+                                <div class="tech-icon">
+                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="#1572B6" d="M18.814 114.123L8.76 1.352h110.48l-10.064 112.754-45.243 12.543-45.119-12.526z"/><path fill="#33A9DC" d="M64.001 117.062l36.559-10.136 8.601-96.354H64.001v106.49z"/><path fill="#fff" d="M64.001 51.429H45.044l-1.134-12.676H64.001V26.404H31.34l.336 3.761 3.435 38.513h28.89v-17.25zm0 35.213l-.105.028-14.154-3.822-.904-10.138H36.686l1.777 19.922 25.307 7.026.231-.063v-12.953z"/><path fill="#fff" d="M63.956 51.429v17.249h17.78l-1.528 17.019-16.252 4.4v12.977l25.336-7.012.172-1.928 2.914-32.656.285-3.05h-3.058zm0-25.025v12.35h34.886l.277-3.043.629-6.989.284-2.318z"/></svg>
+                                </div>
+                                <span class="tech-name">CSS3</span>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- CATEGORIA 2: BACKEND -->
-                    <div class="skills-category-card" data-card-category="backend">
-                        <div class="category-header">
-                            <i data-lucide="server" class="text-neon-purple"></i>
-                            <h3>Backend & CMS</h3>
+                    <!-- BACKEND & DATOS -->
+                    <div class="stack-card reveal">
+                        <p class="stack-card-title">Backend &amp; Datos</p>
+                        <div class="stack-icons-row">
+                            <!-- Java -->
+                            <div class="tech-item primary">
+                                <div class="tech-icon">
+                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="#0074BD" d="M47.617 98.12s-4.767 2.774 3.397 3.71c9.892 1.13 14.947.968 25.845-1.092 0 0 2.871 1.795 6.873 3.351-24.439 10.47-55.308-.607-36.115-5.969zm-2.988-13.665s-5.348 3.959 2.823 4.805c10.567 1.091 18.91 1.18 33.354-1.6 0 0 1.993 2.025 5.132 3.131-29.542 8.64-62.446.68-41.309-6.336z"/><path fill="#EA2D2E" d="M69.802 61.271c6.025 6.935-1.58 13.17-1.58 13.17s15.289-7.891 8.269-17.777c-6.559-9.215-11.587-13.792 15.635-29.58 0 .001-42.731 10.67-22.324 34.187z"/><path fill="#0074BD" d="M102.123 108.229s3.529 2.91-3.888 5.159c-14.102 4.272-58.706 5.56-71.075.171-4.45-1.938 3.888-4.625 6.515-5.192 2.737-.593 4.303-.485 4.303-.485-4.953-3.487-32.013 6.85-13.743 9.815 49.821 8.076 90.817-3.637 77.888-9.468zM49.912 70.294s-22.686 5.389-8.033 7.348c6.188.828 18.518.638 30.011-.326 9.39-.789 18.813-2.474 18.813-2.474s-3.308 1.419-5.704 3.053c-23.042 6.061-67.544 3.238-54.731-2.958 10.832-5.239 19.644-4.643 19.644-4.643zm40.697 22.747c23.421-12.167 12.591-23.86 5.032-22.285-1.848.385-2.677.72-2.677.72s.688-1.079 2-1.543c14.953-5.255 26.451 15.503-4.823 23.725 0-.002.359-.327.468-.617z"/><path fill="#EA2D2E" d="M76.491 1.587S89.459 14.563 64.188 34.51c-20.266 16.006-4.621 25.13-.007 35.559-11.831-10.673-20.509-20.07-14.688-28.815C58.041 28.42 81.722 22.195 76.491 1.587z"/><path fill="#0074BD" d="M52.214 126.021c22.476 1.437 57-.8 57.817-11.436 0 0-1.571 4.032-18.577 7.231-19.186 3.612-42.854 3.191-56.887.874 0 .001 2.875 2.381 17.647 3.331z"/></svg>
+                                </div>
+                                <span class="tech-name">Java</span>
+                            </div>
+                            <!-- Spring Boot -->
+                            <div class="tech-item primary">
+                                <div class="tech-icon">
+                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="#6DB33F" d="M116.452 6.643a58.504 58.504 0 01-6.628 12.119 64.074 64.074 0 10-10.818 80.293C117.945 81.505 124.433 53.077 116.452 6.643zm-37.942 93.188a8.329 8.329 0 11.083-16.658 8.329 8.329 0 01-.083 16.658zm11.908-35.474c-4.826 2.79-10.399 4.267-15.82 4.131a35.78 35.78 0 01-15.437-3.62c-3.718-1.877-7.146-4.543-9.138-8.154a15.83 15.83 0 01-1.645-6.56h.178a29.33 29.33 0 01.38-5.118c1.08-7.258 5.14-14.065 11.063-18.652 5.922-4.587 13.55-6.807 21.14-6.188a32.69 32.69 0 0110.5 2.616c5.29 2.327 9.65 6.338 12.03 11.588 2.383 5.247 2.487 11.316.16 16.618-2.17 4.976-6.282 8.9-11.411 11.339z"/></svg>
+                                </div>
+                                <span class="tech-name">Spring Boot</span>
+                            </div>
+                            <!-- Node.js -->
+                            <div class="tech-item primary">
+                                <div class="tech-icon">
+                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="#83CD29" d="M112.771 30.334L67.942 4.166a7.93 7.93 0 00-7.909 0L15.228 30.334a7.91 7.91 0 00-3.954 6.832v52.5a7.91 7.91 0 003.954 6.832l44.829 26.17a7.93 7.93 0 007.909 0l44.829-26.17a7.91 7.91 0 003.954-6.832v-52.5a7.91 7.91 0 00-3.978-6.832z"/><path fill="#404137" d="M107.092 31.557L63.008 6.196a4.45 4.45 0 00-4.439 0L14.485 31.557a4.434 4.434 0 00-2.219 3.838v50.721c0 1.587.841 3.048 2.219 3.838l44.084 25.362c1.367.789 3.066.789 4.439 0l44.084-25.362a4.434 4.434 0 002.219-3.838V35.395a4.434 4.434 0 00-2.219-3.838z"/><path fill="#83CD29" d="M64 8.683L19.916 34.044v50.721L64 60.404l44.084 24.361V34.044z" opacity=".5"/><path fill="#404137" d="M64 8.683v51.721l44.084 24.361V34.044z" opacity=".5"/></svg>
+                                </div>
+                                <span class="tech-name">Node.js</span>
+                            </div>
                         </div>
-                        <div class="skills-pills-container">
-                            <span class="skill-pill" data-category="backend">Java (17/21)</span>
-                            <span class="skill-pill" data-category="backend">Spring Boot</span>
-                            <span class="skill-pill" data-category="backend">Node.js / Express</span>
-                            <span class="skill-pill" data-category="backend">Supabase (Auth/DB)</span>
-                            <span class="skill-pill" data-category="backend">PostgreSQL</span>
-                            <span class="skill-pill" data-category="backend">Sanity CMS</span>
-                            <span class="skill-pill" data-category="backend">Headless Architecture</span>
-                            <span class="skill-pill" data-category="backend">APIs RESTful</span>
-                            <span class="skill-pill" data-category="backend">JSON Web Tokens (JWT)</span>
-                            <span class="skill-pill" data-category="backend">LocalStorage Fail-Safes</span>
+
+                        <span class="stack-sublabel">Complementos</span>
+                        <div class="stack-icons-row">
+                            <!-- Express -->
+                            <div class="tech-item">
+                                <div class="tech-icon">
+                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M126.67 128H1.33A1.33 1.33 0 010 126.67V1.33A1.33 1.33 0 011.33 0h125.34A1.33 1.33 0 01128 1.33v125.34A1.33 1.33 0 01126.67 128zM9.5 90.5h5.25l21-42-21-42H9.5l21 42zm71.5-84H75.25L57.5 49.5h47.25z"/></svg>
+                                </div>
+                                <span class="tech-name">Express</span>
+                            </div>
+                            <!-- PostgreSQL -->
+                            <div class="tech-item">
+                                <div class="tech-icon">
+                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="#336791" d="M93.809 92.112c.785-6.533.55-7.492 5.416-6.433l1.235.108c3.742.17 8.637-.602 11.513-1.938 6.191-2.873 9.861-7.668 3.758-6.409-13.924 2.873-14.881-1.842-14.881-1.842 14.703-21.815 20.849-49.508 15.543-56.287C101.1.986 77.91 6.583 77.573 6.769l-.099.018c-2.06-.43-4.35-.666-6.921-.682-4.689-.032-8.242 1.242-10.953 3.234-.87-.247-2.61-.73-5.484-1.455-9.09-2.233-33.509-8.94-38.688 17.633-1.056 5.267-.8 10.71.473 16.244 1.533 6.783 7.965 21.836 21.47 21.836 1.01 0 2.028-.119 3.05-.369" fill="#336791"/><ellipse cx="64" cy="60" rx="28" ry="34" fill="#336791"/><path fill="#fff" d="M64 30c-15.464 0-28 13.432-28 30s12.536 30 28 30 28-13.432 28-30-12.536-30-28-30zm0 54c-12.15 0-22-10.745-22-24s9.85-24 22-24 22 10.745 22 24-9.85 24-22 24z"/></svg>
+                                </div>
+                                <span class="tech-name">PostgreSQL</span>
+                            </div>
+                            <!-- Supabase -->
+                            <div class="tech-item">
+                                <div class="tech-icon">
+                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M74.514 5.079a11.55 11.55 0 0 0-19.71 6.956L51.6 75.172h25.694a11.549 11.549 0 0 0 9.965-17.355L74.514 5.079z" fill="url(#sb0)"/><path d="M53.487 122.921a11.55 11.55 0 0 0 19.709-6.956l3.205-63.137H50.706a11.549 11.549 0 0 0-9.965 17.355l12.746 52.738z" fill="url(#sb1)" opacity=".6"/><defs><linearGradient id="sb0" x1="50" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse"><stop stop-color="#3ECF8E"/><stop offset="1" stop-color="#3ECF8E" stop-opacity="0"/></linearGradient><linearGradient id="sb1" x1="78" y1="48" x2="48" y2="128" gradientUnits="userSpaceOnUse"><stop stop-color="#3ECF8E"/><stop offset="1" stop-color="#3ECF8E"/></linearGradient></defs></svg>
+                                </div>
+                                <span class="tech-name">Supabase</span>
+                            </div>
+                            <!-- REST API -->
+                            <div class="tech-item">
+                                <div class="tech-icon">
+                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#FF6B35"/><text x="14" y="78" font-family="monospace" font-size="28" font-weight="bold" fill="white">REST</text></svg>
+                                </div>
+                                <span class="tech-name">REST APIs</span>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- CATEGORIA 3: APIS & METODOS -->
-                    <div class="skills-category-card" data-card-category="multimedia">
-                        <div class="category-header">
-                            <i data-lucide="sliders" class="text-neon-pink"></i>
-                            <h3>APIs & Buenas Prácticas</h3>
-                        </div>
-                        <div class="skills-pills-container">
-                            <span class="skill-pill" data-category="multimedia">Web Audio API</span>
-                            <span class="skill-pill" data-category="multimedia">Canvas 2D API</span>
-                            <span class="skill-pill" data-category="multimedia">SpeechRecognition API</span>
-                            <span class="skill-pill" data-category="multimedia">Cheerio & Axios</span>
-                            <span class="skill-pill" data-category="methodology">Git & GitHub Flow</span>
-                            <span class="skill-pill" data-category="methodology">Lighthouse Optimization</span>
-                            <span class="skill-pill" data-category="methodology">CI-CD (Vercel)</span>
+                    <!-- HERRAMIENTAS -->
+                    <div class="stack-card reveal">
+                        <p class="stack-card-title">Herramientas &amp; Flujo de Trabajo</p>
+                        <div class="stack-icons-row">
+                            <!-- Git -->
+                            <div class="tech-item">
+                                <div class="tech-icon">
+                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="#F34F29" d="M124.742 58.378L69.625 3.264c-3.172-3.174-8.32-3.174-11.497 0L46.685 14.71l14.518 14.518c3.375-1.139 7.243-.375 9.932 2.314 2.703 2.706 3.461 6.607 2.294 9.993l13.992 13.993c3.385-1.167 7.292-.413 9.994 2.295 3.78 3.777 3.78 9.9 0 13.679a9.673 9.673 0 01-13.683 0 9.677 9.677 0 01-2.105-10.521L68.574 47.933l-.002 34.341a9.708 9.708 0 012.559 1.828c3.778 3.777 3.778 9.898 0 13.683-3.779 3.777-9.904 3.777-13.679 0-3.778-3.784-3.778-9.905 0-13.683a9.65 9.65 0 013.167-2.11V47.333a9.581 9.581 0 01-3.167-2.111c-2.862-2.86-3.551-7.06-2.083-10.576L41.056 20.333 3.264 58.123a8.133 8.133 0 000 11.5l55.117 55.114c3.174 3.174 8.32 3.174 11.499 0l54.858-54.858a8.135 8.135 0 00-.016-11.501z"/></svg>
+                                </div>
+                                <span class="tech-name">Git</span>
+                            </div>
+                            <!-- GitHub -->
+                            <div class="tech-item">
+                                <div class="tech-icon">
+                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.103 64 5.103z"/></svg>
+                                </div>
+                                <span class="tech-name">GitHub</span>
+                            </div>
+                            <!-- Vercel -->
+                            <div class="tech-item">
+                                <div class="tech-icon">
+                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M64.002 8.576L128 119.424H0z"/></svg>
+                                </div>
+                                <span class="tech-name">Vercel</span>
+                            </div>
+                            <!-- Postman -->
+                            <div class="tech-item">
+                                <div class="tech-icon">
+                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><circle cx="64" cy="64" r="64" fill="#FF6C37"/><path fill="#fff" d="M96 64c0 17.67-14.33 32-32 32S32 81.67 32 64s14.33-32 32-32 32 14.33 32 32zm-32-20a20 20 0 100 40 20 20 0 000-40z"/></svg>
+                                </div>
+                                <span class="tech-name">Postman</span>
+                            </div>
+                            <!-- Notion -->
+                            <div class="tech-item">
+                                <div class="tech-icon">
+                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#fff"/><path fill="#000" d="M22 22h84v84H22z" opacity="0"/><path d="M31.5 25.5h65a6 6 0 0 1 6 6v65a6 6 0 0 1-6 6h-65a6 6 0 0 1-6-6v-65a6 6 0 0 1 6-6zm8.5 15v47h49V40.5H40zm7 7h35v5H47v-5zm0 10h35v5H47v-5zm0 10h20v5H47v-5z" fill="#1a1a1a"/></svg>
+                                </div>
+                                <span class="tech-name">Notion</span>
+                            </div>
+                            <!-- Lighthouse -->
+                            <div class="tech-item">
+                                <div class="tech-icon">
+                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><circle cx="64" cy="64" r="64" fill="#F44B21"/><path fill="#fff" d="M46 96l18-68 18 68H46zm18-52l-9 34h18l-9-34z"/></svg>
+                                </div>
+                                <span class="tech-name">Lighthouse</span>
+                            </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>

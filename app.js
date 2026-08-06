@@ -153,8 +153,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const lines = [
             '<span style="color:#94a3b8">{</span>',
             '  <span class="key">"name"</span><span style="color:#94a3b8">:</span> <span class="val">"Agustin Pollan"</span><span style="color:#94a3b8">,</span>',
-            '  <span class="key">"role"</span><span style="color:#94a3b8">:</span> <span class="val">"Junior Fullstack"</span><span style="color:#94a3b8">,</span>',
-            '  <span class="key">"focus"</span><span style="color:#94a3b8">:</span> <span class="val">"Frontend-oriented"</span><span style="color:#94a3b8">,</span>',
+            '  <span class="key">"role"</span><span style="color:#94a3b8">:</span> <span class="val">"Full Stack Developer"</span><span style="color:#94a3b8">,</span>',
+            '  <span class="key">"focus"</span><span style="color:#94a3b8">:</span> <span class="val">"Frontend &amp; Architecture"</span><span style="color:#94a3b8">,</span>',
             '  <span class="key">"skills"</span><span style="color:#94a3b8">: [</span>',
             '    <span class="val">"React / Next.js"</span><span style="color:#94a3b8">,</span>',
             '    <span class="val">"Web Audio API"</span><span style="color:#94a3b8">,</span>',

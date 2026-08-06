@@ -2062,15 +2062,22 @@ canvas#osciloscope {
         grid-template-columns: 1fr;
         text-align: center;
         padding-top: 40px;
+        gap: 36px;
     }
     .hero-content {
         align-items: center;
+        max-width: 720px;
+        margin: 0 auto;
     }
     .hero-visual {
-        display: none;
+        max-width: 540px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .code-window {
+        max-width: 100%;
     }
     
-    /* Responsive Showcase Dashboard */
     .showcase-dashboard {
         grid-template-columns: 1fr;
     }
@@ -2123,6 +2130,33 @@ canvas#osciloscope {
     }
 }
 
+@media (max-width: 900px) {
+    /* Responsive Bento Grid: Stack cards vertically with full width */
+    .projects-bento {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        gap: 20px;
+    }
+    .card-featured,
+    .card-side,
+    .card-third,
+    .card-wide {
+        grid-column: span 1 !important;
+        grid-row: auto !important;
+        height: auto;
+        min-height: 380px;
+    }
+    .project-card .card-content {
+        padding: 24px 20px 20px;
+    }
+    
+    /* Responsive Metrics Bar */
+    .projects-metrics-bar {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+}
+
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -2132,26 +2166,65 @@ canvas#osciloscope {
     }
     
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+        line-height: 1.15;
     }
     .hero-subtitle {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    .hero-ctas {
+        flex-direction: column;
+        width: 100%;
+        max-width: 320px;
+    }
+    .hero-ctas .btn-primary,
+    .hero-ctas .btn-secondary {
+        width: 100%;
+        justify-content: center;
     }
     
     .section-title {
-        font-size: 2rem;
+        font-size: 1.85rem;
+    }
+    
+    .projects-filter-bar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+    .project-filter-btn {
+        padding: 8px 14px;
+        font-size: 0.8rem;
     }
     
     .form-row {
         grid-template-columns: 1fr;
     }
     .contact-form {
-        padding: 24px;
+        padding: 20px;
     }
     
     .footer-content {
         flex-direction: column;
         gap: 16px;
         text-align: center;
+    }
+}
+
+@media (max-width: 520px) {
+    .projects-metrics-bar {
+        grid-template-columns: 1fr;
+    }
+    .metric-item {
+        padding: 14px 16px;
+    }
+    .card-actions {
+        flex-direction: column;
+    }
+    .btn-card-primary,
+    .btn-card-secondary {
+        width: 100%;
+        justify-content: center;
     }
 }

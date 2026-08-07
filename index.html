@@ -523,15 +523,15 @@
                         <form id="contactForm" class="contact-form">
                             <div class="form-group">
                                 <label for="contactName">Tu Nombre</label>
-                                <input type="text" id="contactName" placeholder="Ej: Martin Gomez" required class="form-input">
+                                <input type="text" id="contactName" name="name" placeholder="Ej: Martin Gomez" required class="form-input">
                             </div>
                             <div class="form-group">
                                 <label for="contactEmail">Tu Email</label>
-                                <input type="email" id="contactEmail" placeholder="nombre@empresa.com" required class="form-input">
+                                <input type="email" id="contactEmail" name="email" placeholder="nombre@empresa.com" required class="form-input">
                             </div>
                             <div class="form-group">
                                 <label for="contactMessage">Mensaje</label>
-                                <textarea id="contactMessage" rows="4" placeholder="Hola Agustin, quisiera consultar por..." required class="form-input"></textarea>
+                                <textarea id="contactMessage" name="message" rows="4" placeholder="Hola Agustin, quisiera consultar por..." required class="form-input"></textarea>
                             </div>
                             <button type="submit" class="btn-submit-form" id="contactSubmitBtn">Enviar Mensaje</button>
                             <div id="contactFormSuccess" style="display:none; color: #10b981; font-weight: 600; font-size: 0.9rem; margin-top: 10px;">Mensaje enviado con éxito. ¡Gracias por contactarme!</div>

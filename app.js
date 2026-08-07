@@ -117,18 +117,57 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================================================
-    // FORMULARIO DE CONTACTO INTERACTIVO
+    // FORMULARIO DE CONTACTO INTERACTIVO (INTEGRACIÓN FORMSPREE)
     // ==========================================================================
     const contactForm = document.getElementById('contactForm');
     const contactSuccess = document.getElementById('contactFormSuccess');
+    const FORMSPREE_ID = "mlgypren"; // ID de Formspree de Agustín
+
     if (contactForm && contactSuccess) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            contactSuccess.style.display = 'block';
-            contactForm.reset();
-            setTimeout(() => {
-                contactSuccess.style.display = 'none';
-            }, 5000);
+            
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Enviando...';
+            
+            const formData = new FormData(contactForm);
+
+            // Envío real mediante Fetch POST a Formspree
+            fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    contactSuccess.style.display = 'block';
+                    contactSuccess.style.color = '#10b981';
+                    contactSuccess.textContent = '¡Mensaje enviado con éxito! Te responderé lo antes posible.';
+                    contactForm.reset();
+                } else {
+                    contactSuccess.style.display = 'block';
+                    contactSuccess.style.color = '#f43f5e';
+                    contactSuccess.textContent = 'Ocurrió un error al intentar enviar el formulario.';
+                }
+            })
+            .catch(error => {
+                contactSuccess.style.display = 'block';
+                contactSuccess.style.color = '#f43f5e';
+                contactSuccess.textContent = 'Error de conexión. Intenta nuevamente.';
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+                
+                setTimeout(() => {
+                    contactSuccess.style.display = 'none';
+                }, 6000);
+            });
         });
     }
 

@@ -2048,3 +2048,185 @@ body {
         padding: 24px;
     }
 }
+
+
+/* ==========================================================================
+   EDUCATION & FORMACIÓN SECTION (PREMIUM STYLING)
+   ========================================================================== */
+.education-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+
+.education-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 36px;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+}
+
+.edu-badge {
+    align-self: flex-start;
+    background: var(--accent-light-blue);
+    color: var(--accent-blue);
+    padding: 6px 14px;
+    border-radius: 99px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.edu-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+.edu-institution {
+    font-size: 0.95rem;
+    color: var(--accent-blue);
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.edu-desc {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.courses-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.course-item {
+    border-left: 2px solid var(--border-color);
+    padding-left: 14px;
+    transition: border-color 0.25s ease;
+}
+
+.course-item:hover {
+    border-color: var(--accent-blue);
+}
+
+.course-org {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.course-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ==========================================================================
+   EDUCATION & FORMACIÓN SECTION (PREMIUM STYLING)
+   ========================================================================== */
+.education-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+
+.education-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 36px;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+}
+
+.edu-badge {
+    align-self: flex-start;
+    background: var(--accent-light-blue);
+    color: var(--accent-blue);
+    padding: 6px 14px;
+    border-radius: 99px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.edu-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+.edu-institution {
+    font-size: 0.95rem;
+    color: var(--accent-blue);
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.edu-desc {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.courses-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.course-item {
+    border-left: 2px solid var(--border-color);
+    padding-left: 14px;
+    transition: border-color 0.25s ease;
+}
+
+.course-item:hover {
+    border-color: var(--accent-blue);
+}
+
+.course-org {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.course-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
+}

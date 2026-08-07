@@ -3,885 +3,536 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portafolio profesional de Agustin Pollan - Desarrollador Frontend y Fullstack con foco en experiencias interactivas premium y alto rendimiento visual.">
-    <title>Agustin Pollan | Frontend & Fullstack Developer</title>
+    <meta name="description" content="Portafolio profesional de Agustin Pollan - Desarrollador Full Stack.">
+    <title>Agustin Pollan | Desarrollador Full Stack</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
     
-    <!-- Lucide Icons CDN -->
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-
-    <!-- Spotlight de Mouse -->
-    <div class="mouse-spotlight" id="mouseSpotlight"></div>
-
-    <!-- Fondo de malla animado -->
-    <div class="mesh-background"></div>
-
-    <!-- Navegación Flotante -->
-    <nav class="glass-nav">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">Agustin<span>Pollan</span></a>
-            <div class="nav-links">
-                <a href="#proyectos">Proyectos</a>
-                <a href="#habilidades">Stack</a>
-                <a href="#experiencia">Experiencia</a>
-                <a href="#contacto" class="btn-primary-sm">Contacto</a>
-            </div>
-            <button class="mobile-nav-toggle" aria-label="Menu de navegación">
-                <i data-lucide="menu"></i>
-            </button>
+    
+    <!-- Header / Top Nav -->
+    <header class="top-nav">
+        <div class="container nav-container">
+            <a href="#" class="logo"><span class="logo-icon">&lt;/&gt;</span> Agustin <span>Pollan</span></a>
+            <nav class="center-nav">
+                <a href="#inicio" class="nav-item active">Inicio</a>
+                <a href="#sobre-mi" class="nav-item">Sobre mi</a>
+                <a href="#habilidades" class="nav-item">Habilidades</a>
+                <a href="#proyectos" class="nav-item">Proyectos</a>
+                <a href="#contacto" class="nav-item">Contacto</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menú"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button></nav>
         </div>
-    </nav>
+    </header>
 
-    <!-- Menú Móvil -->
-    <div class="mobile-menu">
-        <a href="#proyectos">Proyectos</a>
-        <a href="#habilidades">Stack</a>
-        <a href="#experiencia">Experiencia</a>
-        <a href="#contacto">Contacto</a>
-    </div>
-
-    <!-- Main -->
     <main>
-        
         <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="container">
-                <div class="hero-content">
-                    <span class="hero-badge"><span class="badge-dot"></span> Disponible para nuevos desafíos</span>
-                    <h1 class="hero-title">Desarrollador <span class="accent">Full Stack</span></h1>
-                    <p class="hero-subtitle">
-                        Soy <strong>Agustin Pollan</strong>. Construyo aplicaciones web y móviles modernas, limpias y de alto rendimiento. Especializado en React, Next.js, React Native e integración de servicios Backend con Java, Node.js y Python.
-                    </p>
-                    <div class="hero-ctas">
-                        <a href="#proyectos" class="btn-primary">Ver proyectos <i data-lucide="arrow-down"></i></a>
-                        <a href="#contacto" class="btn-secondary">Contacto</a>
+        <section id="inicio" class="hero-section">
+            <div class="container hero-split">
+                <div class="hero-left">
+                    <div class="greeting-badge">Hola, soy</div>
+                    <h1 class="hero-name">Agustin Pollan</h1>
+                    <h2 class="hero-subtitle">Desarrollador <span class="highlight-pink">Full Stack</span></h2>
+                    <p class="hero-desc">Creo soluciones digitales modernas y eficientes con tecnologías web de vanguardia. Apasionado por el desarrollo limpio, responsive y centrado en el usuario.</p>
+                    
+                    <div class="hero-actions">
+                        <a href="#proyectos" class="btn-hero-primary"><i data-lucide="code-2"></i> Ver Proyectos</a>
+                        <a href="#contacto" class="btn-hero-outline"><i data-lucide="message-square"></i> Contáctame</a>
+                    </div>
+                    
+                    <div class="social-circles">
+                        <a href="https://github.com/Agus1676" target="_blank" aria-label="GitHub" class="social-circle">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#334155" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/agustinpollan/" target="_blank" aria-label="LinkedIn" class="social-circle">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#334155" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                        <a href="mailto:agustinpollanceo@gmail.com" aria-label="Email" class="social-circle">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#334155" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                        </a>
                     </div>
                 </div>
                 
-                <div class="hero-visual">
-                    <div class="code-window">
-                        <div class="window-header">
-                            <span class="dot red"></span>
-                            <span class="dot yellow"></span>
-                            <span class="dot green"></span>
-                            <span class="window-title">developer.json</span>
+                <div class="hero-right">
+                    <div class="hero-showcase-stage">
+                        <!-- Ambient Ring Glow -->
+                        <div class="hero-ambient-ring"></div>
+                        
+                        <!-- Desktop Monitor Showcase (APR Neumáticos) -->
+                        <div class="monitor-device">
+                            <div class="monitor-header">
+                                <div class="monitor-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <span class="monitor-url">aprneumaticos.vercel.app</span>
+                            </div>
+                            <div class="monitor-screen">
+                                <img src="assets/apr-neumaticos.png" alt="APR Neumáticos Web" class="monitor-img">
+                            </div>
+                            <div class="monitor-stand"></div>
                         </div>
-                        <div class="window-content">
-                            <pre><code id="typingCode"></code></pre>
+
+                        <!-- Phone Showcase (GUITA) -->
+                        <div class="phone-device float-anim">
+                            <div class="phone-notch"></div>
+                            <img src="assets/guita-screen.png" alt="GUITA Mobile App" class="phone-img">
                         </div>
-                    </div>
-                    <div class="interactive-glow-sphere"></div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Proyectos Section -->
-        <section id="proyectos" class="projects-section">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="section-tag">Portafolio</span>
-                    <h2 class="section-title">Proyectos <span class="accent">destacados</span></h2>
-                    <p class="section-desc">Aplicaciones web completas enfocadas en rendimiento, UX interactiva y valor real.</p>
-                </div>
-
-                <!-- Banner de Métricas de Impacto -->
-                <div class="projects-metrics-bar reveal">
-                    <div class="metric-item">
-                        <div class="metric-icon-box">
+                        <!-- Floating Tech Badge -->
+                        <div class="floating-tech-badge">
                             <i data-lucide="layers"></i>
-                        </div>
-                        <div class="metric-text-box">
-                            <span class="metric-val">6</span>
-                            <span class="metric-lbl">Apps en Producción</span>
-                        </div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="metric-icon-box">
-                            <i data-lucide="zap"></i>
-                        </div>
-                        <div class="metric-text-box">
-                            <span class="metric-val">99%</span>
-                            <span class="metric-lbl">Lighthouse Score</span>
-                        </div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="metric-icon-box">
-                            <i data-lucide="code-2"></i>
-                        </div>
-                        <div class="metric-text-box">
-                            <span class="metric-val">100%</span>
-                            <span class="metric-lbl">Clean Code &amp; TS</span>
-                        </div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="metric-icon-box">
-                            <i data-lucide="activity"></i>
-                        </div>
-                        <div class="metric-text-box">
-                            <span class="metric-val">&lt;100ms</span>
-                            <span class="metric-lbl">Respuesta en Cliente</span>
+                            <span>Web & Mobile</span>
                         </div>
                     </div>
                 </div>
-
-                <!-- Barra de Filtros de Proyectos -->
-                <div class="projects-filter-bar reveal">
-                    <button class="project-filter-btn active" data-filter="all">Todos (6)</button>
-                    <button class="project-filter-btn" data-filter="mobile">Mobile &amp; React Native</button>
-                    <button class="project-filter-btn" data-filter="ai">IA &amp; Fullstack</button>
-                    <button class="project-filter-btn" data-filter="ecommerce">E-Commerce</button>
-                    <button class="project-filter-btn" data-filter="webapis">Web APIs &amp; Canvas</button>
-                </div>
-
-                <!-- Bento Grid de Proyectos -->
-                <div class="projects-bento reveal">
-
-                    <!-- CARD 1: MODKEY (Featured) -->
-                    <div class="project-card card-featured" data-category="ecommerce webapis">
-                        <div class="card-bg" style="background-image: url('assets/modkey.png');"></div>
-                        <div class="card-overlay"></div>
-                        <span class="card-num">01 / 05</span>
-                        <div class="card-content">
-                            <span class="card-label">E-Commerce &amp; Audio</span>
-                            <h3 class="card-title">MODKEY</h3>
-                            <div class="card-tags">
-                                <span class="card-tag">Next.js 15</span>
-                                <span class="card-tag">React 19</span>
-                                <span class="card-tag">Web Audio API</span>
-                                <span class="card-tag">Canvas API</span>
-                            </div>
-                            <p class="card-desc">Plataforma e-commerce con sintesis de audio en cliente para simular acústica de teclados mecánicos y osciloscopio en tiempo real.</p>
-                            <div class="card-actions">
-                                <a href="https://modkey-one.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-primary">Probar App <i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
-                                <button class="btn-card-secondary open-demo-btn" data-project="modkey">Probar Demo <i data-lucide="sparkles" style="width:14px;height:14px;"></i></button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CARD 2: LOS PORTEÑOS PRO -->
-                    <div class="project-card card-side" data-category="webapis">
-                        <div class="card-bg" style="background-image: url('assets/los-portenos.png');"></div>
-                        <div class="card-overlay"></div>
-                        <span class="card-num">02 / 05</span>
-                        <div class="card-content">
-                            <span class="card-label">Web Interactiva</span>
-                            <h3 class="card-title">Los Porteños Pro</h3>
-                            <div class="card-tags">
-                                <span class="card-tag">React 18</span>
-                                <span class="card-tag">Vite</span>
-                                <span class="card-tag">Canvas 2D</span>
-                                <span class="card-tag">Turnero</span>
-                            </div>
-                            <p class="card-desc">Sistema de reserva de turnos con diagnóstico técnico visual sobre plano vehicular interactivo.</p>
-                            <div class="card-actions">
-                                <a href="https://losporte-osturnero.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-primary">Ver App <i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
-                                <button class="btn-card-secondary open-demo-btn" data-project="losportenos">Probar Demo <i data-lucide="sparkles" style="width:14px;height:14px;"></i></button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CARD 3: MERCADO LIBRE PRO -->
-                    <div class="project-card card-third" data-category="ecommerce">
-                        <div class="card-bg" style="background-image: url('assets/mercadolibre-pro.png');"></div>
-                        <div class="card-overlay"></div>
-                        <span class="card-num">03 / 05</span>
-                        <div class="card-content">
-                            <span class="card-label">Clon E-Commerce</span>
-                            <h3 class="card-title">Mercado Libre Pro</h3>
-                            <div class="card-tags">
-                                <span class="card-tag">React 18</span>
-                                <span class="card-tag">Tailwind CSS</span>
-                                <span class="card-tag">Búsqueda Reactiva</span>
-                            </div>
-                            <p class="card-desc">Reinvención completa con búsqueda rápida en cliente, carrito en tiempo real e interfaz fluida.</p>
-                            <div class="card-actions">
-                                <a href="https://mercadolibrepro.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-primary">Ver App <i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
-                                <button class="btn-card-secondary open-demo-btn" data-project="mercadolibre">Probar Demo <i data-lucide="sparkles" style="width:14px;height:14px;"></i></button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CARD 4: APR NEUMÁTICOS -->
-                    <div class="project-card card-side" data-category="webapis">
-                        <div class="card-bg" style="background-image: url('assets/apr-neumaticos.png');"></div>
-                        <div class="card-overlay"></div>
-                        <span class="card-num">04 / 05</span>
-                        <div class="card-content">
-                            <span class="card-label">Catálogo &amp; Admin</span>
-                            <h3 class="card-title">APR Neumáticos</h3>
-                            <div class="card-tags">
-                                <span class="card-tag">React 18</span>
-                                <span class="card-tag">SheetJS</span>
-                                <span class="card-tag">Quiz Recomendador</span>
-                            </div>
-                            <p class="card-desc">Catálogo con actualizador desde archivos Excel e instalador PWA para consulta offline.</p>
-                            <div class="card-actions">
-                                <a href="https://aprneumaticos.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-primary">Ver App <i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
-                                <button class="btn-card-secondary open-demo-btn" data-project="apr">Probar Quiz <i data-lucide="sparkles" style="width:14px;height:14px;"></i></button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CARD 5: RESUMATCH (Wide) -->
-                    <div class="project-card card-third" data-category="ai">
-                        <div class="card-bg" style="background-image: url('assets/resumatch.png');"></div>
-                        <div class="card-overlay"></div>
-                        <span class="card-num">05 / 06</span>
-                        <div class="card-content">
-                            <span class="card-label">IA Generativa &amp; ATS</span>
-                            <h3 class="card-title">Resumatch AI</h3>
-                            <div class="card-tags">
-                                <span class="card-tag">FastAPI (Python)</span>
-                                <span class="card-tag">React 18</span>
-                                <span class="card-tag">Google Gemini 2.5</span>
-                                <span class="card-tag">Reportes PDF</span>
-                            </div>
-                            <p class="card-desc">Herramienta Full-Stack que compara PDFs contra ofertas laborales utilizando Gemini AI para superar filtros ATS.</p>
-                            <div class="card-actions">
-                                <a href="https://resumatch-dusky.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-primary">Probar App <i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
-                                <button class="btn-card-secondary open-demo-btn" data-project="resumatch">Simular ATS <i data-lucide="sparkles" style="width:14px;height:14px;"></i></button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CARD 6: GUITA (React Native Mobile App) -->
-                    <div class="project-card card-wide" data-category="mobile">
-                        <div class="card-bg" style="background-image: url('assets/guita.jpg');"></div>
-                        <div class="card-overlay"></div>
-                        <span class="card-num">06 / 06</span>
-                        <div class="card-content">
-                            <span class="card-label">App Móvil &amp; Finanzas</span>
-                            <h3 class="card-title">GUITA — Control Financiero</h3>
-                            <div class="card-tags">
-                                <span class="card-tag">React Native</span>
-                                <span class="card-tag">Expo SDK 52</span>
-                                <span class="card-tag">TypeScript</span>
-                                <span class="card-tag">Expo SQLite</span>
-                                <span class="card-tag">Gifted Charts</span>
-                            </div>
-                            <p class="card-desc">App móvil nativa de gestión financiera personal con presupuestos por categoría, gráficos interactivos en tiempo real y persistencia local offline con SQLite.</p>
-                            <div class="card-actions">
-                                <a href="https://github.com/Agus1676/portfolio-agustin" target="_blank" rel="noopener noreferrer" class="btn-card-primary">Ver Código Repo <i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
-                                <button class="btn-card-secondary open-demo-btn" data-project="guita">Ver Detalles <i data-lucide="sparkles" style="width:14px;height:14px;"></i></button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Demo Drawer (Contenedor para Demos Interactivas) -->
-                <div class="demo-drawer" id="demoDrawer">
-                    <div class="demo-drawer-header">
-                        <span class="demo-drawer-label" id="demoDrawerTitle"><i data-lucide="sparkles"></i> Demo Interactiva</span>
-                        <button class="demo-drawer-close" id="closeDemoDrawerBtn" aria-label="Cerrar demo">&times;</button>
-                    </div>
-
-                    <!-- Showcase Dashboard Interno -->
-                    <div class="showcase-dashboard">
-                        <aside class="showcase-sidebar">
-                            <button class="showcase-tab active" data-project="modkey">
-                                <i data-lucide="keyboard"></i>
-                                <div class="tab-info">
-                                    <h4>MODKEY</h4>
-                                    <p>Teclados Mecánicos</p>
-                                </div>
-                            </button>
-                            <button class="showcase-tab" data-project="mercadolibre">
-                                <i data-lucide="shopping-bag"></i>
-                                <div class="tab-info">
-                                    <h4>MERCADO LIBRE PRO</h4>
-                                    <p>Clon E-Commerce</p>
-                                </div>
-                            </button>
-                            <button class="showcase-tab" data-project="losportenos">
-                                <i data-lucide="wrench"></i>
-                                <div class="tab-info">
-                                    <h4>LOS PORTEÑOS PRO</h4>
-                                    <p>Diagnóstico SVG</p>
-                                </div>
-                            </button>
-                            <button class="showcase-tab" data-project="apr">
-                                <i data-lucide="disc"></i>
-                                <div class="tab-info">
-                                    <h4>APR NEUMÁTICOS</h4>
-                                    <p>Quiz Recomendador</p>
-                                </div>
-                            </button>
-                            <button class="showcase-tab" data-project="resumatch">
-                                <i data-lucide="file-check"></i>
-                                <div class="tab-info">
-                                    <h4>RESUMATCH</h4>
-                                    <p>Simulador ATS IA</p>
-                                </div>
-                            </button>
-                        </aside>
-
-                        <div class="showcase-content">
-                            <!-- PANE 1: MODKEY -->
-                            <div class="project-pane active" id="pane-modkey">
-                                <div class="pane-header">
-                                    <h3 class="pane-title">MODKEY — Demo Sintetizador de Audio</h3>
-                                    <p class="pane-subtitle">Probá la acústica simulada de los switches e interactuá con el osciloscopio en tiempo real.</p>
-                                </div>
-                                <div class="pane-nav-tabs">
-                                    <button class="pane-nav-btn active" data-view="details">Detalles</button>
-                                    <button class="pane-nav-btn" data-view="demo">Demo Interactiva</button>
-                                </div>
-                                <div class="pane-tab-content active" data-tab-content="details">
-                                    <div class="pane-split-layout">
-                                        <div class="pane-info-col">
-                                            <p class="project-description">Plataforma e-commerce con sintetizador de sonido en el navegador sin archivos de audio externos.</p>
-                                            <div class="pane-ctas" style="margin-top: 16px;">
-                                                <a href="https://modkey-one.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary-sm">Abrir en Vercel <i data-lucide="external-link" style="width: 14px; height: 14px;"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="pane-mockup-col">
-                                            <img src="assets/modkey.png" alt="MODKEY" class="pane-mockup-img" style="border-radius: 8px; width: 100%; border: 1px solid var(--border-color);">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="pane-tab-content" data-tab-content="demo">
-                                    <div class="demo-box">
-                                        <div class="demo-header">
-                                            <span class="demo-title"><i data-lucide="volume-2"></i> Sintetizador Acústico</span>
-                                        </div>
-                                        <div class="demo-body" style="display:flex; flex-direction:column; gap:14px; align-items:center;">
-                                            <canvas id="osciloscope" width="400" height="90" style="background:#000; border-radius:6px; width:100%;"></canvas>
-                                            <div style="display:flex; gap:10px;">
-                                                <button class="btn-secondary-sm sound-btn" data-switch="linear">Probar Switch Lineal</button>
-                                                <button class="btn-secondary-sm sound-btn" data-switch="tactile">Probar Switch Táctil</button>
-                                                <button class="btn-secondary-sm sound-btn" data-switch="clicky">Probar Switch Clicky</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- PANE 2: MERCADO LIBRE PRO -->
-                            <div class="project-pane" id="pane-mercadolibre">
-                                <div class="pane-header">
-                                    <h3 class="pane-title">Mercado Libre Pro</h3>
-                                    <p class="pane-subtitle">Clon optimizado con búsqueda en tiempo real y carrito interactivo.</p>
-                                </div>
-                                <div class="pane-nav-tabs">
-                                    <button class="pane-nav-btn active" data-view="details">Detalles</button>
-                                    <button class="pane-nav-btn" data-view="demo">Demo Interactiva</button>
-                                </div>
-                                <div class="pane-tab-content active" data-tab-content="details">
-                                    <div class="pane-split-layout">
-                                        <div class="pane-info-col">
-                                            <p class="project-description">Experiencia rápida de e-commerce con filtrado instantáneo y simulación de compra.</p>
-                                            <div class="pane-ctas" style="margin-top: 16px;">
-                                                <a href="https://mercadolibrepro.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary-sm">Abrir en Vercel <i data-lucide="external-link" style="width: 14px; height: 14px;"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="pane-mockup-col">
-                                            <img src="assets/mercadolibre-pro.png" alt="Mercado Libre Pro" class="pane-mockup-img" style="border-radius: 8px; width: 100%; border: 1px solid var(--border-color);">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="pane-tab-content" data-tab-content="demo">
-                                    <div class="demo-box">
-                                        <div class="demo-header"><span class="demo-title">Búsqueda Reactiva</span></div>
-                                        <div class="demo-body" style="padding:16px;">
-                                            <input type="text" id="demoMlSearch" placeholder="Buscar productos (ej: Auriculares, Teclado...)" class="card-select" style="width:100%; padding:10px; border-radius:6px; background:rgba(255,255,255,0.05); color:#fff; border:1px solid var(--border-color);">
-                                            <div id="demoMlResults" style="margin-top:12px; display:flex; flex-direction:column; gap:8px;"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- PANE 3: LOS PORTEÑOS PRO -->
-                            <div class="project-pane" id="pane-losportenos">
-                                <div class="pane-header">
-                                    <h3 class="pane-title">Los Porteños Pro — Diagnóstico SVG</h3>
-                                    <p class="pane-subtitle">Plano interactivo del vehículo para seleccionar zonas de reparación.</p>
-                                </div>
-                                <div class="pane-nav-tabs">
-                                    <button class="pane-nav-btn active" data-view="details">Detalles</button>
-                                    <button class="pane-nav-btn" data-view="demo">Demo Interactiva</button>
-                                </div>
-                                <div class="pane-tab-content active" data-tab-content="details">
-                                    <div class="pane-split-layout">
-                                        <div class="pane-info-col">
-                                            <p class="project-description">Turnero para taller mecánico con mapa interactivo de autopartes.</p>
-                                            <div class="pane-ctas" style="margin-top: 16px;">
-                                                <a href="https://losporte-osturnero.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary-sm">Abrir en Vercel <i data-lucide="external-link" style="width: 14px; height: 14px;"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="pane-mockup-col">
-                                            <img src="assets/los-portenos.png" alt="Los Porteños Pro" class="pane-mockup-img" style="border-radius: 8px; width: 100%; border: 1px solid var(--border-color);">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="pane-tab-content" data-tab-content="demo">
-                                    <div class="demo-box">
-                                        <div class="demo-header"><span class="demo-title">Selección de Zona Vehicular</span></div>
-                                        <div class="demo-body" style="padding:16px; text-align:center;">
-                                            <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:12px;">Haz clic en un componente para simular presupuesto:</p>
-                                            <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
-                                                <button class="btn-secondary-sm diag-btn" data-part="Frenos delanteros" data-price="$45.000">Frenos</button>
-                                                <button class="btn-secondary-sm diag-btn" data-part="Suspensión neumática" data-price="$82.000">Suspensión</button>
-                                                <button class="btn-secondary-sm diag-btn" data-part="Alineación y Balanceo" data-price="$28.000">Alineación</button>
-                                            </div>
-                                            <div id="diagResult" style="margin-top:14px; font-weight:600; color:var(--neon-orange);"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- PANE 4: APR NEUMÁTICOS -->
-                            <div class="project-pane" id="pane-apr">
-                                <div class="pane-header">
-                                    <h3 class="pane-title">APR Neumáticos — Quiz Recomendador</h3>
-                                    <p class="pane-subtitle">Recomendación automatizada del neumático ideal según tipo de uso.</p>
-                                </div>
-                                <div class="pane-nav-tabs">
-                                    <button class="pane-nav-btn active" data-view="details">Detalles</button>
-                                    <button class="pane-nav-btn" data-view="demo">Demo Quiz</button>
-                                </div>
-                                <div class="pane-tab-content active" data-tab-content="details">
-                                    <div class="pane-split-layout">
-                                        <div class="pane-info-col">
-                                            <p class="project-description">Catálogo e-commerce de neumáticos con actualización dinámica por Excel.</p>
-                                            <div class="pane-ctas" style="margin-top: 16px;">
-                                                <a href="https://aprneumaticos.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary-sm">Abrir en Vercel <i data-lucide="external-link" style="width: 14px; height: 14px;"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="pane-mockup-col">
-                                            <img src="assets/apr-neumaticos.png" alt="APR Neumáticos" class="pane-mockup-img" style="border-radius: 8px; width: 100%; border: 1px solid var(--border-color);">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="pane-tab-content" data-tab-content="demo">
-                                    <div class="demo-box">
-                                        <div class="demo-header"><span class="demo-title">Quiz de Recomendación</span></div>
-                                        <div class="demo-body" style="padding:16px;">
-                                            <div class="quiz-container">
-                                                <div class="quiz-step active" id="quizStep1">
-                                                    <p class="quiz-question">¿Por qué tipo de terreno circulás principalmente?</p>
-                                                    <div class="quiz-options">
-                                                        <button class="quiz-opt-btn" data-ans="city">Ciudad / Asfalto</button>
-                                                        <button class="quiz-opt-btn" data-ans="offroad">Ruta / Off-Road</button>
-                                                    </div>
-                                                </div>
-                                                <div class="quiz-step" id="quizStep2" style="display:none;">
-                                                    <div class="quiz-result">
-                                                        <div class="result-tire-name" id="quizTireName">Pirelli Cinturato P7</div>
-                                                        <div class="result-tire-desc" id="quizTireDesc">Excelente agarre en mojado y confort de marcha urbano.</div>
-                                                        <button class="btn-secondary-sm" id="resetQuizBtn" style="margin-top:10px;">Reintentar Quiz</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- PANE 5: RESUMATCH -->
-                            <div class="project-pane" id="pane-resumatch">
-                                <div class="pane-header">
-                                    <h3 class="pane-title">Resumatch — Simulador ATS con IA</h3>
-                                    <p class="pane-subtitle">Análisis automatizado de CV en PDF comparado contra descripciones de puestos.</p>
-                                </div>
-                                <div class="pane-nav-tabs">
-                                    <button class="pane-nav-btn active" data-view="details">Detalles</button>
-                                    <button class="pane-nav-btn" data-view="demo">Demo ATS</button>
-                                </div>
-                                <div class="pane-tab-content active" data-tab-content="details">
-                                    <div class="pane-split-layout">
-                                        <div class="pane-info-col">
-                                            <p class="project-description">Aplicación Full-Stack con integración a la API de Gemini 2.5 Flash para score ATS.</p>
-                                            <div class="pane-ctas" style="margin-top: 16px;">
-                                                <a href="https://resumatch-dusky.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary-sm">Abrir en Vercel <i data-lucide="external-link" style="width: 14px; height: 14px;"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="pane-mockup-col">
-                                            <img src="assets/resumatch.png" alt="Resumatch AI" class="pane-mockup-img" style="border-radius: 8px; width: 100%; border: 1px solid var(--border-color);">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="pane-tab-content" data-tab-content="demo">
-                                    <div class="demo-box">
-                                        <div class="demo-header"><span class="demo-title">Simulador de Match ATS</span></div>
-                                        <div class="demo-body" style="padding:16px;">
-                                            <div style="display:flex; flex-direction:column; gap:10px;">
-                                                <select class="card-select" id="resumatchCvSelect" style="width:100%; padding:8px; background:rgba(255,255,255,0.05); color:#fff; border:1px solid var(--border-color); border-radius:6px;">
-                                                    <option value="react-jr">Agustín Pollán - Frontend Developer</option>
-                                                    <option value="python-jr">Sofía García - Backend Python</option>
-                                                </select>
-                                                <select class="card-select" id="resumatchJobSelect" style="width:100%; padding:8px; background:rgba(255,255,255,0.05); color:#fff; border:1px solid var(--border-color); border-radius:6px;">
-                                                    <option value="frontend-offer">Front-End Developer (React + TS)</option>
-                                                    <option value="backend-offer">Backend Developer (FastAPI + SQL)</option>
-                                                </select>
-                                                <button class="btn-primary-sm" id="resumatchRunBtn" style="margin-top:4px;">Analizar CV</button>
-                                                <div id="resumatchLoader" style="display:none; text-align:center; padding:10px; font-size:0.8rem; color:var(--text-muted);">Analizando con Gemini AI...</div>
-                                                <div id="resumatchResults" style="display:none; background:rgba(255,255,255,0.03); padding:12px; border-radius:6px; border:1px solid var(--border-color);">
-                                                    <h4 id="resumatchResultTitle" style="color:#fff; font-size:0.9rem;">Match 92%</h4>
-                                                    <p id="resumatchResultDesc" style="font-size:0.8rem; color:var(--text-secondary);"></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </section>
-
-        <!-- Habilidades Section -->
-        <section id="habilidades" class="skills-section">
+        
+        <!-- Sobre Mi Section -->
+        <section id="sobre-mi" class="section">
             <div class="container">
-                <div class="section-header reveal">
-                    <span class="section-tag">Capacidades</span>
-                    <h2 class="section-title">Mi stack <span class="accent">tecnológico</span></h2>
-                    <p class="section-desc">Herramientas y lenguajes con los que construyo productos reales, día a día.</p>
+                <div class="section-title-wrap">
+                    <h2 class="section-title">Sobre <span class="accent-line">mí</span></h2>
+                    <p class="section-subtitle">Conocé más sobre mi perfil y enfoque de desarrollo</p>
                 </div>
-
-                <div class="stack-categories">
-
-                    <!-- FRONTEND ESPECIALIZADO -->
-                    <div class="stack-card reveal">
-                        <p class="stack-card-title">Frontend Especializado</p>
-                        <div class="stack-icons-row">
-                            <!-- React -->
-                            <div class="tech-item primary">
-                                <div class="tech-icon">
-                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><g fill="#61DAFB"><circle cx="64" cy="64" r="11.4"/><path d="M107.3 45.2c-2.2-.8-4.5-1.6-6.9-2.3.6-2.4 1.1-4.8 1.5-7.1 2.1-13.2-.2-22.5-6.6-26.1-1.9-1.1-4-1.6-6.4-1.6-7 0-15.9 5.2-24.9 13.9-9-8.7-17.9-13.9-24.9-13.9-2.4 0-4.5.5-6.4 1.6-6.4 3.7-8.7 13-6.6 26.1.4 2.3.9 4.7 1.5 7.1-2.4.7-4.7 1.4-6.9 2.3C8.2 52 1.4 61.4 1.4 64s6.8 12 19.3 18.8c2.2.8 4.5 1.6 6.9 2.3-.6 2.4-1.1 4.8-1.5 7.1-2.1 13.2.2 22.5 6.6 26.1 1.9 1.1 4 1.6 6.4 1.6 7.1 0 16-5.2 24.9-13.9 9 8.7 17.9 13.9 24.9 13.9 2.4 0 4.5-.5 6.4-1.6 6.4-3.7 8.7-13 6.6-26.1-.4-2.3-.9-4.7-1.5-7.1 2.4-.7 4.7-1.4 6.9-2.3 12.5-6.8 19.3-16.2 19.3-18.8s-6.8-12-19.3-18.8zM92.5 14.7c4.1 2.4 5.5 9.8 3.8 20.3-.3 2.1-.8 4.3-1.4 6.6-5.2-1.2-10.7-2-16.5-2.5-3.4-4.8-6.9-9.1-10.4-13 7.4-7.3 14.9-12.3 21-12.3 1.3 0 2.5.3 3.5.9zM81.3 74c-1.8 3.2-3.9 6.4-6.1 9.6-3.7.3-7.4.4-11.2.4-3.9 0-7.6-.1-11.2-.4-2.2-3.2-4.2-6.4-6-9.6-1.9-3.3-3.7-6.7-5.3-10 1.6-3.3 3.4-6.7 5.3-10 1.8-3.2 3.9-6.4 6.1-9.6 3.7-.3 7.4-.4 11.2-.4 3.9 0 7.6.1 11.2.4 2.2 3.2 4.2 6.4 6 9.6 1.9 3.3 3.7 6.7 5.3 10-1.7 3.3-3.4 6.6-5.3 10zm8.3-3.3c1.5 3.5 2.7 6.9 3.8 10.3-3.4.8-7 1.4-10.8 1.9 1.2-1.9 2.5-3.9 3.6-6 1.2-2.1 2.3-4.2 3.4-6.2zM64 97.8c-2.4-2.6-4.7-5.4-6.9-8.3 2.3.1 4.6.2 6.9.2 2.3 0 4.6-.1 6.8-.2-2.2 2.9-4.5 5.7-6.8 8.3zm-18.6-15c-3.8-.5-7.4-1.1-10.8-1.9 1-3.4 2.2-6.8 3.8-10.3 1.1 2 2.2 4.1 3.4 6.1 1.2 2.2 2.4 4.1 3.6 6.1zm-7-25.5c-1.5-3.5-2.7-6.9-3.8-10.3 3.4-.8 7-1.4 10.8-1.9-1.2 1.9-2.5 3.9-3.6 6-1.2 2.1-2.3 4.2-3.4 6.2zM64 30.2c2.4 2.6 4.7 5.4 6.9 8.3-2.3-.1-4.6-.2-6.9-.2-2.3 0-4.6.1-6.8.2 2.2-2.9 4.5-5.7 6.8-8.3zm22.2 21l-3.6-6c3.8.5 7.4 1.1 10.8 1.9-1 3.4-2.2 6.8-3.8 10.3-1.1-2-2.2-4.1-3.4-6.2zM31.7 35c-1.7-10.5-.3-17.9 3.8-20.3 1-.6 2.2-.9 3.5-.9 6 0 13.5 4.9 21 12.3-3.5 3.8-7 8.2-10.4 13-5.8.5-11.3 1.4-16.5 2.5-.6-2.3-1-4.5-1.4-6.6zM7 64c0-4.7 5.7-9.7 15.7-13.4 2-.8 4.2-1.5 6.4-2.1 1.6 5 3.6 10.3 6 15.6-2.4 5.3-4.5 10.5-6 15.5C15.3 75.6 7 69.6 7 64zm28.5 49.3c-4.1-2.4-5.5-9.8-3.8-20.3.3-2.1.8-4.3 1.4-6.6 5.2 1.2 10.7 2 16.5 2.5 3.4 4.8 6.9 9.1 10.4 13-7.4 7.3-14.9 12.3-21 12.3-1.3 0-2.5-.3-3.5-.9zM96.3 93c1.7 10.5.3 17.9-3.8 20.3-1 .6-2.2.9-3.5.9-6 0-13.5-4.9-21-12.3 3.5-3.8 7-8.2 10.4-13 5.8-.5 11.3-1.4 16.5-2.5.6 2.3 1 4.5 1.4 6.6zm9-15.6c-2 .8-4.2 1.5-6.4 2.1-1.6-5-3.6-10.3-6-15.6 2.4-5.3 4.5-10.5 6-15.5 13.8 4 22.1 10 22.1 15.6 0 4.7-5.8 9.7-15.7 13.4z"/></g></svg>
-                                </div>
-                                <span class="tech-name">React</span>
-                            </div>
-                            <!-- Next.js -->
-                            <div class="tech-item primary">
-                                <div class="tech-icon">
-                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M64 0C28.7 0 0 28.7 0 64s28.7 64 64 64c11.2 0 21.7-2.9 30.8-7.9L48.4 55.3v36.6H35.1V40.5h13.4l50.7 73.4C90.3 121.1 77.6 128 64 128c-35.3 0-64-28.7-64-64S28.7 0 64 0z" fill="#fff"/><path d="M108.2 86.8L80.5 40.5h13.4v40.5h14.3" fill="#fff"/></svg>
-                                </div>
-                                <span class="tech-name">Next.js</span>
-                            </div>
-                            <!-- TypeScript -->
-                            <div class="tech-item primary">
-                                <div class="tech-icon">
-                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="#007ACC" d="M2 63.91v62.5h125v-125H2z"/><path fill="#fff" d="M19.1 120.5c0 .4.1.8.4 1.1.3.3.6.5 1 .5h79.2c.4 0 .8-.2 1.1-.5.3-.3.4-.7.4-1.1v-44h20.7V70.9H89.3V56.8H19.1v13h30.1v50.7zm41.5 0V70.9H81v49.6H60.6z"/></svg>
-                                </div>
-                                <span class="tech-name">TypeScript</span>
-                            </div>
-                        </div>
-
-                        <span class="stack-sublabel">Complementos</span>
-                        <div class="stack-icons-row">
-                            <!-- JavaScript -->
-                            <div class="tech-item">
-                                <div class="tech-icon">
-                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="#F0DB4F" d="M1.408 1.408h125.184v125.185H1.408z"/><path fill="#323330" d="M116.347 96.736c-.917-5.711-4.641-10.348-12.543-14.856-3.052-1.572-6.478-2.642-7.529-5.15-.382-1.514-.454-2.338-.231-3.23.84-3.797 4.01-4.917 6.628-4.225 1.702.452 3.312 1.701 4.326 3.603 4.586-3.006 4.586-3.006 7.786-5.055-1.209-1.891-1.802-2.738-2.607-3.544-2.865-3.354-6.866-4.71-13.276-4.36l-3.32.591c-3.17.763-6.16 2.427-8.066 4.711-5.509 6.36-3.881 17.535 1.562 22.174 5.806 5.132 14.29 6.26 15.3 11.087.509 5.561-4.569 7.375-10.143 6.72-4.294-.904-6.677-3.17-9.277-7.253l-8.048 4.624c1.111 2.291 2.321 3.295 4.178 5.334 9.026 9.243 31.443 8.7 35.474-4.996.144-.477 1.018-3.185.344-7.439zm-36.98-40.848h-9.782c0 8.17-.052 16.204-.052 24.363 0 5.149.25 9.868-.57 11.36-1.396 2.945-4.961 2.567-6.627 2.055-1.712-.567-2.54-1.729-3.523-3.13-.25-.381-.436-.714-.582-.984l-7.994 4.94c1.336 2.669 3.236 4.94 5.72 6.37 3.763 2.136 8.703 2.762 13.678 1.62 3.381-.872 6.315-2.788 7.994-5.931 2.557-4.617 2.004-10.252 1.975-16.508.094-8.476 0-16.952 0-25.155z"/></svg>
-                                </div>
-                                <span class="tech-name">JavaScript</span>
-                            </div>
-                            <!-- Vite -->
-                            <div class="tech-item">
-                                <div class="tech-icon">
-                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M124.766 19.52 67.324 122.238c-1.187 2.121-4.234 2.133-5.437.024L.305 19.532c-1.313-2.302.652-5.087 3.261-4.622l60.01 10.898a3.12 3.12 0 0 0 1.13-.004l58.61-10.884c2.606-.485 4.581 2.3 3.459 4.6Z" fill="url(#vite0)"/><path d="M94.009 1.2 49.718 9.32a1.964 1.964 0 0 0-1.612 1.83l-2.487 42.5a1.96 1.96 0 0 0 2.193 2.046l11.52-1.37a1.96 1.96 0 0 1 2.142 2.427l-3.379 15.717a1.96 1.96 0 0 0 2.29 2.379l7.1-1.722c1.328-.32 2.56.847 2.268 2.18l-5.35 25.975c-.335 1.62 1.816 2.51 2.72 1.12l.588-.9 32.54-64.836c.68-1.358-.498-2.89-1.998-2.618l-11.87 2.28a1.96 1.96 0 0 1-2.247-2.54l7.758-26.977A1.96 1.96 0 0 0 94.009 1.2Z" fill="url(#vite1)"/><defs><linearGradient id="vite0" x1="6.035" y1="-8.1" x2="235" y2="214.87" gradientUnits="userSpaceOnUse"><stop stop-color="#41D1FF"/><stop offset="1" stop-color="#BD34FE"/></linearGradient><linearGradient id="vite1" x1="194.651" y1="8.818" x2="236" y2="292.989" gradientUnits="userSpaceOnUse"><stop stop-color="#FF3E00"/><stop offset=".526" stop-color="#FF7743"/><stop offset="1" stop-color="#FFD700"/></linearGradient></defs></svg>
-                                </div>
-                                <span class="tech-name">Vite</span>
-                            </div>
-                            <!-- Tailwind -->
-                            <div class="tech-item">
-                                <div class="tech-icon">
-                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M64.004 25.602c-17.067 0-27.742 8.53-32 25.597 6.398-8.531 13.867-11.73 22.398-9.602 4.871 1.214 8.352 4.746 12.207 8.66C72.883 56.629 80.145 64 96.004 64c17.066 0 27.74-8.531 32-25.602-6.399 8.536-13.867 11.735-22.399 9.602-4.87-1.21-8.347-4.742-12.207-8.656-6.27-6.367-13.53-13.742-29.394-13.742zM32.004 64c-17.066 0-27.742 8.531-32 25.602C6.402 81.066 13.87 77.867 22.402 80c4.871 1.215 8.352 4.746 12.207 8.66 6.274 6.375 13.536 13.742 29.395 13.742 17.066 0 27.741-8.532 32-25.602-6.399 8.536-13.867 11.735-22.399 9.602-4.87-1.21-8.347-4.742-12.207-8.656C55.128 71.371 47.868 64 32.004 64z" fill="#38bdf8"/></svg>
-                                </div>
-                                <span class="tech-name">Tailwind</span>
-                            </div>
-                            <!-- Framer Motion -->
-                            <div class="tech-item">
-                                <div class="tech-icon">
-                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M64 0L0 64l64 64 64-64z" fill="#0055FF"/><path d="M64 64L0 128h64V64z" fill="#fff" opacity=".5"/><path d="M64 64l64 64H64V64z" fill="#fff" opacity=".25"/></svg>
-                                </div>
-                                <span class="tech-name">Framer Motion</span>
-                            </div>
-                            <!-- HTML5 -->
-                            <div class="tech-item">
-                                <div class="tech-icon">
-                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="#E44D26" d="M19.037 113.876L9.032 1.661h109.936l-10.016 112.198-45.019 12.48z"/><path fill="#F16529" d="M64 116.8l36.378-10.086 8.559-95.878H64z"/><path fill="#EBEBEB" d="M64 52.455H45.788L44.53 38.361H64V24.599H29.489l.33 3.692 3.382 37.927H64zm0 35.743l-.061.017-15.327-4.14-.979-10.975H33.816l1.928 21.609 28.193 7.826.063-.017z"/><path fill="#fff" d="M63.952 52.455v13.763h16.947l-1.597 17.849-15.35 4.143v14.319l28.215-7.82.207-2.325 3.234-36.233.335-3.696h-3.708zm0-27.856v13.762h33.244l.276-3.092.628-6.978.329-3.692z"/></svg>
-                                </div>
-                                <span class="tech-name">HTML5</span>
-                            </div>
-                            <!-- CSS3 -->
-                            <div class="tech-item">
-                                <div class="tech-icon">
-                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="#1572B6" d="M18.814 114.123L8.76 1.352h110.48l-10.064 112.754-45.243 12.543-45.119-12.526z"/><path fill="#33A9DC" d="M64.001 117.062l36.559-10.136 8.601-96.354H64.001v106.49z"/><path fill="#fff" d="M64.001 51.429H45.044l-1.134-12.676H64.001V26.404H31.34l.336 3.761 3.435 38.513h28.89v-17.25zm0 35.213l-.105.028-14.154-3.822-.904-10.138H36.686l1.777 19.922 25.307 7.026.231-.063v-12.953z"/><path fill="#fff" d="M63.956 51.429v17.249h17.78l-1.528 17.019-16.252 4.4v12.977l25.336-7.012.172-1.928 2.914-32.656.285-3.05h-3.058zm0-25.025v12.35h34.886l.277-3.043.629-6.989.284-2.318z"/></svg>
-                                </div>
-                                <span class="tech-name">CSS3</span>
-                            </div>
-                        </div>
+                <div class="about-card">
+                    <div class="about-header-block">
+                        <h3>Desarrollador Full Stack enfocado en soluciones reales</h3>
+                        <p class="about-intro">Soy <strong class="text-dark">Agustin Pollan</strong>, desarrollador de Buenos Aires, Argentina. Construyo aplicaciones web y móviles de extremo a extremo con enfoque en rendimiento, mantenibilidad y experiencia de usuario.</p>
                     </div>
 
-                    <!-- BACKEND & DATOS -->
-                    <div class="stack-card reveal">
-                        <p class="stack-card-title">Backend &amp; Datos</p>
-                        <div class="stack-icons-row">
-                            <!-- Java -->
-                            <div class="tech-item primary">
-                                <div class="tech-icon">
-                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="#0074BD" d="M47.617 98.12s-4.767 2.774 3.397 3.71c9.892 1.13 14.947.968 25.845-1.092 0 0 2.871 1.795 6.873 3.351-24.439 10.47-55.308-.607-36.115-5.969zm-2.988-13.665s-5.348 3.959 2.823 4.805c10.567 1.091 18.91 1.18 33.354-1.6 0 0 1.993 2.025 5.132 3.131-29.542 8.64-62.446.68-41.309-6.336z"/><path fill="#EA2D2E" d="M69.802 61.271c6.025 6.935-1.58 13.17-1.58 13.17s15.289-7.891 8.269-17.777c-6.559-9.215-11.587-13.792 15.635-29.58 0 .001-42.731 10.67-22.324 34.187z"/><path fill="#0074BD" d="M102.123 108.229s3.529 2.91-3.888 5.159c-14.102 4.272-58.706 5.56-71.075.171-4.45-1.938 3.888-4.625 6.515-5.192 2.737-.593 4.303-.485 4.303-.485-4.953-3.487-32.013 6.85-13.743 9.815 49.821 8.076 90.817-3.637 77.888-9.468zM49.912 70.294s-22.686 5.389-8.033 7.348c6.188.828 18.518.638 30.011-.326 9.39-.789 18.813-2.474 18.813-2.474s-3.308 1.419-5.704 3.053c-23.042 6.061-67.544 3.238-54.731-2.958 10.832-5.239 19.644-4.643 19.644-4.643zm40.697 22.747c23.421-12.167 12.591-23.86 5.032-22.285-1.848.385-2.677.72-2.677.72s.688-1.079 2-1.543c14.953-5.255 26.451 15.503-4.823 23.725 0-.002.359-.327.468-.617z"/><path fill="#EA2D2E" d="M76.491 1.587S89.459 14.563 64.188 34.51c-20.266 16.006-4.621 25.13-.007 35.559-11.831-10.673-20.509-20.07-14.688-28.815C58.041 28.42 81.722 22.195 76.491 1.587z"/><path fill="#0074BD" d="M52.214 126.021c22.476 1.437 57-.8 57.817-11.436 0 0-1.571 4.032-18.577 7.231-19.186 3.612-42.854 3.191-56.887.874 0 .001 2.875 2.381 17.647 3.331z"/></svg>
+                    <div class="about-pillars-grid">
+                        <!-- Pillar 1: Frontend -->
+                        <div class="about-pillar">
+                            <div class="pillar-header">
+                                <div class="pillar-icon">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
                                 </div>
-                                <span class="tech-name">Java</span>
+                                <h4>Desarrollo Frontend</h4>
                             </div>
-                            <!-- Spring Boot -->
-                            <div class="tech-item primary">
-                                <div class="tech-icon">
-                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="#6DB33F" d="M116.452 6.643a58.504 58.504 0 01-6.628 12.119 64.074 64.074 0 10-10.818 80.293C117.945 81.505 124.433 53.077 116.452 6.643zm-37.942 93.188a8.329 8.329 0 11.083-16.658 8.329 8.329 0 01-.083 16.658zm11.908-35.474c-4.826 2.79-10.399 4.267-15.82 4.131a35.78 35.78 0 01-15.437-3.62c-3.718-1.877-7.146-4.543-9.138-8.154a15.83 15.83 0 01-1.645-6.56h.178a29.33 29.33 0 01.38-5.118c1.08-7.258 5.14-14.065 11.063-18.652 5.922-4.587 13.55-6.807 21.14-6.188a32.69 32.69 0 0110.5 2.616c5.29 2.327 9.65 6.338 12.03 11.588 2.383 5.247 2.487 11.316.16 16.618-2.17 4.976-6.282 8.9-11.411 11.339z"/></svg>
-                                </div>
-                                <span class="tech-name">Spring Boot</span>
-                            </div>
-                            <!-- Node.js -->
-                            <div class="tech-item primary">
-                                <div class="tech-icon">
-                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="#83CD29" d="M112.771 30.334L67.942 4.166a7.93 7.93 0 00-7.909 0L15.228 30.334a7.91 7.91 0 00-3.954 6.832v52.5a7.91 7.91 0 003.954 6.832l44.829 26.17a7.93 7.93 0 007.909 0l44.829-26.17a7.91 7.91 0 003.954-6.832v-52.5a7.91 7.91 0 00-3.978-6.832z"/><path fill="#404137" d="M107.092 31.557L63.008 6.196a4.45 4.45 0 00-4.439 0L14.485 31.557a4.434 4.434 0 00-2.219 3.838v50.721c0 1.587.841 3.048 2.219 3.838l44.084 25.362c1.367.789 3.066.789 4.439 0l44.084-25.362a4.434 4.434 0 002.219-3.838V35.395a4.434 4.434 0 00-2.219-3.838z"/><path fill="#83CD29" d="M64 8.683L19.916 34.044v50.721L64 60.404l44.084 24.361V34.044z" opacity=".5"/><path fill="#404137" d="M64 8.683v51.721l44.084 24.361V34.044z" opacity=".5"/></svg>
-                                </div>
-                                <span class="tech-name">Node.js</span>
-                            </div>
+                            <p>Especializado en interfaces modernas, reactivas y accesibles utilizando <strong class="text-dark">React</strong>, <strong class="text-dark">Next.js 15</strong> y <strong class="text-dark">TypeScript</strong>, optimizando tiempos de carga y usabilidad.</p>
                         </div>
 
-                        <span class="stack-sublabel">Complementos</span>
-                        <div class="stack-icons-row">
-                            <!-- Express -->
-                            <div class="tech-item">
-                                <div class="tech-icon">
-                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M126.67 128H1.33A1.33 1.33 0 010 126.67V1.33A1.33 1.33 0 011.33 0h125.34A1.33 1.33 0 01128 1.33v125.34A1.33 1.33 0 01126.67 128zM9.5 90.5h5.25l21-42-21-42H9.5l21 42zm71.5-84H75.25L57.5 49.5h47.25z"/></svg>
+                        <!-- Pillar 2: Backend -->
+                        <div class="about-pillar">
+                            <div class="pillar-header">
+                                <div class="pillar-icon">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
                                 </div>
-                                <span class="tech-name">Express</span>
+                                <h4>Arquitectura Backend</h4>
                             </div>
-                            <!-- PostgreSQL -->
-                            <div class="tech-item">
-                                <div class="tech-icon">
-                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="#336791" d="M93.809 92.112c.785-6.533.55-7.492 5.416-6.433l1.235.108c3.742.17 8.637-.602 11.513-1.938 6.191-2.873 9.861-7.668 3.758-6.409-13.924 2.873-14.881-1.842-14.881-1.842 14.703-21.815 20.849-49.508 15.543-56.287C101.1.986 77.91 6.583 77.573 6.769l-.099.018c-2.06-.43-4.35-.666-6.921-.682-4.689-.032-8.242 1.242-10.953 3.234-.87-.247-2.61-.73-5.484-1.455-9.09-2.233-33.509-8.94-38.688 17.633-1.056 5.267-.8 10.71.473 16.244 1.533 6.783 7.965 21.836 21.47 21.836 1.01 0 2.028-.119 3.05-.369" fill="#336791"/><ellipse cx="64" cy="60" rx="28" ry="34" fill="#336791"/><path fill="#fff" d="M64 30c-15.464 0-28 13.432-28 30s12.536 30 28 30 28-13.432 28-30-12.536-30-28-30zm0 54c-12.15 0-22-10.745-22-24s9.85-24 22-24 22 10.745 22 24-9.85 24-22 24z"/></svg>
+                            <p>Construcción de APIs RESTful, microservicios y gestión de datos con <strong class="text-dark">Java (Spring Boot)</strong>, <strong class="text-dark">Node.js</strong>, <strong class="text-dark">Python</strong> y bases de datos <strong class="text-dark">PostgreSQL / Supabase</strong>.</p>
+                        </div>
+
+                        <!-- Pillar 3: Mobile -->
+                        <div class="about-pillar">
+                            <div class="pillar-header">
+                                <div class="pillar-icon">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
                                 </div>
-                                <span class="tech-name">PostgreSQL</span>
+                                <h4>Desarrollo Mobile (Aprendizaje)</h4>
                             </div>
-                            <!-- Supabase -->
-                            <div class="tech-item">
-                                <div class="tech-icon">
-                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path d="M74.514 5.079a11.55 11.55 0 0 0-19.71 6.956L51.6 75.172h25.694a11.549 11.549 0 0 0 9.965-17.355L74.514 5.079z" fill="url(#sb0)"/><path d="M53.487 122.921a11.55 11.55 0 0 0 19.709-6.956l3.205-63.137H50.706a11.549 11.549 0 0 0-9.965 17.355l12.746 52.738z" fill="url(#sb1)" opacity=".6"/><defs><linearGradient id="sb0" x1="50" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse"><stop stop-color="#3ECF8E"/><stop offset="1" stop-color="#3ECF8E" stop-opacity="0"/></linearGradient><linearGradient id="sb1" x1="78" y1="48" x2="48" y2="128" gradientUnits="userSpaceOnUse"><stop stop-color="#3ECF8E"/><stop offset="1" stop-color="#3ECF8E"/></linearGradient></defs></svg>
-                                </div>
-                                <span class="tech-name">Supabase</span>
-                            </div>
-                            <!-- REST API -->
-                            <div class="tech-item">
-                                <div class="tech-icon">
-                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#FF6B35"/><text x="14" y="78" font-family="monospace" font-size="28" font-weight="bold" fill="white">REST</text></svg>
-                                </div>
-                                <span class="tech-name">REST APIs</span>
-                            </div>
+                            <p>Explorando el desarrollo nativo móvil mediante <strong class="text-dark">React Native</strong>, <strong class="text-dark">Expo SDK 52</strong> y persistencia local con <strong class="text-dark">SQLite</strong>, aplicado en el proyecto <strong class="text-dark">GUITA</strong>.</p>
                         </div>
                     </div>
-
-                    <!-- HERRAMIENTAS -->
-                    <div class="stack-card reveal">
-                        <p class="stack-card-title">Herramientas &amp; Flujo de Trabajo</p>
-                        <div class="stack-icons-row">
-                            <!-- Git -->
-                            <div class="tech-item">
-                                <div class="tech-icon">
-                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="#F34F29" d="M124.742 58.378L69.625 3.264c-3.172-3.174-8.32-3.174-11.497 0L46.685 14.71l14.518 14.518c3.375-1.139 7.243-.375 9.932 2.314 2.703 2.706 3.461 6.607 2.294 9.993l13.992 13.993c3.385-1.167 7.292-.413 9.994 2.295 3.78 3.777 3.78 9.9 0 13.679a9.673 9.673 0 01-13.683 0 9.677 9.677 0 01-2.105-10.521L68.574 47.933l-.002 34.341a9.708 9.708 0 012.559 1.828c3.778 3.777 3.778 9.898 0 13.683-3.779 3.777-9.904 3.777-13.679 0-3.778-3.784-3.778-9.905 0-13.683a9.65 9.65 0 013.167-2.11V47.333a9.581 9.581 0 01-3.167-2.111c-2.862-2.86-3.551-7.06-2.083-10.576L41.056 20.333 3.264 58.123a8.133 8.133 0 000 11.5l55.117 55.114c3.174 3.174 8.32 3.174 11.499 0l54.858-54.858a8.135 8.135 0 00-.016-11.501z"/></svg>
-                                </div>
-                                <span class="tech-name">Git</span>
-                            </div>
-                            <!-- GitHub -->
-                            <div class="tech-item">
-                                <div class="tech-icon">
-                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.103 64 5.103z"/></svg>
-                                </div>
-                                <span class="tech-name">GitHub</span>
-                            </div>
-                            <!-- Vercel -->
-                            <div class="tech-item">
-                                <div class="tech-icon">
-                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M64.002 8.576L128 119.424H0z"/></svg>
-                                </div>
-                                <span class="tech-name">Vercel</span>
-                            </div>
-                            <!-- Postman -->
-                            <div class="tech-item">
-                                <div class="tech-icon">
-                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><circle cx="64" cy="64" r="64" fill="#FF6C37"/><path fill="#fff" d="M96 64c0 17.67-14.33 32-32 32S32 81.67 32 64s14.33-32 32-32 32 14.33 32 32zm-32-20a20 20 0 100 40 20 20 0 000-40z"/></svg>
-                                </div>
-                                <span class="tech-name">Postman</span>
-                            </div>
-                            <!-- Notion -->
-                            <div class="tech-item">
-                                <div class="tech-icon">
-                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="16" fill="#fff"/><path fill="#000" d="M22 22h84v84H22z" opacity="0"/><path d="M31.5 25.5h65a6 6 0 0 1 6 6v65a6 6 0 0 1-6 6h-65a6 6 0 0 1-6-6v-65a6 6 0 0 1 6-6zm8.5 15v47h49V40.5H40zm7 7h35v5H47v-5zm0 10h35v5H47v-5zm0 10h20v5H47v-5z" fill="#1a1a1a"/></svg>
-                                </div>
-                                <span class="tech-name">Notion</span>
-                            </div>
-                            <!-- Lighthouse -->
-                            <div class="tech-item">
-                                <div class="tech-icon">
-                                    <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><circle cx="64" cy="64" r="64" fill="#F44B21"/><path fill="#fff" d="M46 96l18-68 18 68H46zm18-52l-9 34h18l-9-34z"/></svg>
-                                </div>
-                                <span class="tech-name">Lighthouse</span>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </section>
 
-        <!-- Experiencia Section -->
-        <section id="experiencia" class="experience-section">
+        <!-- Tecnologías & Habilidades Section -->
+        <section id="habilidades" class="section bg-light-alt">
             <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">Trayectoria</span>
-                    <h2 class="section-title">Especialización Técnica</h2>
-                    <p class="section-desc">Áreas de enfoque donde aplico mi conocimiento para resolver problemas complejos y construir productos digitales.</p>
+                <div class="section-title-wrap">
+                    <h2 class="section-title">Tecnologías <span class="accent-line">&</span> Habilidades</h2>
+                    <p class="section-subtitle">Herramientas y tecnologías que domino y utilizo en mis proyectos</p>
                 </div>
 
-                <div class="experience-grid">
-                    <!-- Área 1 -->
-                    <div class="experience-card">
-                        <div class="exp-icon-wrapper purple">
+                <div class="skills-grid-3col">
+                    <!-- Frontend -->
+                    <div class="skill-card">
+                        <div class="skill-icon-circle blue">
                             <i data-lucide="layout"></i>
                         </div>
-                        <div class="exp-content">
-                            <h3>Arquitectura Web & Frontend</h3>
-                            <p class="exp-role purple">React, Next.js, Vite, Framer Motion</p>
-                            <p class="exp-text">
-                                Especializado en construir interfaces dinámicas de alta fidelidad, con navegación optimizada (App Router) y micro-animaciones premium que mejoran el engagement del usuario. Implemento de forma constante TypeScript y CSS modular.
-                            </p>
-                            <div class="exp-footer">
-                                <span class="exp-tag-project">APLICADO EN: MODKEY, MERCADO LIBRE PRO</span>
-                            </div>
+                        <h3 class="skill-card-title">Frontend</h3>
+                        <p class="skill-card-desc">Desarrollo de interfaces modernas, responsive y accesibles utilizando las mejores prácticas.</p>
+                        <div class="skill-chips-row">
+                            <span class="skill-chip"><svg viewBox="0 0 128 128" width="16" height="16"><path fill="#E34F26" d="M18.8 113.3L8.5 0h111l-10.3 113.3L63.9 128z"/><path fill="#EF652A" d="M64 117.8l36.7-10.2 8.8-96.6H64z"/></svg> HTML5</span>
+                            <span class="skill-chip"><svg viewBox="0 0 128 128" width="16" height="16"><path fill="#1572B6" d="M18.8 113.3L8.5 0h111l-10.3 113.3L63.9 128z"/><path fill="#33A9DC" d="M64 117.8l36.7-10.2 8.8-96.6H64z"/></svg> CSS3</span>
+                            <span class="skill-chip"><svg viewBox="0 0 128 128" width="16" height="16"><path fill="#F7DF1E" d="M0 0h128v128H0z"/><path d="M67.3 104.3c3.2 5.2 7.7 8.6 14.8 8.6 6.2 0 10.2-3 10.2-7.4 0-5.2-4.1-7.1-11-10.1l-3.8-1.7c-11-4.7-18.3-10.6-18.3-23.2 0-11.6 9-20.5 23-20.5 9.8 0 16.3 3.4 21.2 12l-9.1 5.8c-2.8-4.8-6.1-6.9-12.1-6.9-4.8 0-8 3-8 6.6 0 4.6 3.1 6.5 10 9.5l3.8 1.7c13.1 5.6 19.5 11.2 19.5 24 0 13.9-10.9 21.5-25.7 21.5-14.4 0-22.7-7.2-26.9-15.6l9.4-4.3z"/></svg> JavaScript</span>
+                            <span class="skill-chip primary"><svg viewBox="0 0 128 128" width="16" height="16"><g fill="#61DAFB"><circle cx="64" cy="64" r="11.4"/><path d="M107.3 45.2c-2.2-.8-4.5-1.6-6.9-2.3.6-2.4 1.1-4.8 1.5-7.1 2.1-13.2-.2-22.5-6.6-26.1-1.9-1.1-4-1.6-6.4-1.6-7 0-15.9 5.2-24.9 13.9-9-8.7-17.9-13.9-24.9-13.9-2.4 0-4.5.5-6.4 1.6-6.4 3.7-8.7 13-6.6 26.1.4 2.3.9 4.7 1.5 7.1-2.4.7-4.7 1.4-6.9 2.3C8.2 52 1.4 61.4 1.4 64s6.8 12 19.3 18.8c2.2.8 4.5 1.6 6.9 2.3-.6 2.4-1.1 4.8-1.5 7.1-2.1 13.2.2 22.5 6.6 26.1 1.9 1.1 4 1.6 6.4 1.6 7.1 0 16-5.2 24.9-13.9 9 8.7 17.9 13.9 24.9 13.9 2.4 0 4.5-.5 6.4-1.6 6.4-3.7 8.7-13 6.6-26.1-.4-2.3-.9-4.7-1.5-7.1 2.4-.7 4.7-1.4 6.9-2.3 12.5-6.8 19.3-16.2 19.3-18.8s-6.8-12-19.3-18.8z"/></g></svg> React</span>
+                            <span class="skill-chip primary"><svg viewBox="0 0 128 128" width="16" height="16"><path d="M64 0C28.7 0 0 28.7 0 64s28.7 64 64 64 64-28.7 64-64S99.3 0 64 0zm24.6 92.5L46.8 38.3h8.9l33.4 44.8v9.4zm-9.3-39.6L46.8 83.2V38.3h9.3v34.4l23.2-33.1z" fill="#000"/></svg> Next.js</span>
+                            <span class="skill-chip primary"><svg viewBox="0 0 128 128" width="16" height="16"><path fill="#3178C6" d="M0 0h128v128H0z"/><path fill="#fff" d="M115.3 103.7c0 4.8-1.5 8.7-4.5 11.5-3 2.8-7.3 4.2-12.8 4.2-4.1 0-7.7-.8-10.9-2.3-3.2-1.6-5.8-3.8-7.8-6.6l7.4-5.9c1.6 2.2 3.5 3.9 5.8 5.1 2.3 1.2 4.7 1.8 7.3 1.8 2.6 0 4.6-.6 5.9-1.7 1.3-1.1 2-2.7 2-4.6 0-1.4-.4-2.6-1.3-3.6-.9-.9-2.2-1.7-3.9-2.4-1.7-.7-3.7-1.4-6-2.1-3.6-1.1-6.7-2.3-9.3-3.6-2.6-1.3-4.7-3-6.2-5.1-1.5-2.1-2.3-4.8-2.3-8.1 0-3.3.9-6.2 2.7-8.7 1.8-2.5 4.3-4.4 7.5-5.8 3.2-1.4 7-2.1 11.2-2.1 3.9 0 7.4.7 10.4 2.1 3 1.4 5.5 3.3 7.3 5.7l-6.8 6c-1.4-1.7-3-3-4.9-3.9-1.9-.9-4-1.4-6.3-1.4-2.3 0-4.1.5-5.4 1.5-1.3 1-1.9 2.3-1.9 4 0 1.3.4 2.4 1.3 3.3.9.9 2.1 1.7 3.8 2.3 1.6.7 3.6 1.3 5.9 2 3.7 1.2 6.9 2.4 9.5 3.7 2.6 1.3 4.7 3 6.2 5.1 1.5 2 2.3 4.7 2.3 8.1zM64 45.4H47.1v65.1H34.4V45.4H17.5V35.1H64v10.3z"/></svg> TypeScript</span>
+                            <span class="skill-chip"><svg viewBox="0 0 128 128" width="16" height="16"><path fill="#38BDF8" d="M64 32c-17.1 0-27.4 8.6-30.9 25.7 6.9-8.6 14.6-11.1 23.1-7.7 4.9 2 8.4 5.5 12.3 9.5 6.3 6.4 13.6 13.8 29.7 13.8 17.1 0 27.4-8.6 30.9-25.7-6.9 8.6-14.6 11.1-23.1 7.7-4.9-2-8.4-5.5-12.3-9.5C87.4 39.4 80.1 32 64 32z"/></svg> Tailwind CSS</span>
+                            <span class="skill-chip"><svg viewBox="0 0 128 128" width="16" height="16"><path fill="#646CFF" d="M123.6 19.5L67.7 122.9c-1.3 2.4-4.7 2.4-6 0L5.8 19.5c-1.5-2.7.9-5.9 3.9-5.2l53 11.7c.8.2 1.6.2 2.4 0l54.6-11.7c3.1-.7 5.5 2.5 3.9 5.2z"/><path fill="#FFD62E" d="M88.7 13.6L47.5 56.8c-.8.8-.4 2.2.7 2.4l17.7 3.5c1.1.2 1.6 1.5.9 2.4L37.1 103c-.9 1.1 0 2.8 1.4 2.5l56.8-15.4c1.1-.3 1.6-1.5 1-2.4l-14-22.3c-.6-1 0-2.3 1.1-2.5l22.7-3.9c1.4-.2 2-2 .9-2.8L88.7 13.6z"/></svg> Vite</span>
                         </div>
                     </div>
 
-                    <!-- Área 2 -->
-                    <div class="experience-card">
-                        <div class="exp-icon-wrapper green">
+                    <!-- Backend -->
+                    <div class="skill-card">
+                        <div class="skill-icon-circle blue">
                             <i data-lucide="database"></i>
                         </div>
-                        <div class="exp-content">
-                            <h3>Integraciones Backend & Datos</h3>
-                            <p class="exp-role green">Node.js, Supabase, PostgreSQL, CSV Integrations</p>
-                            <p class="exp-text">
-                                Diseño de flujos de datos eficientes, integración de APIs RESTful, bases de datos relacionales en la nube y sincronizaciones masivas de archivos CSV/Excel en segundos, automatizando tareas complejas de administración de stock.
-                            </p>
-                            <div class="exp-footer">
-                                <span class="exp-tag-project">APLICADO EN: APR NEUMÁTICOS, LOS PORTEÑOS PRO</span>
-                            </div>
+                        <h3 class="skill-card-title">Backend</h3>
+                        <p class="skill-card-desc">Desarrollo de APIs robustas, bases de datos y lógica de servidor para aplicaciones escalables.</p>
+                        <div class="skill-chips-row">
+                            <span class="skill-chip primary"><svg viewBox="0 0 128 128" width="16" height="16"><path fill="#007396" d="M47.2 87.2s-4.3 2.5 3 3.3c8.9 1 15-1 26.6-8.3 0 0-16.1 4.7-29.6 5zM44.4 73.1s-5 3.7 2.3 4.3c9.5.8 19-1.2 32.7-10.6 0 0-19.1 5.3-35 6.3zM60.6 55.4c6.3 7.2 1.4 12.3-5.2 18 10.3-6.5 17.5-12.7 12-19-4.8-5.6-14-9.3-6.8-19.8-13.6 11.2-6.5 13.4 0 20.8z"/><path fill="#ED8B00" d="M83.4 92.5c12.2-6.8 16.5-13.9 16.5-13.9s-3.5 2.5-9.8 4.3c-7 2-15.4 2.8-23.7 2.8-15.3 0-25-3.3-25-3.3s3 2.8 11 4.3c11.5 2 21.8 1.4 31-4.2z"/></svg> Java</span>
+                            <span class="skill-chip primary"><svg viewBox="0 0 128 128" width="16" height="16"><path fill="#6DB33F" d="M120.7 42.6L68.5 12.5c-2.8-1.6-6.3-1.6-9.1 0L7.2 42.6c-2.8 1.6-4.6 4.7-4.6 8v60.2c0 3.3 1.8 6.4 4.6 8l52.2 30.1c2.8 1.6 6.3 1.6 9.1 0l52.2-30.1c2.8-1.6 4.6-4.7 4.6-8V50.6c0-3.3-1.8-6.4-4.6-8z"/></svg> Spring Boot</span>
+                            <span class="skill-chip primary"><svg viewBox="0 0 128 128" width="16" height="16"><path fill="#339933" d="M64 8l52 30v60L64 128 12 98V38L64 8zm0 18.5L25 49v44l39 22.5 39-22.5V49L64 26.5z"/></svg> Node.js</span>
+                            <span class="skill-chip"><svg viewBox="0 0 128 128" width="16" height="16"><path fill="#fff" d="M0 0h128v128H0z" opacity="0"/><path d="M116.5 98.3l-28.9-42.8 27.2-40.3h-17.5l-19.1 29.4-19.1-29.4H41.6l27.2 40.3-28.9 42.8h17.8l20.5-31.5 20.5 31.5h17.3zM32 98.3V15.2H15v83.1H32z" fill="#000"/></svg> Express</span>
+                            <span class="skill-chip"><svg viewBox="0 0 128 128" width="16" height="16"><path fill="#336791" d="M63.5 12.8c-2.3 0-4.5.3-6.6.8-9.8 2.5-17.1 9.8-21.2 18.6-2.5 5.5-3.8 11.8-3.8 18.4 0 5.2.8 10.3 2.5 15 2 5.5 5 10.3 9 14.3 2.3 2.3 4.8 4.3 7.6 5.8v29.5l14-8.3v-20c2.8.5 5.5.8 8.5.8 13 0 24.8-5.3 33.3-13.8 8.5-8.5 13.8-20.3 13.8-33.3.1-15.3-7.2-27.8-17.1-37.8-6-5-12.8-8-20-10z"/></svg> PostgreSQL</span>
+                            <span class="skill-chip"><svg viewBox="0 0 128 128" width="16" height="16"><path fill="#3ECF8E" d="M69.8 123.6c-2.5 3.3-7.8 1.5-7.8-2.6V74.4H10.6c-4.4 0-6.8-5.2-3.9-8.5L64.4 4.5c2.5-3.3 7.8-1.5 7.8 2.6V53.7h51.4c4.4 0 6.8 5.2 3.9 8.5L69.8 123.6z"/></svg> Supabase</span>
+                            <span class="skill-chip"><i data-lucide="api" style="width:14px;height:14px;color:#4f46e5;"></i> REST APIs</span>
                         </div>
                     </div>
 
-                    <!-- Área 3 -->
-                    <div class="experience-card">
-                        <div class="exp-icon-wrapper cyan">
-                            <i data-lucide="sliders"></i>
+                    <!-- Herramientas & Mobile -->
+                    <div class="skill-card">
+                        <div class="skill-icon-circle blue">
+                            <i data-lucide="wrench"></i>
                         </div>
-                        <div class="exp-content">
-                            <h3>APIs del Navegador & Interfaces Avanzadas</h3>
-                            <p class="exp-role cyan">Web Audio, Canvas 2D, SVG Vectorial, WebSpeech</p>
-                            <p class="exp-text">
-                                Exploración y dominio de las APIs de hardware y multimedia integradas del navegador: síntesis matemática de sonido en vivo, osciloscopios interactivos, mapas vectoriales dinámicos y reconocimiento de voz por IA en el cliente.
-                            </p>
-                            <div class="exp-footer">
-                                <span class="exp-tag-project">APLICADO EN: MODKEY, LOS PORTEÑOS, MERCADO LIBRE</span>
-                            </div>
+                        <h3 class="skill-card-title">Herramientas & Mobile</h3>
+                        <p class="skill-card-desc">Flujo de trabajo optimizado y desarrollo móvil en constante aprendizaje.</p>
+                        <div class="skill-chips-row">
+                            <span class="skill-chip"><svg viewBox="0 0 128 128" width="16" height="16"><path fill="#F05032" d="M122.7 57.3L70.7 5.3c-3-3-8-3-11 0L48 17c-2.3 2.3-2.6 5.8-1 8.5l14 14c-1.8 3-.8 7 2.2 9 1.7 1 3.7 1.4 5.6 1l12.4 12.4c.4 1.9 0 3.9-1 5.6-2 3-1 8 2.2 9 3 2 7 1 9-2.2 1.6-2.5 1.6-5.8 0-8.3l-12-12c.4-1.9 0-3.9-1-5.6 1-1.3 2.2-2.3 3.6-3L100 66c2.7 1.6 6.2 1.3 8.5-1l14.2-14.2c3-3 3-8 0-11z"/></svg> Git & GitHub</span>
+                            <span class="skill-chip"><svg viewBox="0 0 128 128" width="16" height="16"><path fill="#000" d="M64.002 8.576L128 119.424H0z"/></svg> Vercel</span>
+                            <span class="skill-chip"><svg viewBox="0 0 128 128" width="16" height="16"><circle cx="64" cy="64" r="64" fill="#FF6C37"/><path fill="#fff" d="M96 64c0 17.67-14.33 32-32 32S32 81.67 32 64s14.33-32 32-32 32 14.33 32 32zm-32-20a20 20 0 100 40 20 20 0 000-40z"/></svg> Postman</span>
+                            <span class="skill-chip"><svg viewBox="0 0 128 128" width="16" height="16"><rect width="128" height="128" rx="16" fill="#000"/><path fill="#fff" d="M31.5 25.5h65a6 6 0 0 1 6 6v65a6 6 0 0 1-6 6h-65a6 6 0 0 1-6-6v-65a6 6 0 0 1 6-6zm8.5 15v47h49V40.5H40zm7 7h35v5H47v-5zm0 10h35v5H47v-5zm0 10h20v5H47v-5z"/></svg> Notion</span>
+                        </div>
+                        <div class="mobile-learning-box">
+                            <span class="learning-tag">Mobile (En Aprendizaje)</span>
+                            <p class="learning-desc">React Native & Expo SDK 52 (Aplicado en el proyecto GUITA)</p>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+                                <!-- Proyectos Destacados Section (Interactive Carousel) -->
+        <section id="proyectos" class="section">
+            <div class="container">
+                <div class="section-title-wrap">
+                    <h2 class="section-title">Proyectos <span class="accent-line">Destacados</span></h2>
+                    <p class="section-subtitle">Explorá mis proyectos interactuando con el visor dinámico</p>
+                </div>
+
+                <div class="filter-bar">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="web">Web</button>
+                    <button class="filter-btn" data-filter="mobile">Mobile</button>
+                    <button class="filter-btn" data-filter="fullstack">Fullstack</button>
+                </div>
+
+                <!-- Carousel Component -->
+                <div class="carousel-wrapper">
+                    <button class="carousel-control prev" id="carouselPrevBtn" aria-label="Anterior">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                    </button>
+
+                    <div class="carousel-viewport" id="carouselViewport">
+                        <div class="carousel-track" id="carouselTrack">
+                            
+                            <!-- Slide 1: MODKEY -->
+                            <article class="carousel-slide" data-category="web fullstack" data-index="0">
+                                <div class="slide-card">
+                                    <div class="slide-media">
+                                        <div class="slide-browser-top">
+                                            <div class="dots"><span></span><span></span><span></span></div>
+                                            <span class="url-text">modkey-one.vercel.app</span>
+                                        </div>
+                                        <div class="slide-img-wrap">
+                                            <img src="assets/modkey.png" alt="MODKEY E-Commerce" class="slide-img">
+                                        </div>
+                                    </div>
+                                    <div class="slide-info">
+                                        <div class="slide-badges">
+                                            <span class="badge-cat blue">Ecommerce</span>
+                                            <span class="badge-cat purple">Full Stack</span>
+                                        </div>
+                                        <h3 class="slide-title">MODKEY</h3>
+                                        <p class="slide-desc">Plataforma e-commerce completa con sintetizador interactivo de audio en tiempo real y osciloscopio renderizado en Canvas.</p>
+                                        
+                                        <div class="slide-highlights">
+                                            <div class="sh-item"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#4f46e5" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Web Audio API & Processing</div>
+                                            <div class="sh-item"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#4f46e5" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Carrito de compras & Checkout</div>
+                                        </div>
+                                        
+                                        <div class="slide-tags">
+                                            <span>Next.js 15</span>
+                                            <span>React 19</span>
+                                            <span>Web Audio API</span>
+                                        </div>
+                                        <div class="slide-actions">
+                                            <a href="https://modkey-one.vercel.app/" target="_blank" class="btn-card-primary">Ver Sitio Web</a>
+                                            <a href="https://github.com/Agus1676/modkey" target="_blank" class="btn-card-outline">Código</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Slide 2: Los Porteños Pro -->
+                            <article class="carousel-slide" data-category="web" data-index="1">
+                                <div class="slide-card">
+                                    <div class="slide-media">
+                                        <div class="slide-browser-top">
+                                            <div class="dots"><span></span><span></span><span></span></div>
+                                            <span class="url-text">losporte-osturnero.vercel.app</span>
+                                        </div>
+                                        <div class="slide-img-wrap">
+                                            <img src="assets/los-portenos.png" alt="Los Porteños Pro" class="slide-img">
+                                        </div>
+                                    </div>
+                                    <div class="slide-info">
+                                        <div class="slide-badges">
+                                            <span class="badge-cat blue">Sistema</span>
+                                            <span class="badge-cat">Web App</span>
+                                        </div>
+                                        <h3 class="slide-title">Los Porteños Pro</h3>
+                                        <p class="slide-desc">Sistema de reservas de turnos e inspección mecánica con mapa interactivo en Canvas 2D y calculadora de presupuestos.</p>
+                                        
+                                        <div class="slide-highlights">
+                                            <div class="sh-item"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#4f46e5" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Mapa vectorial Canvas 2D</div>
+                                            <div class="sh-item"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#4f46e5" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Cotizador de servicios instantáneo</div>
+                                        </div>
+                                        
+                                        <div class="slide-tags">
+                                            <span>React 18</span>
+                                            <span>Canvas 2D</span>
+                                            <span>Vite</span>
+                                        </div>
+                                        <div class="slide-actions">
+                                            <a href="https://losporte-osturnero.vercel.app/" target="_blank" class="btn-card-primary">Ver Sitio Web</a>
+                                            <a href="https://github.com/Agus1676/los-portenos-pro" target="_blank" class="btn-card-outline">Código</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Slide 3: APR Neumáticos -->
+                            <article class="carousel-slide" data-category="web" data-index="2">
+                                <div class="slide-card">
+                                    <div class="slide-media">
+                                        <div class="slide-browser-top">
+                                            <div class="dots"><span></span><span></span><span></span></div>
+                                            <span class="url-text">aprneumaticos.vercel.app</span>
+                                        </div>
+                                        <div class="slide-img-wrap">
+                                            <img src="assets/apr-neumaticos.png" alt="APR Neumáticos" class="slide-img">
+                                        </div>
+                                    </div>
+                                    <div class="slide-info">
+                                        <div class="slide-badges">
+                                            <span class="badge-cat blue">Catálogo</span>
+                                            <span class="badge-cat">Gestión</span>
+                                        </div>
+                                        <h3 class="slide-title">APR Neumáticos</h3>
+                                        <p class="slide-desc">Catálogo comercial de neumáticos con actualización masiva vía planillas Excel (SheetJS) y soporte PWA offline.</p>
+                                        
+                                        <div class="slide-highlights">
+                                            <div class="sh-item"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#4f46e5" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Carga automatizada desde Excel</div>
+                                            <div class="sh-item"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#4f46e5" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Progressive Web App instalable</div>
+                                        </div>
+                                        
+                                        <div class="slide-tags">
+                                            <span>React 18</span>
+                                            <span>SheetJS</span>
+                                            <span>PWA</span>
+                                        </div>
+                                        <div class="slide-actions">
+                                            <a href="https://aprneumaticos.vercel.app/" target="_blank" class="btn-card-primary">Ver Sitio Web</a>
+                                            <a href="https://github.com/Agus1676/apr-neumaticos" target="_blank" class="btn-card-outline">Código</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Slide 4: Resumatch AI -->
+                            <article class="carousel-slide" data-category="web fullstack" data-index="3">
+                                <div class="slide-card">
+                                    <div class="slide-media">
+                                        <div class="slide-browser-top">
+                                            <div class="dots"><span></span><span></span><span></span></div>
+                                            <span class="url-text">resumatch-dusky.vercel.app</span>
+                                        </div>
+                                        <div class="slide-img-wrap">
+                                            <img src="assets/resumatch.png" alt="Resumatch AI" class="slide-img">
+                                        </div>
+                                    </div>
+                                    <div class="slide-info">
+                                        <div class="slide-badges">
+                                            <span class="badge-cat purple">IA Generativa</span>
+                                            <span class="badge-cat blue">Full Stack</span>
+                                        </div>
+                                        <h3 class="slide-title">Resumatch AI</h3>
+                                        <p class="slide-desc">Auditor inteligente de CVs en PDF conectado con la API de Gemini 2.5 para optimización frente a filtros ATS.</p>
+                                        
+                                        <div class="slide-highlights">
+                                            <div class="sh-item"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#4f46e5" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Análisis semántico Gemini AI</div>
+                                            <div class="sh-item"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#4f46e5" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Backend en FastAPI / Python</div>
+                                        </div>
+                                        
+                                        <div class="slide-tags">
+                                            <span>FastAPI</span>
+                                            <span>React</span>
+                                            <span>Gemini AI</span>
+                                        </div>
+                                        <div class="slide-actions">
+                                            <a href="https://resumatch-dusky.vercel.app/" target="_blank" class="btn-card-primary">Ver Sitio Web</a>
+                                            <a href="https://github.com/Agus1676/guita" target="_blank" class="btn-card-outline">Código</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Slide 5: GUITA -->
+                            <article class="carousel-slide" data-category="mobile" data-index="4">
+                                <div class="slide-card">
+                                    <div class="slide-media mobile-bg">
+                                        <div class="slide-phone-wrap">
+                                            <div class="phone-notch"></div>
+                                            <img src="assets/guita-screen.png" alt="GUITA Mobile App" class="slide-phone-img">
+                                        </div>
+                                    </div>
+                                    <div class="slide-info">
+                                        <div class="slide-badges">
+                                            <span class="badge-cat green">Finanzas</span>
+                                            <span class="badge-cat purple">Mobile (Aprendizaje)</span>
+                                        </div>
+                                        <h3 class="slide-title">GUITA</h3>
+                                        <p class="slide-desc">App móvil nativa para control financiero personal, presupuestos por categoría y almacenamiento local SQLite 100% privado.</p>
+                                        
+                                        <div class="slide-highlights">
+                                            <div class="sh-item"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#4f46e5" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> React Native & Expo SDK 52</div>
+                                            <div class="sh-item"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#4f46e5" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Persistencia local SQLite</div>
+                                        </div>
+                                        
+                                        <div class="slide-tags">
+                                            <span>React Native</span>
+                                            <span>Expo SDK 52</span>
+                                            <span>SQLite</span>
+                                        </div>
+                                        <div class="slide-actions">
+                                            <a href="https://github.com/Agus1676/guita" target="_blank" class="btn-card-primary">Ver Repositorio</a>
+                                            </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                        </div>
+                    </div>
+
+                    <button class="carousel-control next" id="carouselNextBtn" aria-label="Siguiente">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                    </button>
+                </div>
+
+                <!-- Indicators & Dots -->
+                <div class="carousel-pagination" id="carouselDots">
+                    <!-- Dots generated dynamically via JS -->
+                </div>
+
             </div>
         </section>
 
         <!-- Contacto Section -->
-        <section id="contacto" class="contact-section">
+        <section id="contacto" class="section bg-light-alt">
             <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">Conectemos</span>
-                    <h2 class="section-title">Iniciar un Proyecto</h2>
-                    <p class="section-desc">¿Buscando un desarrollador proactivo para tu equipo o con visión para crear productos interactivos? Hablemos.</p>
+                <div class="section-title-wrap">
+                    <h2 class="section-title">Contacto <span class="accent-line">Directo</span></h2>
+                    <p class="section-subtitle">¿Querés armar un proyecto o sumar un desarrollador a tu equipo? Escribime.</p>
                 </div>
 
-                <div class="contact-wrapper">
-                    <!-- Formulario de contacto -->
-                    <form class="contact-form" id="contactForm">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">Nombre</label>
-                                <input type="text" id="name" name="name" required placeholder="Tu nombre">
+                <div class="contact-grid">
+                    <!-- Left: Info & Direct Links -->
+                    <div class="contact-info-card">
+                        <h3>Hablemos de tu proyecto</h3>
+                        <p>Estoy disponible para posiciones Full Stack, proyectos freelance y colaboraciones. Si tenés una idea o propuesta, mandame un mensaje.</p>
+                        
+                        <div class="contact-methods-list">
+                            <div class="cm-item">
+                                <div class="cm-icon">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                                </div>
+                                <div>
+                                    <span class="cm-label">Email Directo</span>
+                                    <a href="mailto:agustinpollanceo@gmail.com" class="cm-val">agustinpollanceo@gmail.com</a>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required placeholder="tu@email.com">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Mensaje</label>
-                            <textarea id="message" name="message" rows="5" required placeholder="Detalla tu propuesta o consulta..."></textarea>
-                        </div>
-                        <button type="submit" class="btn-primary w-full">Enviar Mensaje <i data-lucide="send"></i></button>
-                        <div class="form-status" id="formStatus"></div>
-                    </form>
 
-                    <!-- Info extra contacto -->
-                    <div class="contact-info">
-                        <div class="info-card">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                            <div>
-                                <h4>Email de contacto</h4>
-                                <p><a href="mailto:agustinpollanceo@gmail.com">agustinpollanceo@gmail.com</a></p>
+                            <div class="cm-item">
+                                <div class="cm-icon">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                                </div>
+                                <div>
+                                    <span class="cm-label">LinkedIn</span>
+                                    <a href="https://www.linkedin.com/in/agustinpollan/" target="_blank" class="cm-val">linkedin.com/in/agustinpollan</a>
+                                </div>
+                            </div>
+
+                            <div class="cm-item">
+                                <div class="cm-icon">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                                </div>
+                                <div>
+                                    <span class="cm-label">GitHub</span>
+                                    <a href="https://github.com/Agus1676" target="_blank" class="cm-val">github.com/Agus1676</a>
+                                </div>
                             </div>
                         </div>
-                        <div class="info-card">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-                            <div>
-                                <h4>GitHub Oficial</h4>
-                                <p><a href="https://github.com/Agus1676" target="_blank">github.com/Agus1676</a></p>
+                    </div>
+
+                    <!-- Right: Form -->
+                    <div class="contact-form-card">
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <label for="contactName">Tu Nombre</label>
+                                <input type="text" id="contactName" placeholder="Ej: Martin Gomez" required class="form-input">
                             </div>
-                        </div>
-                        <div class="info-card">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-                            <div>
-                                <h4>LinkedIn Profesional</h4>
-                                <p><a href="https://www.linkedin.com/in/agustinpollan/" target="_blank">linkedin.com/in/agustinpollan</a></p>
+                            <div class="form-group">
+                                <label for="contactEmail">Tu Email</label>
+                                <input type="email" id="contactEmail" placeholder="nombre@empresa.com" required class="form-input">
                             </div>
-                        </div>
-                        <div class="info-card">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                            <div>
-                                <h4>Ubicación</h4>
-                                <p>Buenos Aires, Argentina</p>
+                            <div class="form-group">
+                                <label for="contactMessage">Mensaje</label>
+                                <textarea id="contactMessage" rows="4" placeholder="Hola Agustin, quisiera consultar por..." required class="form-input"></textarea>
                             </div>
-                        </div>
+                            <button type="submit" class="btn-submit-form" id="contactSubmitBtn">Enviar Mensaje</button>
+                            <div id="contactFormSuccess" style="display:none; color: #10b981; font-weight: 600; font-size: 0.9rem; margin-top: 10px;">Mensaje enviado con éxito. ¡Gracias por contactarme!</div>
+                        </form>
                     </div>
                 </div>
             </div>
         </section>
 
-    </main>
+        <!-- Drawer for interactive demos -->
+    <div class="demo-drawer" id="demoDrawer">
+        <div class="demo-drawer-header">
+            <span class="demo-drawer-title">Demo Interactivo</span>
+            <button class="close-drawer-btn" id="closeDrawerBtn">&times;</button>
+        </div>
+        <div class="demo-drawer-body" id="demoDrawerBody">
+            <!-- Content loaded dynamically via app.js -->
+        </div>
+    </div>
 
     <!-- Footer -->
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2026 Agustin Pollan. Todos los derechos reservados.</p>
-                <p class="footer-signature">Agustín Pollán — Desarrollador Full Stack</p>
-            </div>
+    <footer class="main-footer-light">
+        <div class="container footer-container">
+            <p>&copy; 2026 Agustin Pollan. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <!-- JS -->
-    <script type="module" src="app.js"></script>
+    <script src="app.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
